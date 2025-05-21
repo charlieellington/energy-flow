@@ -1,0 +1,111 @@
+## 0. What the demo will do
+* `/partner` – full-screen video.  
+* `/facilitator` – video **+** scrolling **Coach Panel** that prints AI hints.  
+* A silent **Agent** joins the room, listens only to the Partner, streams hints to the Facilitator.
+
+## 1. LiveKit Cloud — 1 hour
+
+| Do | Trim |
+| --- | --- |
+| • Create project (EU) → make room `ifs-demo`. | Skip separate **dev** vs **prod** envs. |
+| • Use LiveKit's **token-generator** web page to mint two JWTs ("partner", "facilitator") and paste them into `.env.local`. | No scripting, no API-key juggling. |
+
+## 2. Agent — 2 hours
+
+| Do | Trim |
+| --- | --- |
+| • Pull pre-built image:<br/>`docker run --env-file .agent.env livekit/agent-audio-llm:latest`. | No repo fork, no code edits today. |
+| • Set **four** env-vars only:<br/>`LIVEKIT_URL`, `PARTNER_ID=partner`, `OPENAI_API_KEY`, `SYSTEM_PROMPT` (your IFS prompt). | Defaults: Whisper STT, GPT-4o-mini LLM. |
+| • Run locally for the demo (use `ngrok` if remote testers need access). | Skip Fly/Railway deployment for POC. |
+
+## 3. Front end — 1 day total
+
+### 3.1 Setup (15 min)
+
+```bash
+npx create-next-app ifs-demo --example with-supabase
+cd ifs-demo
+npm i @livekit/components-react @livekit/client
+```
+
+### 3.2 Shared wrapper (20 min)
+
+```tsx
+// app/livekit-wrapper.tsx
+export default function LKWrapper({ token, children }) {
+  return (
+    <LiveKitRoom
+      token={token}
+      serverUrl={process.env.NEXT_PUBLIC_LK_URL}
+      connectOptions={{ autoSubscribe: true }}
+      style={{ height: '100%' }}
+    >
+      {children}
+    </LiveKitRoom>
+  );
+}
+```
+
+### 3.3 Partner page (30 min)
+
+```tsx
+// app/partner/page.tsx
+import LKWrapper from '@/livekit-wrapper';
+
+export default function Partner() {
+  return (
+    <LKWrapper token={process.env.NEXT_PUBLIC_PARTNER_TOKEN!}>
+      <ParticipantTile isLocal />
+    </LKWrapper>
+  );
+}
+```
+
+### 3.4 Facilitator page (2 h)
+
+```tsx
+// app/facilitator/page.tsx
+import { useRoomContext } from '@livekit/components-react';
+
+function HintStream() {
+  const { room } = useRoomContext();
+  const [lines, setLines] = React.useState<string[]>([]);
+
+  React.useEffect(() => {
+    room.on('dataReceived', ({ payload, participant }) => {
+      if (participant.identity === 'agent') {
+        setLines((l) => [...l, new TextDecoder().decode(payload)]);
+      }
+    });
+  }, [room]);
+
+  return <pre className="overflow-auto p-4 text-sm">{lines.join('\n')}</pre>;
+}
+
+export default function Facilitator() {
+  return (
+    <LKWrapper token={process.env.NEXT_PUBLIC_FACILITATOR_TOKEN!}>
+      <div className="grid h-screen grid-cols-[2fr_1fr]">
+        <ParticipantTile isLocal />
+        <HintStream />
+      </div>
+    </LKWrapper>
+  );
+}
+```
+
+## 5. Timeline
+
+| Day | Output |
+| --- | --- |
+| **Day 1 AM** | LiveKit room + tokens; Agent image pulled. |
+| **Day 1 PM** | Agent running locally; Partner page live. |
+| **Day 2 AM** | Facilitator page + Coach Panel wired. |
+| **Day 2 PM** | Test, polish Tailwind, `vercel --prod`. Demo done. |
+
+*Total dev effort: **≈ 12–14 hours***.
+
+### Next easy wins
+* **Move Agent to Fly.io** — `fly launch`, reuse env-file.  
+* **Consent banner** — Tailwind modal on `/partner`, sets a cookie.  
+* **Supabase auth** — re-enable provider, add serverless JWT-sign function.
