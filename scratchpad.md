@@ -20,5 +20,8 @@
 - Fixed stray character at end of Contact page and ensured it uses `MONTH_VIEW` layout.
 - Restructured routes: renamed spaced pages & folders to slug-friendly names (`doing.mdx`, `developer-docs/`, `life-tools/`, `projects/`) so URLs work again. Removed old spaced variants and temporarily deleted Contact page pending fix.
 
+## 2025-05-21 Updates (continued)
+- Updated `pages/index.mdx` (About page) to reflect new site structure: added **Developer docs**, renamed *Systems & processes* → *Life tools & systems*, and refreshed project examples.
+
 
 
