@@ -1,0 +1,214 @@
+# Development Documentation
+
+> **Note:** I'm coding using Cursor!
+
+---
+
+## 0a – Choose a Project
+
+1. **Choosing the problem / product**  
+   *Is it a pain-killer?*
+
+2. **What's the fastest route and best validation test?**  
+   a. Marketing page → ads → customer  
+   b. Build application → user test  
+   c. Another approach specific to your problem
+
+3. **Estimate time based on previous workflows**  
+   *Are you using your time the best?*
+
+4. **Are you well-stocked?**  
+   See the rules on Remarkable—you want to be prepared so you can turn back if needs be on the adventure and you're getting positive inputs on funding.
+
+---
+
+## 0b – Market it first
+
+Seriously—stop building it now; stop being a *doer*.  
+Launch a landing page at most.  
+Ideally, talk to people and show them.  
+But don't start building.  
+Only when you've found the thing that people say *"yes, I want that"*—start building.
+
+[Ref: stackingthebricks.com](https://stackingthebricks.com/number-one-mistake-no-sales/)
+
+If you're going to have kids and make money, you need to get over this perfectionism of *"it must be built"*—you've already proven you can build.
+
+---
+
+## 1 – Choosing the Tech Stack and Template
+
+### Summary
+
+Plan the project using **o3**.  
+Critique a lot and look for alternatives.  
+When you're happy, generate a **build-plan.mdx** and add it to *Energy Flow Docs*.
+
+### a) Tech Stack
+
+1. **Choose the right tech stack.**  
+   Currently using **Next.js + React + Tailwind CSS**; there are other options—use ChatGPT to critique based on what you're building.
+
+2. **Projects.**  
+   Look for places to split into different applications to keep things smaller and cleaner—AI coding on large codebases is not good.  
+   e.g. you spun up the database on a different project to the main app for *Bene Frames*.
+
+### b) Template
+
+Vercel's templates are perfect starting points—*not* over-stacked boilers—just the bare bones: [vercel.com/templates/supabase-auth](https://vercel.com/templates/supabase-auth) (for example).  
+This is how you built the wait-list app super-fast: [signup-eight-green.vercel.app](https://signup-eight-green.vercel.app/)
+
+---
+
+## 2 – Getting Started
+
+### Project Start
+
+1. Go to [github.com/new](https://github.com/new)  
+2. Create a new repository.  
+3. Open it in Cursor and save to a file on the desktop.
+
+---
+
+## 3 – Load Context and Add Rules
+
+1. Load in [github.com/charlieellington/energy-flow](https://github.com/charlieellington/energy-flow).  
+2. Go to **Cursor Settings → Rules → Project Rules → + Add new rule**.  
+3. **Name** the rule.  
+4. **Edit** the new rule with the following:
+
+   > Always follow the rules set out in **@CONTRIBUTING.md** and, after every action, update **@scratchpad.md** for the current project status. Check **@build plan / context docs** etc.
+
+   *Edit the bold parts with the real files.*
+
+5. In **Rule type** make sure it is set to **"Always"**.
+
+### Test
+
+Commit to GitHub and check the files are there; this gives you a clean restart point.
+
+#### 0 — Bootstrap a clean repo
+
+---
+
+## 4 – First Commit
+
+git commit -m "Clean Start"
+
+Get it to say Hello World.
+You can follow this with ChatGPT prompts—getting everything working is the first step. 
+
+---
+
+## 5 – Build Database
+
+This worked well for *Bene Frames*—repeat if you're going to use it.
+
+1. Create a new project and Git repo.  
+2. Loop through prompts on ChatGPT to design the database architecture.  
+3. Use ChatGPT (fed into Cursor) prompts to create that database.  
+4. Debug and make sure it works.
+
+---
+
+## 6 – Build Loop
+
+Build **one feature at a time**—keep it as small as possible so you can get it working and debug. *Test, test, test.*
+
+---
+
+## Note: Prompting
+
+What I've found works best:
+
+* **Do not** use Cursor's auto setting.  
+* **Always select the model:**
+
+  | Use-case | Model |
+  |----------|-------|
+  | Decide how to do the task (initial ask) | **o3** |
+  | Big task—get it right | **o3** |
+  | Small change (e.g. update a button) | **4o** |
+  | Everything else (e.g. run the dev server) | **4o-mini** |
+  | Debugging (avoid loops) | **o3** |
+
+See: [x.com/ericzakariasson/status/1922434149568430304](https://x.com/ericzakariasson/status/1922434149568430304) for *"What model to use in Cursor?"*
+
+**Summary**  
+Planner → Executor → Planner → (debug if needed) → Executor
+
+### Debugging
+
+* Revert changes often.  
+* **Don't wrestle with errors.**  
+* When you encounter an error, go back to the last working checkpoint—it's cheaper to start from clean code than to untangle a bug.  
+* Roll back and rethink the prompt. Ask more questions about missing information.
+
+---
+
+## Replacing the Original Prompt
+
+> "Before you begin *X* task, review the codebase and scratchpad. What do you need to feel 100 % confident you can implement?"
+
+This exposes missing info that you can fill with clarification or new documentation.
+
+---
+
+## The Current Design ↔ Build Loop
+
+### Design First
+
+You can design an app fast in Figma—it doesn't have to be perfect—think **80 % of a Deep Work prototype**.
+
+Doing the full thing means you get clearer on the structure; going back and forth and changing when coding is slow. Lessons learned on *Bene Frames*: your original pitch for Deep Work's Sprints is accurate and their value is **huge** considering developer time—it's just that developers psychologically feel free when it's your/team time and outsourcing to design felt like money spent 🙄.
+
+### User Test
+
+Do it—at least show a few people and save some time.
+
+### Design to Code
+
+All auto Figma-to-code tools (Anima, Builder.io) didn't work and made the codebase a mess.
+
+**The best way…**
+
+1. Take a small component—e.g. header or content area.  
+2. Screenshot it, describe it well, add any CSS details from Figma; prompt using **o3** and tell it to adapt to existing Tailwind and CSS rules rather than create new ones.  
+3. Debug visually on the local dev server.  
+4. Add functionality / backend.  
+5. Repeat.
+
+### Not Tried and Tested
+
+I used to be a huge fan of [storybook.js.org](https://storybook.js.org/)—if I were building a long-lasting project with a design system, I'd get into this. Take an **atomic** approach—build from atoms to larger design components, then link back to Figma for a design system and an app that can scale.
+
+---
+
+## 7 – Test — DO LOTS OF IT
+
+1. **Test—do lots of it.**  
+   Test locally all the time.
+
+2. **Check locally** that everything works *before* deploying on Vercel: [chatgpt.com/c/68163d70-d300-800a-88e1-ca47158654ee](https://chatgpt.com/c/68163d70-d300-800a-88e1-ca47158654ee)
+
+---
+
+## 8 – Talking to Users
+
+Standard user-test process: book tests, Zoom call, make notes, feed notes into AI, write a report, make changes. Iterate. Retest. Repeat forever—my assumption is if I do this, I'll make money.
+
+---
+
+## 9 – Launching to the World
+
+Write up the launch when you do it for the feedback loop.
+
+---
+
+## 10 – Market Fit
+
+Do you get it? Was it a pain-killer? Etc.
+
+---
+
+*Development Documentation 10*

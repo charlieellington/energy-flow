@@ -1,2 +1,35 @@
 .next
 node_modules
+
+# macOS metadata
+.DS_Store
+
+# Editor directories and settings
+.idea/
+.vscode/
+
+# Cursor AI session data
+# (Intentionally keep .cursor tracked because it stores project rules)
+
+# Package manager stores
+.pnpm-store/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Environment files
+.env
+.env.*
+
+# Build output
+out/
+dist/
+
+# Coverage
+coverage/
+
+# Next.js build directory (already ignored but keep for clarity)
