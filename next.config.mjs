@@ -10,14 +10,4 @@ const withNextra = nextra({
   themeConfig: './theme.config.tsx',
 });
 
-export default withNextra({
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/docs',
-        permanent: false,
-      },
-    ];
-  },
-});
+export default withNextra();
