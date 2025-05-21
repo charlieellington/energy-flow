@@ -1,0 +1,48 @@
+name: Content Checks
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Scan MDX for prohibited characters
+        run: |
+          echo "Searching for HTML tags (<) in .mdx files..."
+          # Grep returns 1 if no matches; we capture output and act accordingly.
+          if grep -R --line-number "<" --include='*.mdx' . | grep -q ".mdx:"; then
+            echo "::error::Found HTML tags in MDX files. Remove any < characters or JSX/HTML blocks."
+            grep -R --line-number "<" --include='*.mdx' . || true
+            exit 1
+          else
+            echo "✅ No HTML tags found in MDX files."
+          fi
+
+      - name: Scan MDX for JavaScript code fences
+        run: |
+          echo "Searching for \`\`\`js code fences in .mdx files..."
+          if grep -R --line-number "^\`\`\`[ ]*\(js\|javascript\)" --include='*.mdx' . | grep -q ".mdx:"; then
+            echo "::error::Found JavaScript code fences in MDX files. Remove any \`\`\`js blocks."
+            grep -R --line-number "^\`\`\`[ ]*\(js\|javascript\)" --include='*.mdx' . || true
+            exit 1
+          else
+            echo "✅ No JavaScript fences found in MDX files."
+          fi
+
+      - name: Fail if any .DS_Store files exist
+        run: |
+          echo "Checking for stray .DS_Store files..."
+          if find . -name '.DS_Store' | grep -q .; then
+            echo "::error::.DS_Store files detected in repository. Please remove them."
+            find . -name '.DS_Store' -print || true
+            exit 1
+          else
+            echo "✅ No .DS_Store files found."
+          fi 
