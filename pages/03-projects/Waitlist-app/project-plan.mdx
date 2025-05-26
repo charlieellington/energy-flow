@@ -1,0 +1,168 @@
+---
+title: Waitlist Kit 0 → 1 – Project Plan
+description: A self-hosted, one-click “join the list” site built with Next.js 14 and Supabase, deployable via the Vercel × Supabase integration.
+---
+
+> **Goal**  
+> Ship a minimal, reusable wait-list starter that anyone can deploy to Vercel in one click.
+
+---
+
+## 0 · Prerequisites
+
+| Tool | Version / note |
+|------|----------------|
+| Node | ≥ 18 |
+| Package manager | pnpm / npm / yarn |
+| Supabase CLI (optional) | for local DB |
+| GitHub account | template clone |
+| Vercel account | production host |
+| Google Cloud project | *only if deployer wants Google Auth* |
+
+---
+
+## 1 · Repo scaffolding
+
+    waitlist-kit/
+    ├─ app/
+    │  ├─ layout.tsx            # global shell + Tailwind
+    │  ├─ page.tsx              # landing
+    │  ├─ join/page.tsx         # sign-up form (magic link)
+    │  ├─ list/page.tsx         # public list of sign-ups
+    │  └─ api/
+    │     └─ preview/route.ts   # (optional) OG-image
+    ├─ lib/
+    │  └─ supabase.ts           # createBrowserClient / createServerClient
+    ├─ public/
+    │  └─ logo.svg              # replaceable brand asset
+    ├─ supabase/
+    │  ├─ migrations/
+    │  │  └─ 000_waitlist.sql   # table + RLS policy
+    │  └─ config.toml           # link migrations
+    ├─ content.json             # hero copy, colours, perks cards
+    ├─ tailwind.config.ts
+    ├─ .env.example
+    ├─ vercel.json              # runtime opts (edge optional)
+    └─ README.md
+
+*Keep editable copy in **content.json** so deployers tweak text, not TSX.*
+
+---
+
+## 2 · Database schema (`000_waitlist.sql`)
+
+~~~sql
+create table public.waitlist_signups (
+  id         uuid primary key default gen_random_uuid(),
+  email      text not null check (email <> ''),
+  name       text,
+  message    text,
+  hidden     boolean default false,
+  created_at timestamp with time zone default now()
+);
+
+alter table public.waitlist_signups
+  enable row level security;
+
+create policy "Public insert" on public.waitlist_signups
+  for insert using (true);
+~~~
+
+Magic-link e-mail auth works without extra policies.
+
+---
+
+## 3 · Core UI flow
+
+1. **Landing** – reads perks + launch date from `content.json`.  
+2. **Call-to-action**  
+   * Show *Continue with Google* only if `NEXT_PUBLIC_GOOGLE` env-var exists.  
+   * Always offer *Sign up with email* (Supabase magic link).  
+3. **Insert to Supabase**
+
+   ~~~ts
+   supabase
+     .from('waitlist_signups')
+     .insert({ email, name, message, hidden });
+   ~~~
+
+4. **Redirect to `/list`** – fetch with  
+
+   ~~~sql
+   select * from waitlist_signups
+   order by created_at desc;
+   ~~~
+
+   Display as Tailwind card grid; rows #1–40 get a founder badge.
+
+---
+
+## 4 · Packaging as a template
+
+| File | Purpose |
+|------|---------|
+| `README.md` | pitch → **Deploy to Vercel** button → quick-start |
+| Deploy button | `https://vercel.com/new/clone?repository-url=https://github.com/<your-org>/waitlist-kit&project-name=waitlist-kit` |
+| `.env.example` | only `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` |
+| `supabase/config.toml` | tells integration to run migrations |
+| `LICENSE` | MIT or commercial |
+
+---
+
+## 5 · Buyer onboarding
+
+1. Click **Deploy to Vercel**.  
+2. Authorise Vercel ⇄ Supabase.  
+3. Wait ~60 s for build.  
+4. *(Optional)* Add Google OAuth creds in **Supabase → Auth → Providers**.  
+5. Replace `public/logo.svg` & tweak `content.json`.  
+6. Push → redeploy → done.
+
+---
+
+## 6 · Optional power-ups
+
+| Feature | Effort | Note |
+|---------|--------|------|
+| Supabase Realtime feed | 1 h | live updates |
+| Slack / email weekly digest | 1 h | Edge Function + cron |
+| Stripe checkout | 3 h | copy *nextjs-subscription-payments* |
+| Multi-list support | 2 h | add `list_id` FK |
+
+---
+
+## 7 · Schedule & owners
+
+| Day | Deliverable | Owner |
+|-----|-------------|-------|
+| **D0** | Repo skeleton + Tailwind baseline | you / Cursor |
+| **D1 AM** | SQL, Supabase client, email flow | |
+| **D1 PM** | List grid, badges, hide names toggle | |
+| **D2 AM** | README, deploy button, migration test | |
+| **D2 PM** | Edge-case QA, public launch | |
+
+≈ 2 focussed energy-flow days.
+
+---
+
+## 8 · Risks & mitigations
+
+| Risk | Mitigation |
+|------|------------|
+| Buyers skip Google setup | Make auth optional; magic link works OOTB |
+| Preview DB clutter | Supabase auto-deletes after 7 days |
+| Schema changes break users | Tag releases (`v1.x`), provide upgrade notes |
+
+---
+
+## 9 · Next-action checklist
+
+- [ ] `npx create-next-app@latest waitlist-kit --ts --tailwind`
+- [ ] Add files per **§ 1**
+- [ ] Paste SQL migration; test (`supabase start`)
+- [ ] Wire forms → DB insert
+- [ ] Push to GitHub; create Vercel project
+- [ ] Verify one-click deploy flow
+- [ ] Write README + licence
+
+> **Everything’s captured – paste this file into your repo as `PROJECT_PLAN.mdx` and start building.**
