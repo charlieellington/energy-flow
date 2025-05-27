@@ -141,19 +141,43 @@ What do you need to feel **100 % confident** you can implement?
 - joinWaitlistAction now omits `note` when column absent.
 - Landing page `searchParams` handling fixed (sync).
 
-Pending:
-- Apply migration in Supabase, then smoke-test modal flow again (Task 07F).
-- Once confirmed, mark Tasks 06E & 07F complete and build public list page (Task 08).
+## 2025-05-27 – Hotfix: Fallback to anon key for public list
+- **Bug**: Landing page `/api/waitlist` crashed with `supabaseKey is required` when `SUPABASE_SERVICE_ROLE_KEY` was not set locally.
+- **Fix**: Updated `utils/supabase/admin.ts` to fall back to `NEXT_PUBLIC_SUPABASE_ANON_KEY` when service role key is missing. This is sufficient for reading the `waitlist_public` view.
+- **Action**: Devs can still optionally add `SUPABASE_SERVICE_ROLE_KEY` in `.env` for elevated queries.
+- **Status**: Patch applied; verification scheduled (see Next Steps).
 
-Pending:
-- Task 08 – `/list` page:
-  • Server component to fetch `waitlist_signups` ordered by `created_at desc`.
-  • Use client hook (SWR) for live updates so new sign-ups appear without reload (mirrors Sunni behaviour).
-  • Respect `hidden` flag (render anonymised name when true).
+## 2025-05-27 – End-of-day Checkpoint ✅
+All coding for the day is complete. Quick summary:
+1. Public wait-list API now works without the service-role key (fallback to anon key).
+2. Client component `waitlist-list.client.tsx` renders the list and handles infinite scroll + hydration.
+3. Auth flow refactor is partly done; `/sign-in` page & send-otp action still outstanding.
 
-Dev notes:
-- Supabase Cloud (PG 15) doesn't yet support `create policy if not exists`; future migrations should use plain `create policy` wrapped in `DO $$ BEGIN ... EXCEPTION WHEN duplicate_object THEN END $$` if idempotency needed.
-- Next.js Hot-reload webpack cache warnings are benign; ignore or add `--no-webpack-cache` in dev script if noisy.
+### Next Steps (start here on next session)
+1. Verify the landing page wait-list renders rows locally → mark **Task 08** complete.
+2. Smoke-test wait-list modal form end-to-end (07F). When green, tick **07F** and **06E**.
+3. Finish remaining Auth subtasks:
+   • **06C** `auth/send-otp.ts` server action.
+   • **06D** new `/sign-in` page (email-only) + success screen.
+   • **06E** final QA of session handling.
+4. Sync migrations in `supabase/migrations/` so dashboard & repo match.
+5. Kick-off **Task 09** (packaging) once the above are done.
 
 ## 2025-05-27 – Repo Sync
 - Committed and pushed latest changes in `energy-flow` repo to GitHub (including updated `pages/doing.mdx`, new `project-plan.mdx` and this scratchpad file).
+
+- [x] Local dev server for energy-flow started on port 3010 using `pnpm dev` with `PORT=3010`.
+
+## 2025-05-27 – Assistant Planning Notes
+- **Migration status check**: ✅ Confirmed via dashboard — `waitlist_signups` table (with `note` column) exists. Migration applied.
+
+- **Post-sign-in behaviour** (**Task 06F – done**)
+   1. After successful OTP sign-in, redirect to `/` (landing page).
+   2. Hide/remove the "Join wait-list" CTA when the user already has a session.
+   ✅ callback route now defaults to `/`.
+   ✅ `LandingHero` now checks session server-side and hides modal when logged-in.
+   ✅ Removed middleware redirect that previously forced logged-in users to `/protected`.
+
+- **Wait-list List Component on Landing** (**Task 08 – in progress**)
+  - Build `components/WaitlistList.tsx`
+  - `components/waitlist-list.client.tsx` implemented; verify & polish.
