@@ -23,32 +23,27 @@ For the full spec & packaging details see `project-plan.mdx` in the same folder.
 - **Task 03** Supabase helpers (client / server / middleware)
 - **Task 04** Initial SQL migration + RLS (insert / select)
 - **Task 05** Landing page (hero, modal trigger, copy from `content.json`)
-- **Task 06F** Post-sign-in UX (callback ➜ `/`, hide Join CTA)
-- **Task 07A-E** Wait-list modal form fundamentals (migration for `note`, modal UI, UTM utils, server action, hero trigger)
+- **Task 06** Magic-link auth series complete (A-F inc. middleware) ✅
+- **Task 07A-F** Wait-list modal form (fields, action, round-trip smoke-test) ✅
+- **Task 08** Public wait-list list component verified & polished ✅
+- **Task 08a** Landing-page static demo section ✅
+- **Task 09b** Deploy button → minimal URL shows env-var wizard ✅
 - **Hot-fix** Anon-key fallback for public list (2025-05-27)
 
 ### 🟡 In-progress
-- **Task 06** Magic-link auth (OTP)
-  • 06C send-OTP (merged into `signInAction`)  ✅ 
-  • 06D `/sign-in` page single-field form   ✅ 
-  • 06E middleware session check & QA   ⏳
-- **Task 07F** Smoke-test modal ➜ DB round-trip & mark complete
-- **Task 08** Public wait-list list component (verify infinite scroll; polish)
+*(none – board is catching up to reality)*
 
-### ⏳ Todo
-- **Task 08a** Landing page demo section (static list placeholder)
-- **Task 09** Packaging (README, `.env.example`, Vercel button, MIT licence)
-- **Task 10** ESLint + Prettier + CI
-- **Task 11** End-to-end deploy test
+### ⏳ Todo (next milestones)
+- **Task 09a** Sync Supabase dashboard migrations back into `supabase/migrations/` (ensure git history matches cloud).
+- **Task 09c** Final packaging: tweak copy, repo badges, MIT licence text, NPM script hints.
 
 ---
 
 ## Next Steps _(start here next session)_
-1. Verify landing page wait-list renders rows locally → tick **Task 08**.
-2. Smoke-test wait-list modal end-to-end (07F). If green, tick **07F** & **06E**.
-3. Finish Task-06 QA (session refresh, README env-vars). When done, move Task 06 to ✅.
-4. Sync dashboard migrations back into `supabase/migrations/` (ensure history matches git).
-5. Kick-off **Task 09** (packaging) once above are complete.
+1. Export latest SQL from dashboard → commit under `supabase/migrations/` (**Task 09a**).
+2. Polish packaging items & README badges (**Task 09c**).
+
+Ensure Vercel deploy wizard now pulls our template, user to smoke-test.
 
 ---
 
@@ -61,6 +56,15 @@ For the full spec & packaging details see `project-plan.mdx` in the same folder.
 ---
 
 ## Changelog _(chronological history)_
+
+### 2025-05-29
+- Middleware QA passed; **Task 06E** complete, closing Task-06 series.
+- Modal smoke-test succeeded; **Task 07F** complete.
+- Public list verified; **Task 08** complete.
+- Landing-page static demo added; **Task 08a** complete.
+
+### 2025-05-28
+- Planning session: reviewed outstanding items, confirmed **Task 08** (public wait-list verification) is next, and outlined step-by-step plan.
 
 ### 2025-05-27
 - **End-of-day checkpoint** – list API fixed (anon-key fallback); list component implemented; scratchpad reorganised.
