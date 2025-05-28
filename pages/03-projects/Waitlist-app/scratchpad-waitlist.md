@@ -29,19 +29,32 @@ For the full spec & packaging details see `project-plan.mdx` in the same folder.
 - **Task 08a** Landing-page static demo section ✅
 - **Task 09b** Deploy button → minimal URL shows env-var wizard ✅
 - **Hot-fix** Anon-key fallback for public list (2025-05-27)
+- **Task 09a** Sync Supabase dashboard migrations back into `supabase/migrations/` ✅
+- **Task 10b** ENV vars + README snippet ✅
+- **Task 10c** Supabase SMTP wiring ✅
+- **Task 10d** Welcome e-mail component & server action ✅
+- **Task 10e** DX / packaging docs + smoke-test ✅
+- **Task 10f** Final QA tweaks (welcome email flag, doc patch) ✅
+- **Task 09c** Final packaging: README polish, repo badges, MIT licence text, helper scripts ✅
 
 ### 🟡 In-progress
-*(none – board is catching up to reality)*
+- *(none – all Task-10 subtasks complete)*
 
 ### ⏳ Todo (next milestones)
-- **Task 09a** Sync Supabase dashboard migrations back into `supabase/migrations/` (ensure git history matches cloud).
-- **Task 09c** Final packaging: tweak copy, repo badges, MIT licence text, NPM script hints.
+Charlie to do (tomorrow):
+- Update the copy on the homepage and README to reflect email magic-link flow powered by Re-Send.
+- Design decision: add photo upload to wait-list rows (e.g. card layout like waitlist.sunni.be).
+- End-to-end copy audit – remove dead sections and adjust flow step-by-step.
+- Walk through the README as a first-time user, note friction points and patch.
+- Review the original template repo for helper-file ideas to possibly port later (low priority).
 
 ---
 
-## Next Steps _(start here next session)_
-1. Export latest SQL from dashboard → commit under `supabase/migrations/` (**Task 09a**).
-2. Polish packaging items & README badges (**Task 09c**).
+## Next Steps _(release checklist)_
+1. Run `pnpm lint && pnpm build` locally – both should pass without error.
+2. Tag **v1.0.0** and push to GitHub.
+3. Publish the template or send to marketplace.
+4. Celebrate 🥳
 
 Ensure Vercel deploy wizard now pulls our template, user to smoke-test.
 
@@ -77,6 +90,13 @@ Ensure Vercel deploy wizard now pulls our template, user to smoke-test.
 - Landing page hero built, modal integration planned.
 - Task-06/07 clarifications received (OTP-only auth, modal fields, tracking).
 - Sub-task progress: 06A-B done, 07A-E implemented.
+
+### 2025-05-31
+- **Task 09a** initiated – running `supabase db diff` to capture latest schema into new migration file.
+- **Task 09a** completed – migration file `004_schema_sync_20250531.sql` generated from remote DB.
+
+### 2025-06-01
+- Hot-fix: Added `suppressHydrationWarning` to `<body>` in `app/layout.tsx` to silence hydration mismatch caused by next-themes body style attribute.
 
 ---
 
