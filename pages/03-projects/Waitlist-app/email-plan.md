@@ -8,13 +8,13 @@ _Integrate Re-Send to improve OTP and transactional e-mails while keeping the "o
 
 | Decision | Rationale |
 |----------|-----------|
-| **Fallback to `resend.dev` sandbox** on first deploy | Ensures buyers see a working product in <60 s. They can add a custom domain & DKIM later for branding. |
+| **Fallback to `resend.dev` sandbox** on first deploy | Ensures buyers see a working product in &lt;60&nbsp;s. They can add a custom domain &amp; DKIM later for branding. |
 | **No separate double-opt-in flow** | The existing Supabase magic-link already proves address ownership. We'll add a short GDPR notice inside the welcome e-mail footer. |
 
 ---
 
 ## 1 · Provider Set-up (Task 10a)
-1. Sign-up at <https://resend.com> → free tier.  
+1. Sign-up at [resend.com](https://resend.com) → free tier.  
 2. _Optional_ — Add a custom sender domain & DKIM. If skipped, Re-Send will fall back to its shared `resend.dev`.  
 3. Grab:  
    • SMTP creds (`SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`)  
