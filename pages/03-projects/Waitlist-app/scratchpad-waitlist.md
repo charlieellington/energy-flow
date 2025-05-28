@@ -47,6 +47,7 @@ Charlie to do (tomorrow):
 - End-to-end copy audit – remove dead sections and adjust flow step-by-step.
 - Walk through the README as a first-time user, note friction points and patch.
 - Review the original template repo for helper-file ideas to possibly port later (low priority).
+- Fix energy-flow pages not working on deployment (investigate content-check failures).
 
 ---
 
@@ -97,6 +98,9 @@ Ensure Vercel deploy wizard now pulls our template, user to smoke-test.
 
 ### 2025-06-01
 - Hot-fix: Added `suppressHydrationWarning` to `&lt;body&gt;` in `app/layout.tsx` to silence hydration mismatch caused by next-themes body style attribute.
+
+### 2025-06-02
+- Removed obsolete `email-plan.md` after Task-10 completion.
 
 ---
 
