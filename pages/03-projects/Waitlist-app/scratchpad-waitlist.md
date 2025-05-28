@@ -96,7 +96,7 @@ Ensure Vercel deploy wizard now pulls our template, user to smoke-test.
 - **Task 09a** completed – migration file `004_schema_sync_20250531.sql` generated from remote DB.
 
 ### 2025-06-01
-- Hot-fix: Added `suppressHydrationWarning` to `<body>` in `app/layout.tsx` to silence hydration mismatch caused by next-themes body style attribute.
+- Hot-fix: Added `suppressHydrationWarning` to `&lt;body&gt;` in `app/layout.tsx` to silence hydration mismatch caused by next-themes body style attribute.
 
 ---
 
