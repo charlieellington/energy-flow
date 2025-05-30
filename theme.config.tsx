@@ -1,5 +1,6 @@
 import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
+import SidebarToggle from './components/SidebarToggle'
 
 // Helper: turn "my-folder_name" → "My Folder Name"
 const humanize = (slug: string) =>
@@ -91,8 +92,13 @@ const config: DocsThemeConfig = {
       <meta name="theme-color" content="#000000" />
       {/* Rainbow emoji favicon */}
       <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+      {/* Hide sidebar helper class */}
+      <style>{`@media (min-width:1024px){body.ef-hide-sidebar nav,body.ef-hide-sidebar aside{display:none!important;}body.ef-hide-sidebar main{margin-left:0!important;}}`}</style>
     </>
   ),
+  navbar: {
+    extraContent: <SidebarToggle />,
+  },
 }
 
 export default config
