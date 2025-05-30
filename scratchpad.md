@@ -41,6 +41,8 @@
 - Completed Step 1: fixed lint/type issues (relaxed some ESLint rules, updated code). Build succeeded; committed and tagged public snapshot `v1.0.0`, pushed to GitHub.
 - Added troubleshooting note to Freeze & Duplicate doc about temporarily relaxing ESLint rules.
 - Mirrored `waitlist-landing` into new private repo `no-bad-parts-landing` via bare clone; pushed `main` + tags.
+- Added `pageExtensions` to `next.config.mjs` so `.md` files render; affected pages now appear on live site.
+- Added desktop sidebar toggle (button in navbar) with `SidebarToggle` component and CSS.
 
 
 
