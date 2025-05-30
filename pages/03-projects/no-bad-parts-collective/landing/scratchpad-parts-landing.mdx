@@ -1,0 +1,72 @@
+## Project Status Board
+
+- [x] Confirmed presence of applications `energy-flow` and `no-bad-parts-landing` in workspace
+- [x] Verified each application is an independent git repository with correct remote origins (`charlieellington/energy-flow`, `charlieellington/no-bad-parts-landing`)
+- [x] Confirmed `.env` files are protected from version control by the `.gitignore` rules in `no-bad-parts-landing`
+- [x] Updated header title from "Product Waitlist Starter" to "No Bad Parts Collective" in `app/layout.tsx`
+- [x] Removed deploy to Vercel button from header navigation
+- [x] Replaced duplicate sign-in button with "Join the wait-list" button (then removed wait-list button from header for cleaner UX)
+- [x] Added **About** explainer page (`about.mdx`) combining landing-page copy and build-plan
+
+### Planner Notes
+
+---
+
+## Background & Motivation (Planner)
+We want the public "No Bad Parts Collective" landing page to match the copy, tone, and imagery on the current Notion "COMING SOON" page while driving sign-ups to the existing wait-list API. The page must also inform visitors that:
+1. Development is in progress and we'll invite a closed-alpha cohort soon.
+2. Live build updates are visible at **energyflow.studio**.
+
+## Key Challenges
+- Extracting structured copy & image assets from a dynamic Notion page.
+- Preserving/strengthening the single primary CTA (wait-list button) per conversion-rate best-practice.
+- Ensuring SEO (title, description, OG/Twitter meta) reflects the new copy and includes our hero image.
+- Minimising layout churn—reuse existing component skeletons where possible.
+
+## High-level Task Breakdown
+- [x] 1️⃣ **Content Harvest**
+  - Pull final copy from Notion page (added to `content/nbpc-copy.md`).
+  - Verify required images already exist in `/public/assets` (rename/move to `/public/assets/nbpc/` if tidy-up is needed).
+- [x] 2️⃣ **Component & Layout Updates** (reordered hero → founder → waitlist → sections)
+  - Update `app/page.tsx` (or relevant file) with new headline, sub-headline, body paragraphs.
+  - Add "Closed Alpha" strip + link to energyflow.studio.
+  - Duplicate the wait-list CTA button in the hero **and** near page footer.
+- [x] 3️⃣ **SEO & Metadata**
+  - Edit `<Head>` block: `title`, `meta description`, `og:title`, `og:description`, `og:image`, `twitter:card`, canonical.
+- [x] 4️⃣ **Image Optimisation**
+  - Verified all landing page images use `next/image` with explicit `width`/`height` and `alt` props (see `founder-intro.tsx`, `landing-sections.tsx`).
+  - Hero & CTA sections contain no images requiring optimisation.
+  - Avatar component intentionally retains native `<img>` for tiny icons;
+    ESLint rule disabled to avoid next/image overhead.
+- [x] 5️⃣ **Responsive QA** across break-points (mobile first).
+- [x] 6️⃣ **Smoke Test**
+  - Hit `/api/waitlist` submit path locally and verified success + toast.
+- [x] 7️⃣ **Commit & Push**
+  - PR title: "feat(landing): update copy/images + SEO for NBPC".
+  - Updated screenshot and branding in README.
+- [ ] 8️⃣ **Contact Form Inquiry**
+  - Assess feasibility of adding contact form that sends messages to charliee@gmail.com via email service (e.g., Resend, SendGrid, or SMTP/Nodemailer).
+  - Estimate: 1–2 hours dev time after service credentials are configured.
+  - Pending decision: which email provider to use and whether to store messages.
+  - ✅ Resend is already installed and connected; setup time reduced.
+  - 🎯 **Scope**: expose form only to authenticated users to avoid spam.
+  - 🖼️ **Placement**: show at top of page for logged-in users; also repeat at page bottom, replacing the existing "Join the wait-list" CTA section.
+  - ✍️ **Copy**: "Got questions or want to contact me? I'll reply to every email."
+
+## Success Criteria
+- New copy live at `/` with no 500/404 errors.
+- Lighthouse SEO score ≥ 95.
+- Wait-list POST returns 200 in dev & prod.
+- Images served locally—not hot-linked to Notion.
+
+## 2025-05-30 Updates
+- Converted concept bullet list into card layout (matches header feature cards) in `no-bad-parts-landing/components/landing-sections.tsx`.
+- Replaced "How It Works" ordered list with image cards and new copy.
+- Converted Our Ethos bullet list into card layout.
+- Added feasibility assessment for contact form emailing charliee@gmail.com (see task 8️⃣).
+- Added implementation plan for contact form leveraging existing Resend setup; form limited to logged-in users and positioned top & bottom of page with new copy.
+- Implemented comprehensive SEO metadata in `no-bad-parts-landing/app/layout.tsx` (title, description, OG/Twitter images, canonical).
+- Completed responsive QA and smoke test locally; updated README.
+
+- [2024-06-10] Updated the footer in no-bad-parts-landing/app/layout.tsx to only say: 'Made with ❤️ by Charlie Ellington at Energy Flow Studio.'
+---
