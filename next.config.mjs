@@ -11,6 +11,7 @@ const withNextra = nextra({
 });
 
 export default withNextra({
+  pageExtensions: ['md', 'mdx', 'tsx', 'ts'],
   async redirects() {
     return [
       {
