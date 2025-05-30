@@ -7,6 +7,7 @@
 - [x] Removed deploy to Vercel button from header navigation
 - [x] Replaced duplicate sign-in button with "Join the wait-list" button (then removed wait-list button from header for cleaner UX)
 - [x] Added **About** explainer page (`about.mdx`) combining landing-page copy and build-plan
+- [x] Added external link to "No Bad Parts Collective" references in `about.mdx` for consistent linking.
 
 ### Planner Notes
 
@@ -67,6 +68,23 @@ We want the public "No Bad Parts Collective" landing page to match the copy, ton
 - Added implementation plan for contact form leveraging existing Resend setup; form limited to logged-in users and positioned top & bottom of page with new copy.
 - Implemented comprehensive SEO metadata in `no-bad-parts-landing/app/layout.tsx` (title, description, OG/Twitter images, canonical).
 - Completed responsive QA and smoke test locally; updated README.
+- [2025-05-30] Replaced default favicon with rainbow emoji by adding `app/icon.svg` and updating `icons` metadata in `no-bad-parts-landing/app/layout.tsx`.
+- [2025-05-30] Added gradient divider lines before and after the waitlist section in `no-bad-parts-landing/app/page.tsx` for clearer visual separation, matching the hero section style.
+- [2025-05-30] Ran local ESLint and Next.js production builds for **energy-flow** and **no-bad-parts-landing**; both succeeded with zero warnings or errors.
 
 - [2024-06-10] Updated the footer in no-bad-parts-landing/app/layout.tsx to only say: 'Made with ❤️ by Charlie Ellington at Energy Flow Studio.'
+
+## 2025-06-xx Avatar Upload Flow Decision
+
+- **Decision:** Retain the current avatar-upload step _after_ the user completes the magic-link sign-in ("Option 1" from chat).
+- **Rationale:**
+  - Re-uses the proven `upload-avatar.ts` helper and `avatars` storage bucket.
+  - Avoids anonymous uploads/policy changes while the visitor is unauthenticated.
+  - Keeps the wait-list modal lightweight (higher conversion rate).
+- **Action Items (when capacity allows):**
+  1. Update copy on the post-sign-up profile card to explicitly invite the user to add a photo (currently implicit).
+  2. Add a subtle reminder toast if the user dismisses the card without uploading an avatar.
+  3. Review clean-up cron for orphaned avatar files (users who never verify) — low priority.
+- **No immediate code changes required**; existing flow already satisfies the decision.
+
 ---

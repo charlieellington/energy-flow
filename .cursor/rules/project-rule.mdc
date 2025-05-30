@@ -1,6 +1,0 @@
----
-description: 
-globs: 
-alwaysApply: true
----
-Always follow the rules set out in [CONTRIBUTING.md](mdc:pages/developer-docs/CONTRIBUTING.md) and after every action update [scratchpad.md](mdc:scratchpad.md) for the current project status. Check @
