@@ -1,68 +1,87 @@
-# Waitlist Kit – Freeze & Duplicate Quick Checklist
+# Waitlist Kit – Freeze & Duplicate Checklist (Revised 2025-05-30)
 
-Use these short chat prompts in a fresh Cursor workspace to pause the public template **and** spin up your own copy without rebuilding Supabase.
+This guide shows you how to **freeze** the public Waitlist Kit template and then **spin-up your own private copy** without touching the existing Supabase project.  The flow is:
+
+```
+public-template → snapshot → NEW private repo → new Cursor workspace
+```
+
+If you prefer a one-liner: *"Make a pristine snapshot then fork my own copy."*
 
 ---
 
 ## 0 · Prerequisites
-1. Cursor is open in the original `waitlist-landing` workspace and all tests pass.
-2. You have a GitHub PAT configured in your terminal (`gh auth status`).
-3. The current Supabase project is working and the `.env` file lives **locally**.
+1. You are in the original `waitlist-landing` directory **inside Cursor** and all tests pass.
+2. A GitHub personal access token (`gh auth status`) is configured.
+3. The working Supabase credentials live in a local **`.env`** file (never committed).
+4. `gh` CLI and `pnpm` are installed.
 
 ---
 
-## 1 · Freeze the Public Template
+## ✅ Steps 1–2 Completed
 
-Prompt-to-AI #1  
-"Run `pnpm lint && pnpm build`. Let me know if anything fails."
+The public template was frozen at `main@v1.0.0` and mirrored into your private repo
 
-Prompt-to-AI #2  
-"Stage all changes, commit as `chore(release): public snapshot v1.0.0`, tag `v1.0.0`, and push everything to GitHub."
+```
+https://github.com/charlieellington/no-bad-parts-landing
+```
 
-Outcome → `main` now represents the _public template snapshot_.
-
----
-
-## 2 · Duplicate for My Personal Project
-
-### Option A – Full duplicate (clean history)
-Prompt-to-AI #3  
-"Mirror the current repo into a new private GitHub repo called `<my-next-project>` using `git clone --bare` and `gh repo create`. Push the mirror."
-
-### Option B – Simple fork
-Prompt-to-AI #3-alt  
-"Rename the current remote to `template`, add a new remote `origin` pointing to `git@github.com:<me>/<my-next-project>.git`, and push the `main` branch."
-
-Outcome → you now have `my-next-project` with identical code.
+You can safely skip to the remaining steps below.
 
 ---
 
-## 3 · Reuse the Existing Supabase Instance
-Prompt-to-AI #4  
-"Copy my local `.env` file into the new repo (do **not** commit it). Confirm that the project runs locally with `pnpm dev`."
+## 3 · Start a **Fresh Cursor Workspace** from your repo
+1. In Cursor choose **File → Close Workspace** (this just closes the current folder; *no* files are deleted).
+2. **Clone your repo**:
+   ```bash
+   git clone https://github.com/charlieellington/no-bad-parts-landing.git
+   cd no-bad-parts-landing
+   code .         # or: open the folder in Cursor
+   ```
+You are now in a **clean workspace** that points at your private repo.
 
 ---
 
-## 4 · Bring the energy-flow Docs Along
-Prompt-to-AI #5  
-"Copy the `energy-flow/` directory into the new repo and commit it as `docs: add energy-flow reference`."
+## 4 · Reuse the Existing Supabase Instance
+Copy over the `.env` file from the template workspace **manually** (do *not* commit).
 
-(Alternative: "Add `energy-flow` as a git submodule" if you prefer.)
+```bash
+cp ../waitlist-landing/.env .
 
----
-
-## 5 · Start a Fresh Cursor Workspace
-Prompt-to-AI #6  
-"Close this workspace and clone `<my-next-project>` into a new one."
-
----
-
-## 6 · Post-duplication House-Keeping *(manual)*
-• Update product name in `content.json` and hero copy.  
-• Replace badges & marketplace links.  
-• Rotate email API keys if needed.  
-• Decide whether to leave the project public or private.
+# Verify everything still works
+pnpm install
+pnpm dev
+```
 
 ---
 
-_That's it—six quick prompts and you're running on a clean personal fork while the public template is safely frozen._ 
+## 5 · Bring the `energy-flow` Docs Along
+If you want the docs:
+
+```bash
+# 5-A · Copy the directory (simplest)
+rsync -a ../waitlist-landing/energy-flow ./energy-flow
+
+git add energy-flow
+git commit -m "docs: add energy-flow reference"
+
+git push
+# — or —
+# 5-B · Git submodule (keeps size down)
+# git submodule add https://github.com/<you>/energy-flow energy-flow
+```
+
+---
+
+## 6 · Post-duplication House-Keeping (manual)
+• Replace product name + hero copy in `content.json`.
+• Swap out marketplace badges & links.
+• Rotate any email API keys.
+• Decide whether the new repo should be public or private.
+
+---
+
+### ✅ Done
+You are now running on a **private fork** while the public template is safely frozen at `v1.0.0`. Enjoy! 
+
+You now own **`no-bad-parts-landing`** on GitHub with identical code. 

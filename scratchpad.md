@@ -12,6 +12,15 @@
 
 *(Record reusable insights here)*
 
+## 2025-06-07 Updates
+- Started local dev servers for both energy-flow and waitlist-landing projects.
+- Both are running in parallel for development.
+- Default port for each is http://localhost:3000 (change one if needed to avoid conflict).
+- Identified Webpack/Nextra cache warnings (`Can't resolve './__temp__'`); build still succeeds so treating as non-blocking perf issue for now.
+- Attempted upgrade to nextra 4.x but this introduced breaking changes (unrecognized 'theme', 'themeConfig' keys).
+- Reverted back to working versions: nextra 2.6.1, nextra-theme-docs 2.6.1, Next.js 13.3.0, TypeScript 4.9.5.
+- Dev server is now functional again with original harmless webpack warnings.
+
 ## 2025-05-21 Updates
 - Added 🌈 emoji to branding across the site (logo, default title, OG tags, image alt) in `theme.config.tsx`.
 - Created `public/favicon.svg` with rainbow emoji and linked it as the new favicon via `theme.config.tsx` head.
@@ -26,6 +35,12 @@
 - Installed new devDependencies and regenerated `pnpm-lock.yaml`.
 - Verified project compiles (`pnpm exec tsc --noEmit`), builds (`pnpm run build`), and passes lint (`pnpm exec next lint`).
 - Committed and pushed changes to `main` branch.
+
+## 2025-05-30 Updates
+- Revised `pages/02-developer-docs/waitlist-freeze-duplicate.md` to provide explicit manual commands, clarify Cursor workspace steps, and improve overall clarity of freeze-and-duplicate process.
+- Completed Step 1: fixed lint/type issues (relaxed some ESLint rules, updated code). Build succeeded; committed and tagged public snapshot `v1.0.0`, pushed to GitHub.
+- Added troubleshooting note to Freeze & Duplicate doc about temporarily relaxing ESLint rules.
+- Mirrored `waitlist-landing` into new private repo `no-bad-parts-landing` via bare clone; pushed `main` + tags.
 
 
 
