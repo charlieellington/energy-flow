@@ -58,6 +58,11 @@ const config: DocsThemeConfig = {
     titleComponent: ({ title }: { title: string }) => <span>{humanize(title)}</span>,
     toggleButton: true,
   },
+  main: ({ children }) => (
+    <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+      {children}
+    </div>
+  ),
   useNextSeoProps() {
     return {
       titleTemplate: '%s – Energy Flow',
