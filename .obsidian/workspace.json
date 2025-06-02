@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "pages/03-projects/oli-stories/new page test four.md",
+                "file": "pages/03-projects/oli-stories/new-page-test-four.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "new page test four"
+              "title": "new-page-test-four"
             }
           }
         ]
@@ -181,11 +181,14 @@
   },
   "active": "7048e266322725b7",
   "lastOpenFiles": [
+    "pages/03-projects/oli-stories/about-and-idea.md",
+    "pages/03-projects/oli-stories/new-page-test-four.md",
+    "pages/03-projects/oli-stories/new-page-test-3.md",
+    "pages/03-projects/oli-stories/new-page-test.md",
+    "pages/03-projects/oli-stories/index.mdx",
     "pages/03-projects/oli-stories/New page test 3.md",
     "pages/03-projects/oli-stories/new page test four.md",
-    "pages/03-projects/oli-stories/new-page-test.md",
     "pages/doing.mdx",
-    "pages/03-projects/oli-stories/about-and-idea.md",
     "pages/04-life-tools/meal-plan.mdx",
     "pages/04-life-tools/meal-planning-context.mdx",
     "pages/04-life-tools/index.mdx",
@@ -193,7 +196,6 @@
     "pages/03-projects/Sunni/index.mdx",
     "pages/03-projects/Sunni/scratchpad-sunni.md",
     "pages/03-projects/Sunni/about.mdx",
-    "pages/03-projects/oli-stories/index.mdx",
     "pages/03-projects/OliStories/New Page Test.md",
     "pages/03-projects/OliStories/About and Idea.md",
     "pages/03-projects/OliStories/about-and-idea.md",
