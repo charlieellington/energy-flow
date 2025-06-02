@@ -35,8 +35,7 @@
               "title": "New Page Test"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -194,8 +193,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b8bd1ce6ee930ce6",
+  "active": "7048e266322725b7",
   "lastOpenFiles": [
+    "scripts/normalize-filenames.mjs",
+    "scripts",
     "pages/03-projects/OliStories/New Page Test.md",
     "pages/03-projects/OliStories/About and Idea.md",
     "pages/02-developer-docs/waitlist-freeze-duplicate.md",
@@ -215,7 +216,6 @@
     "pages/03-projects/Sunni/sunni-project-plan.md",
     "pages/03-projects/Sunni/about.mdx",
     "pages/03-projects/Sunni/scratchpad-sunni.md",
-    "pages/03-projects/Waitlist-app/about.mdx",
     "scratchpad.md",
     "README.md",
     "pages/03-projects/Waitlist-app/scratchpad-waitlist.md"
