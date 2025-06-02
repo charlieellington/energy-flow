@@ -1,0 +1,12 @@
+{
+  "env": {
+    "NEXT_PRIVATE_SKIP_BUILD_WORKER": "true",
+    "VERCEL_DEEP_CLONE": "true"
+  },
+  "build": {
+    "env": {
+      "NEXT_PRIVATE_SKIP_BUILD_WORKER": "true",
+      "VERCEL_DEEP_CLONE": "true"
+    }
+  }
+} 
