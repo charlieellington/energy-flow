@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "pages/03-projects/Sunni/sunni-project-plan.md",
+                "file": "pages/doing.mdx",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "sunni-project-plan"
+              "title": "doing"
             }
           }
         ],
@@ -181,8 +181,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -195,10 +194,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7048e266322725b7",
+  "active": "54403e868e7e3663",
   "lastOpenFiles": [
-    "pages/03-projects/Sunni/scratchpad-sunni.md",
     "pages/03-projects/Sunni/sunni-project-plan.md",
+    "pages/03-projects/Sunni/scratchpad-sunni.md",
     "pages/03-projects/no-bad-parts-collective/scratchpad.md",
     "pages/03-projects/Waitlist-app/about.mdx",
     "pages/03-projects/Sunni/about.mdx",
