@@ -45,6 +45,16 @@ function addTitleIfMissing() {
           }
         });
       }
+
+      // After updating front matter, also make sure there is a top-level heading so the page shows a proper title in content and so Nextra registers it for the sidebar.
+      const hasHeading = tree.children.some((n) => n.type === 'heading' && n.depth === 1)
+      if (!hasHeading) {
+        tree.children.unshift({
+          type: 'heading',
+          depth: 1,
+          children: [{ type: 'text', value: generatedTitle }]
+        })
+      }
     }
   };
 }
