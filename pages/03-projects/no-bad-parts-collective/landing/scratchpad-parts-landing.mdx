@@ -1,15 +1,5 @@
 ## Project Status Board
 
-- [x] Confirmed presence of applications `energy-flow` and `no-bad-parts-landing` in workspace
-- [x] Verified each application is an independent git repository with correct remote origins (`charlieellington/energy-flow`, `charlieellington/no-bad-parts-landing`)
-- [x] Confirmed `.env` files are protected from version control by the `.gitignore` rules in `no-bad-parts-landing`
-- [x] Updated header title from "Product Waitlist Starter" to "No Bad Parts Collective" in `app/layout.tsx`
-- [x] Removed deploy to Vercel button from header navigation
-- [x] Replaced duplicate sign-in button with "Join the wait-list" button (then removed wait-list button from header for cleaner UX)
-- [x] Added **About** explainer page (`about.mdx`) combining landing-page copy and build-plan
-- [x] Added external link to "No Bad Parts Collective" references in `about.mdx` for consistent linking.
-- [x] Added summarised "What I'm working on" section to energy-flow/pages/index.mdx with links to No Bad Parts Collective, Sunni.be, Waitlist Kit, and Zebra Design
-
 ### Planner Notes
 
 ---
@@ -20,10 +10,7 @@ We want the public "No Bad Parts Collective" landing page to match the copy, ton
 2. Live build updates are visible at **energyflow.studio**.
 
 ## Key Challenges
-- Extracting structured copy & image assets from a dynamic Notion page.
-- Preserving/strengthening the single primary CTA (wait-list button) per conversion-rate best-practice.
-- Ensuring SEO (title, description, OG/Twitter meta) reflects the new copy and includes our hero image.
-- Minimising layout churn—reuse existing component skeletons where possible.
+
 
 ## High-level Task Breakdown
 - [x] 1️⃣ **Content Harvest**
@@ -46,20 +33,14 @@ We want the public "No Bad Parts Collective" landing page to match the copy, ton
 - [x] 7️⃣ **Commit & Push**
   - PR title: "feat(landing): update copy/images + SEO for NBPC".
   - Updated screenshot and branding in README.
-- [ ] 8️⃣ **Contact Form Inquiry**
-  - Assess feasibility of adding contact form that sends messages to charliee@gmail.com via email service (e.g., Resend, SendGrid, or SMTP/Nodemailer).
-  - Estimate: 1–2 hours dev time after service credentials are configured.
-  - Pending decision: which email provider to use and whether to store messages.
-  - ✅ Resend is already installed and connected; setup time reduced.
-  - 🎯 **Scope**: expose form only to authenticated users to avoid spam.
-  - 🖼️ **Placement**: show at top of page for logged-in users; also repeat at page bottom, replacing the existing "Join the wait-list" CTA section.
-  - ✍️ **Copy**: "Got questions or want to contact me? I'll reply to every email."
+- [ ] 8️⃣ **Contact and Feedback 
+  - Add Intercomm to the website to gather instant feedback live or by email 
+  - Quick solution 
+- [ ] 9️⃣ **Buy Now Feature**
+  - Feature to be able to move up the waitlist 
 
 ## Success Criteria
-- New copy live at `/` with no 500/404 errors.
-- Lighthouse SEO score ≥ 95.
-- Wait-list POST returns 200 in dev & prod.
-- Images served locally—not hot-linked to Notion.
+
 
 ## 2025-05-30 Updates
 - Converted concept bullet list into card layout (matches header feature cards) in `no-bad-parts-landing/components/landing-sections.tsx`.
