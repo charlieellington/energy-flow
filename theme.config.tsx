@@ -1,6 +1,7 @@
 import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 import SidebarToggle from './components/SidebarToggle'
+import AutoRefresh from './components/AutoRefresh'
 
 // Helper: turn "my-folder_name" → "My Folder Name"
 const humanize = (slug: string) =>
@@ -60,6 +61,7 @@ const config: DocsThemeConfig = {
   },
   main: ({ children }) => (
     <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+      <AutoRefresh />
       {children}
     </div>
   ),

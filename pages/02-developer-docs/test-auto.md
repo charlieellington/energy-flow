@@ -1,1 +1,0 @@
-This is auto test page. It should appear in the menu. 
