@@ -21,27 +21,15 @@ function needsNormalization(filename) {
   const nameWithoutExt = filename.replace(/\.(md|mdx)$/, '')
   const normalized = toKebabCase(nameWithoutExt)
   
-  // Only normalize if:
-  // 1. The normalized version is different from original
-  // 2. The original has spaces or non-alphanumeric characters (except hyphens)
-  return normalized !== nameWithoutExt.toLowerCase() && 
-         (/[\s\W]/.test(nameWithoutExt) && !/^[a-z0-9-]+$/i.test(nameWithoutExt))
+  // Only normalize if the original has spaces or non-alphanumeric characters (except hyphens)
+  return normalized !== nameWithoutExt && (/[\s\W]/.test(nameWithoutExt) && !/^[a-z0-9-]+$/i.test(nameWithoutExt))
 }
 
 // Check if a directory name needs normalization
 function directoryNeedsNormalization(dirname) {
   const normalized = toKebabCase(dirname)
   // Only normalize directories with spaces, capitals, or special characters
-  return normalized !== dirname.toLowerCase() && 
-         (/[\s\W]/.test(dirname) && !/^[a-z0-9-]+$/i.test(dirname))
-}
-
-// Check if a file would conflict with existing files (case-insensitive)
-function wouldConflict(dirPath, newFileName) {
-  const existingFiles = fs.readdirSync(dirPath)
-  return existingFiles.some(file => 
-    file.toLowerCase() === newFileName.toLowerCase() && file !== newFileName
-  )
+  return normalized !== dirname && (/[\s\W]/.test(dirname) && !/^[a-z0-9-]+$/i.test(dirname))
 }
 
 // Ensure index file exists for a directory
@@ -54,8 +42,7 @@ function ensureIndexFile(dirPath, dirName) {
       .replace(/\b\w/g, (c) => c.toUpperCase())
 
     const indexPath = path.join(dirPath, 'index.mdx')
-    const content = `---\ntitle: ${displayTitle}\n---\n\n# ${displayTitle}\n\n` +
-      'This folder contains the following pages.\n'
+    const content = `---\ntitle: ${displayTitle}\n---\n\n# ${displayTitle}\n\nThis folder contains the following pages.\n`
     fs.writeFileSync(indexPath, content, 'utf8')
     console.log(`📝 Created missing index.mdx in ${dirPath}`)
   }
@@ -65,95 +52,69 @@ function ensureIndexFile(dirPath, dirName) {
 function processDirectory(dirPath) {
   const items = fs.readdirSync(dirPath, { withFileTypes: true })
   
-  // Ensure index file exists for this directory
-  const dirName = path.basename(dirPath)
-  if (dirName !== 'pages') {
-    ensureIndexFile(dirPath, dirName)
-  }
-  
+  // First pass: rename directories that need normalization
   for (const item of items) {
+    if (item.isDirectory() && directoryNeedsNormalization(item.name)) {
+      const normalizedDirName = toKebabCase(item.name)
+      const currentPath = path.join(dirPath, item.name)
+      const normalizedPath = path.join(dirPath, normalizedDirName)
+      
+      if (!fs.existsSync(normalizedPath)) {
+        console.log(`📁 Renaming directory: ${item.name} → ${normalizedDirName}`)
+        fs.renameSync(currentPath, normalizedPath)
+      }
+    }
+  }
+
+  // Second pass: process all items (with updated names)
+  const updatedItems = fs.readdirSync(dirPath, { withFileTypes: true })
+  
+  for (const item of updatedItems) {
     const fullPath = path.join(dirPath, item.name)
     
     if (item.isDirectory()) {
-      // Recursively process subdirectories first
-      processDirectory(fullPath)
+      // Ensure index file exists for this directory
+      ensureIndexFile(fullPath, item.name)
       
-      // Check if directory name needs normalization
-      if (directoryNeedsNormalization(item.name)) {
-        const normalizedDirName = toKebabCase(item.name)
-        const normalizedDirPath = path.join(dirPath, normalizedDirName)
-        
-        // Only create if it won't conflict and doesn't already exist
-        if (!wouldConflict(dirPath, normalizedDirName) && !fs.existsSync(normalizedDirPath)) {
-          console.log(`📁 Creating normalized directory: ${normalizedDirName}`)
-          fs.mkdirSync(normalizedDirPath, { recursive: true })
-          
-          // Copy all contents to normalized directory
-          const copyDir = (src, dest) => {
-            const items = fs.readdirSync(src, { withFileTypes: true })
-            for (const item of items) {
-              const srcPath = path.join(src, item.name)
-              const destPath = path.join(dest, item.name)
-              
-              if (item.isDirectory()) {
-                fs.mkdirSync(destPath, { recursive: true })
-                copyDir(srcPath, destPath)
-              } else {
-                fs.copyFileSync(srcPath, destPath)
-              }
-            }
-          }
-          
-          copyDir(fullPath, normalizedDirPath)
-        }
-      }
+      // Recursively process subdirectories
+      processDirectory(fullPath)
     } else if (item.name.endsWith('.md') || item.name.endsWith('.mdx')) {
-      // Only process files that actually need normalization
+      // Rename files that need normalization
       if (needsNormalization(item.name)) {
         const nameWithoutExt = item.name.replace(/\.(md|mdx)$/, '')
         const extension = item.name.match(/\.(md|mdx)$/)[0]
         const normalizedFileName = toKebabCase(nameWithoutExt) + extension
         const normalizedFilePath = path.join(dirPath, normalizedFileName)
         
-        // Only create if it won't conflict and doesn't already exist
-        if (!wouldConflict(dirPath, normalizedFileName) && !fs.existsSync(normalizedFilePath)) {
-          console.log(`📄 Creating normalized file: ${normalizedFileName}`)
+        if (!fs.existsSync(normalizedFilePath)) {
+          console.log(`📄 Renaming file: ${item.name} → ${normalizedFileName}`)
           
-          // Read original file content
+          // Read original content and add proper front-matter/heading
           const originalContent = fs.readFileSync(fullPath, 'utf8')
-          
-          // Extract original title from filename (for display)
           const displayTitle = nameWithoutExt
             .replace(/[-_]/g, ' ')
             .replace(/\b\w/g, (char) => char.toUpperCase())
           
-          // Check if file already has front-matter
           const hasFrontMatter = originalContent.trim().startsWith('---')
           
           let normalizedContent
           if (hasFrontMatter) {
-            // If it has front-matter, ensure it has the correct title
             const frontMatterRegex = /^---\n(.*?)\n---/s
             const match = originalContent.match(frontMatterRegex)
             
             if (match && !match[1].includes('title:')) {
-              // Add title to existing front-matter
               const newFrontMatter = `title: ${displayTitle}\n${match[1]}`
               normalizedContent = originalContent.replace(frontMatterRegex, `---\n${newFrontMatter}\n---`)
-            } else if (match && match[1].includes('title:')) {
-              // Keep existing title
-              normalizedContent = originalContent
             } else {
-              // Add front-matter if regex didn't match
-              normalizedContent = `---\ntitle: ${displayTitle}\n---\n\n${originalContent}`
+              normalizedContent = originalContent
             }
           } else {
-            // Add front-matter and heading
             normalizedContent = `---\ntitle: ${displayTitle}\n---\n\n# ${displayTitle}\n\n${originalContent}`
           }
           
-          // Write normalized file
+          // Write content to new file and remove old one
           fs.writeFileSync(normalizedFilePath, normalizedContent, 'utf8')
+          fs.unlinkSync(fullPath)
         }
       }
     }
