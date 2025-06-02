@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "pages/doing.mdx",
+                "file": "pages/03-projects/OliStories/About and Idea.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "doing"
+              "title": "About and Idea"
             }
           }
         ]
@@ -181,9 +181,11 @@
   },
   "active": "7048e266322725b7",
   "lastOpenFiles": [
+    "pages/doing.mdx",
+    "pages/03-projects/OliStories/About and Idea.md",
+    "pages/03-projects/OliStories",
     "pages/02-developer-docs/testing-ob-2.md",
     "pages/02-developer-docs/testing-ob-1.md",
-    "pages/doing.mdx",
     "pages/03-projects/no-bad-parts-collective/landing/scratchpad-parts-landing.mdx",
     "pages/03-projects/no-bad-parts-collective/Notes and Planning.md",
     "pages/03-projects/no-bad-parts-collective/about.mdx",
