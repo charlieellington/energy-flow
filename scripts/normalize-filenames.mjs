@@ -16,6 +16,34 @@ function toKebabCase(str) {
     .replace(/^-|-$/g, '') // trim leading/trailing hyphens
 }
 
+// Check if a filename needs normalization (has spaces, capitals, or special chars)
+function needsNormalization(filename) {
+  const nameWithoutExt = filename.replace(/\.(md|mdx)$/, '')
+  const normalized = toKebabCase(nameWithoutExt)
+  
+  // Only normalize if:
+  // 1. The normalized version is different from original
+  // 2. The original has spaces or non-alphanumeric characters (except hyphens)
+  return normalized !== nameWithoutExt.toLowerCase() && 
+         (/[\s\W]/.test(nameWithoutExt) && !/^[a-z0-9-]+$/i.test(nameWithoutExt))
+}
+
+// Check if a directory name needs normalization
+function directoryNeedsNormalization(dirname) {
+  const normalized = toKebabCase(dirname)
+  // Only normalize directories with spaces, capitals, or special characters
+  return normalized !== dirname.toLowerCase() && 
+         (/[\s\W]/.test(dirname) && !/^[a-z0-9-]+$/i.test(dirname))
+}
+
+// Check if a file would conflict with existing files (case-insensitive)
+function wouldConflict(dirPath, newFileName) {
+  const existingFiles = fs.readdirSync(dirPath)
+  return existingFiles.some(file => 
+    file.toLowerCase() === newFileName.toLowerCase() && file !== newFileName
+  )
+}
+
 // Process a single directory
 function processDirectory(dirPath) {
   const items = fs.readdirSync(dirPath, { withFileTypes: true })
@@ -24,16 +52,16 @@ function processDirectory(dirPath) {
     const fullPath = path.join(dirPath, item.name)
     
     if (item.isDirectory()) {
-      // Recursively process subdirectories
+      // Recursively process subdirectories first
       processDirectory(fullPath)
       
       // Check if directory name needs normalization
-      const normalizedDirName = toKebabCase(item.name)
-      if (normalizedDirName !== item.name && normalizedDirName) {
+      if (directoryNeedsNormalization(item.name)) {
+        const normalizedDirName = toKebabCase(item.name)
         const normalizedDirPath = path.join(dirPath, normalizedDirName)
         
-        // Create normalized directory if it doesn't exist
-        if (!fs.existsSync(normalizedDirPath)) {
+        // Only create if it won't conflict and doesn't already exist
+        if (!wouldConflict(dirPath, normalizedDirName) && !fs.existsSync(normalizedDirPath)) {
           console.log(`📁 Creating normalized directory: ${normalizedDirName}`)
           fs.mkdirSync(normalizedDirPath, { recursive: true })
           
@@ -57,17 +85,16 @@ function processDirectory(dirPath) {
         }
       }
     } else if (item.name.endsWith('.md') || item.name.endsWith('.mdx')) {
-      // Process markdown files
-      const nameWithoutExt = item.name.replace(/\.(md|mdx)$/, '')
-      const extension = item.name.match(/\.(md|mdx)$/)[0]
-      const normalizedFileName = toKebabCase(nameWithoutExt)
-      
-      if (normalizedFileName !== nameWithoutExt && normalizedFileName) {
-        const normalizedFilePath = path.join(dirPath, normalizedFileName + extension)
+      // Only process files that actually need normalization
+      if (needsNormalization(item.name)) {
+        const nameWithoutExt = item.name.replace(/\.(md|mdx)$/, '')
+        const extension = item.name.match(/\.(md|mdx)$/)[0]
+        const normalizedFileName = toKebabCase(nameWithoutExt) + extension
+        const normalizedFilePath = path.join(dirPath, normalizedFileName)
         
-        // Create normalized file if it doesn't exist
-        if (!fs.existsSync(normalizedFilePath)) {
-          console.log(`📄 Creating normalized file: ${normalizedFileName + extension}`)
+        // Only create if it won't conflict and doesn't already exist
+        if (!wouldConflict(dirPath, normalizedFileName) && !fs.existsSync(normalizedFilePath)) {
+          console.log(`📄 Creating normalized file: ${normalizedFileName}`)
           
           // Read original file content
           const originalContent = fs.readFileSync(fullPath, 'utf8')
