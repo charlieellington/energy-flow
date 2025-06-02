@@ -44,9 +44,32 @@ function wouldConflict(dirPath, newFileName) {
   )
 }
 
+// Ensure index file exists for a directory
+function ensureIndexFile(dirPath, dirName) {
+  const files = fs.readdirSync(dirPath)
+  const hasIndex = files.some((f) => /^(index|readme)\.(md|mdx)$/i.test(f))
+  if (!hasIndex) {
+    const displayTitle = dirName
+      .replace(/[-_]/g, ' ')
+      .replace(/\b\w/g, (c) => c.toUpperCase())
+
+    const indexPath = path.join(dirPath, 'index.mdx')
+    const content = `---\ntitle: ${displayTitle}\n---\n\n# ${displayTitle}\n\n` +
+      'This folder contains the following pages.\n'
+    fs.writeFileSync(indexPath, content, 'utf8')
+    console.log(`📝 Created missing index.mdx in ${dirPath}`)
+  }
+}
+
 // Process a single directory
 function processDirectory(dirPath) {
   const items = fs.readdirSync(dirPath, { withFileTypes: true })
+  
+  // Ensure index file exists for this directory
+  const dirName = path.basename(dirPath)
+  if (dirName !== 'pages') {
+    ensureIndexFile(dirPath, dirName)
+  }
   
   for (const item of items) {
     const fullPath = path.join(dirPath, item.name)
