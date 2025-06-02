@@ -52,6 +52,18 @@ Better order management
 Landing Page - Bene can set this up somewhere else and be able to edit and test herself - Full control 
 
 
+
+## Launch v.1 
+
+Launch: 
+- Launch in batches of 10: friends and family (cost price), early early bird, early bird, standard
+- Bene runs more campaigns, including the ones to share and win, etc. 
+
+Expo: 
+- Only opportunity to buy at the beginning, during expo, back to early-bird pricing 
+
+
+
 ## Uncertainties 
 
 - Billing amount and delivery on launch? 
