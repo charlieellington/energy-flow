@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "pages/03-projects/OliStories/About and Idea.md",
+                "file": "pages/04-life-tools/meal-plan.mdx",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "About and Idea"
+              "title": "meal-plan"
             }
           },
           {
@@ -195,8 +195,8 @@
   },
   "active": "7048e266322725b7",
   "lastOpenFiles": [
-    "pages/03-projects/OliStories/about-and-idea.md",
     "pages/03-projects/OliStories/About and Idea.md",
+    "pages/03-projects/OliStories/about-and-idea.md",
     "pages/03-projects/no-bad-parts-collective/notes-and-planning.md",
     "pages/03-projects/oli-stories/new-page-test.md",
     "pages/03-projects/oli-stories/about-and-idea.md",
