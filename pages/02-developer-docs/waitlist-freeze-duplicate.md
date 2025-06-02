@@ -1,3 +1,9 @@
+---
+title: Waitlist Freeze Duplicate
+---
+
+# Waitlist Freeze Duplicate
+
 # Waitlist Kit – Freeze & Duplicate Checklist (Revised 2025-05-30)
 
 This guide shows you how to **freeze** the public Waitlist Kit template and then **spin-up your own private copy** without touching the existing Supabase project.  The flow is:

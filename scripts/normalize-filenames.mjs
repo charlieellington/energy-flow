@@ -79,43 +79,62 @@ function processDirectory(dirPath) {
       // Recursively process subdirectories
       processDirectory(fullPath)
     } else if (item.name.endsWith('.md') || item.name.endsWith('.mdx')) {
-      // Rename files that need normalization
+      // Process files that need normalization OR need front-matter
+      const nameWithoutExt = item.name.replace(/\.(md|mdx)$/, '')
+      const extension = item.name.match(/\.(md|mdx)$/)[0]
+      const normalizedFileName = toKebabCase(nameWithoutExt) + extension
+      const normalizedFilePath = path.join(dirPath, normalizedFileName)
+      
+      // Read original content first
+      const originalContent = fs.readFileSync(fullPath, 'utf8')
+      const displayTitle = nameWithoutExt
+        .replace(/[-_]/g, ' ')
+        .replace(/\b\w/g, (char) => char.toUpperCase())
+      
+      // Check if file needs front-matter
+      const hasFrontMatter = originalContent.trim().startsWith('---')
+      const needsFrontMatter = !hasFrontMatter || !originalContent.includes('title:')
+      
+      // Generate proper content with front-matter
+      let properContent = originalContent
+      if (needsFrontMatter) {
+        if (hasFrontMatter) {
+          const frontMatterRegex = /^---\n(.*?)\n---/s
+          const match = originalContent.match(frontMatterRegex)
+          
+          if (match && !match[1].includes('title:')) {
+            const newFrontMatter = `title: ${displayTitle}\n${match[1]}`
+            properContent = originalContent.replace(frontMatterRegex, `---\n${newFrontMatter}\n---`)
+          }
+        } else {
+          properContent = `---\ntitle: ${displayTitle}\n---\n\n# ${displayTitle}\n\n${originalContent}`
+        }
+      }
+      
+      // Handle file normalization and deduplication
       if (needsNormalization(item.name)) {
-        const nameWithoutExt = item.name.replace(/\.(md|mdx)$/, '')
-        const extension = item.name.match(/\.(md|mdx)$/)[0]
-        const normalizedFileName = toKebabCase(nameWithoutExt) + extension
-        const normalizedFilePath = path.join(dirPath, normalizedFileName)
-        
-        if (!fs.existsSync(normalizedFilePath)) {
+        // If normalized file already exists, merge and keep only one
+        if (fs.existsSync(normalizedFilePath)) {
+          console.log(`📄 Patching and deduplicating: ${item.name} → ${normalizedFileName}`)
+          
+          // Write proper content to normalized file (overwrite existing)
+          fs.writeFileSync(normalizedFilePath, properContent, 'utf8')
+          
+          // Remove original file if it's different from normalized
+          if (fullPath !== normalizedFilePath) {
+            fs.unlinkSync(fullPath)
+          }
+        } else {
           console.log(`📄 Renaming file: ${item.name} → ${normalizedFileName}`)
           
-          // Read original content and add proper front-matter/heading
-          const originalContent = fs.readFileSync(fullPath, 'utf8')
-          const displayTitle = nameWithoutExt
-            .replace(/[-_]/g, ' ')
-            .replace(/\b\w/g, (char) => char.toUpperCase())
-          
-          const hasFrontMatter = originalContent.trim().startsWith('---')
-          
-          let normalizedContent
-          if (hasFrontMatter) {
-            const frontMatterRegex = /^---\n(.*?)\n---/s
-            const match = originalContent.match(frontMatterRegex)
-            
-            if (match && !match[1].includes('title:')) {
-              const newFrontMatter = `title: ${displayTitle}\n${match[1]}`
-              normalizedContent = originalContent.replace(frontMatterRegex, `---\n${newFrontMatter}\n---`)
-            } else {
-              normalizedContent = originalContent
-            }
-          } else {
-            normalizedContent = `---\ntitle: ${displayTitle}\n---\n\n# ${displayTitle}\n\n${originalContent}`
-          }
-          
           // Write content to new file and remove old one
-          fs.writeFileSync(normalizedFilePath, normalizedContent, 'utf8')
+          fs.writeFileSync(normalizedFilePath, properContent, 'utf8')
           fs.unlinkSync(fullPath)
         }
+      } else if (needsFrontMatter) {
+        // File doesn't need renaming but needs front-matter
+        console.log(`📝 Adding front-matter to: ${item.name}`)
+        fs.writeFileSync(fullPath, properContent, 'utf8')
       }
     }
   }

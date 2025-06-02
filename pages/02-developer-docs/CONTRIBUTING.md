@@ -1,3 +1,9 @@
+---
+title: CONTRIBUTING
+---
+
+# CONTRIBUTING
+
 A concise, opinionated guide for working on this code-base.
 Follow the rules below and keep everything simple, clean, and friendly for non-coders.
 

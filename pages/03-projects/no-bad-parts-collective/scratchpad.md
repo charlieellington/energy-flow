@@ -1,1 +1,7 @@
+---
+title: Scratchpad
+---
+
+# Scratchpad
+
 draft

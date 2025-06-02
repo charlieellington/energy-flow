@@ -1,3 +1,9 @@
+---
+title: Scratchpad Waitlist
+---
+
+# Scratchpad Waitlist
+
 # Waitlist Kit – Scratchpad
 _A lightweight wait-list template (Next 14 × Tailwind × shadcn/ui × Supabase)._
 
