@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "9223520457501638",
@@ -166,7 +166,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -181,9 +182,10 @@
   },
   "active": "d99a31c836c3bf86",
   "lastOpenFiles": [
+    "scratchpad.md",
+    "README.md",
     "pages/doing.mdx",
     "pages/03-projects/no-bad-parts-collective/scratchpad.md",
-    "pages/03-projects/Waitlist-app/scratchpad-waitlist.md",
-    "scratchpad.md"
+    "pages/03-projects/Waitlist-app/scratchpad-waitlist.md"
   ]
 }
