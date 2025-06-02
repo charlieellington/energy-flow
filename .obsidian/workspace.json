@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "pages/02-developer-docs/CONTRIBUTING.md",
+                "file": "pages/03-projects/no-bad-parts-collective/landing/scratchpad-parts-landing.mdx",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CONTRIBUTING"
+              "title": "scratchpad-parts-landing"
             }
           }
         ]
@@ -181,6 +181,7 @@
   },
   "active": "7048e266322725b7",
   "lastOpenFiles": [
+    "pages/02-developer-docs/CONTRIBUTING.md",
     "vercel.json",
     "pages/02-developer-docs/Developement-documentation.mdx",
     "pages/02-developer-docs/waitlist-freeze-duplicate.md",
@@ -202,7 +203,6 @@
     "pages/03-projects/Sunni/sunni-project-plan.md",
     "pages/03-projects/Sunni/index.mdx",
     "pages/03-projects/Sunni/scratchpad-sunni.md",
-    "pages/03-projects/Sunni/about.mdx",
     "pages/03-projects/OliStories/New Page Test.md",
     "pages/03-projects/OliStories/About and Idea.md",
     "pages/03-projects/OliStories/about-and-idea.md",
