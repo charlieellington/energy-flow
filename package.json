@@ -4,8 +4,9 @@
   "description": "Nextra docs template",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "build": "node scripts/normalize-filenames.mjs && next build",
+    "start": "next start",
+    "normalize": "node scripts/normalize-filenames.mjs"
   },
   "repository": {
     "type": "git",
