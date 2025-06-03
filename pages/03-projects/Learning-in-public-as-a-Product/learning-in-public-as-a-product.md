@@ -83,16 +83,19 @@ PACT* = In _Tiny Experiments_, Anne-Laure Le Cunff says a PACT is a self-designe
 - https://clip.opus.pro/dashboard 
 - Use Opus Clip to place the b-roll with AI quickly 
 - Export and download 
+- Upload to Youtube 
+
+### Thumbnail 
+- Create thumbnail: **Brand consistency via a five-minute LoRA.** Drop 10–20 headshots into **“Train Flux LoRA – Portrait Trainer”** ($2 per run). In ~5 min you get a lightweight LoRA you can bolt onto FLUX.1 and generate endless thumbnails featuring _your_ face, perfectly on-brand. https://chatgpt.com/c/683efb74-11f0-800a-9601-05aeef14b036 
+- Publish on Youtube 
 
 ### Package for short-form 
 - Take long form video 
 - Put into Opus Clip and AI makes the short versions 
-- Download / Upload to youtube 
+- Add captions 
+- Upload to youtube 
+- Upload to instagram (stealth for now)
 
-### Package for long-form 
-*Process needs finalising*
-- Create thumbnail: **Brand consistency via a five-minute LoRA.** Drop 10–20 headshots into **“Train Flux LoRA – Portrait Trainer”** ($2 per run). In ~5 min you get a lightweight LoRA you can bolt onto FLUX.1 and generate endless thumbnails featuring _your_ face, perfectly on-brand. https://chatgpt.com/c/683efb74-11f0-800a-9601-05aeef14b036 
-- Upload to Youtube 
 
 ---
 
