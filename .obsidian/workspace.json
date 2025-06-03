@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "pages/03-projects/Learning-in-public-as-a-Product/learning-in-public-as-a-product.md",
+                "file": "pages/doing.mdx",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "learning-in-public-as-a-product"
+              "title": "doing"
             }
           }
         ]
@@ -181,10 +181,10 @@
   },
   "active": "7048e266322725b7",
   "lastOpenFiles": [
+    "pages/03-projects/Learning-in-public-as-a-Product/learning-in-public-as-a-product.md",
     "pages/03-projects/no-bad-parts-collective/notes-and-planning.md",
     "pages/03-projects/Learning-in-public-as-a-Product/Learning in public as a product.md",
     "pages/03-projects/Learning-in-public-as-a-Product/sora-video-guide.md",
-    "pages/03-projects/Learning-in-public-as-a-Product/learning-in-public-as-a-product.md",
     "pages/03-projects/Learning-in-public-as-a-Product/index.mdx",
     "components/BuyMeACoffee.tsx",
     "pages/03-projects/no-bad-parts-collective/about.mdx",
