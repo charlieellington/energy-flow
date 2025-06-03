@@ -94,7 +94,7 @@ PACT* = In _Tiny Experiments_, Anne-Laure Le Cunff says a PACT is a self-designe
 - Put into Opus Clip and AI makes the short versions 
 - Add captions 
 - Upload to youtube 
-- Upload to instagram (stealth for now)
+- Upload to instagram (stealth for now, one click extra) 
 
 
 ---
