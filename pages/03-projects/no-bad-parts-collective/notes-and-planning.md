@@ -7,9 +7,7 @@ title: Notes And Planning
 v.01 - Can make calls and AI listens - test it 1:1 with personal network 
 v.02 - Test the above posting in forums and see if there's interest 
 v.1 - Community Page + Technology (Paid Basic) - SEE BELOW 
-v.2 - As above with connections to people
-
-
+v.2 - As above with connections to people ( Paid Pro )
 
 
 --- 
