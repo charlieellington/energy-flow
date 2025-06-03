@@ -41,9 +41,27 @@ const config: DocsThemeConfig = {
   },
   footer: {
     text: (
-      <span style={{ fontSize: '0.8rem' }}>
-        Made with ❤️ by Charlie Ellington with help from friends
-      </span>
+      <div style={{ fontSize: '0.8rem', textAlign: 'center' }}>
+        <div style={{ marginBottom: '1rem' }}>
+          Made with ❤️ by Charlie Ellington with help from friends
+        </div>
+        <div style={{ marginBottom: '0.5rem' }}>
+          These notes helped? Buy me a coffee to fund nappies and turning rough notes into more useful docs:
+        </div>
+        <div>
+          <div 
+            data-name="bmc-button" 
+            data-slug="charlieflow" 
+            data-color="#FF5F5F" 
+            data-emoji=""  
+            data-font="Cookie" 
+            data-text="Buy me a coffee" 
+            data-outline-color="#000000" 
+            data-font-color="#ffffff" 
+            data-coffee-color="#FFDD00"
+          />
+        </div>
+      </div>
     ),
   },
   components: {
@@ -100,6 +118,8 @@ const config: DocsThemeConfig = {
       <meta name="theme-color" content="#000000" />
       {/* Rainbow emoji favicon */}
       <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+      {/* Buy Me a Coffee script */}
+      <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" />
       {/* Hide sidebar helper class */}
       <style>{`@media (min-width:1024px){body.ef-hide-sidebar nav,body.ef-hide-sidebar aside{display:none!important;}body.ef-hide-sidebar main{margin-left:0!important;}}`}</style>
     </>
