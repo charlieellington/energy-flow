@@ -2,7 +2,6 @@ import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 import SidebarToggle from './components/SidebarToggle'
 import AutoRefresh from './components/AutoRefresh'
-import Script from 'next/script'
 
 // Helper: turn "my-folder_name" → "My Folder Name"
 const humanize = (slug: string) =>
@@ -42,27 +41,34 @@ const config: DocsThemeConfig = {
   },
   footer: {
     text: (
-      <>
-        <span style={{ fontSize: '0.8rem', display: 'block', marginBottom: '0.4rem' }}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          textAlign: 'center',
+          gap: '0.4rem',
+          fontSize: '0.8rem',
+        }}
+      >
+        <span>
           These notes helped? Buy me a coffee to fund nappies and turning rough notes into more useful docs:
         </span>
-        <Script
-          src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
-          data-name="bmc-button"
-          data-slug="charlieflow"
-          data-color="#FF5F5F"
-          data-emoji=""
-          data-font="Cookie"
-          data-text="Buy me a coffee"
-          data-outline-color="#000000"
-          data-font-color="#ffffff"
-          data-coffee-color="#FFDD00"
-          strategy="afterInteractive"
-        />
-        <span style={{ fontSize: '0.8rem', display: 'block', marginTop: '0.6rem' }}>
-          Made with ❤️ by Charlie Ellington with help from friends
-        </span>
-      </>
+        <a
+          href="https://www.buymeacoffee.com/charlieflow"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ display: 'inline-block' }}
+        >
+          <img
+            src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png"
+            alt="Buy Me A Coffee"
+            style={{ height: '45px', width: '162px' }}
+          />
+        </a>
+        <span>Made with ❤️ by Charlie Ellington with help from friends</span>
+      </div>
     ),
   },
   components: {

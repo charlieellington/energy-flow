@@ -1,3 +1,9 @@
+---
+title: Learning In Public As A Product
+---
+
+# Learning In Public As A Product
+
 
 I’m building a peer-to-peer app that uses AI prompts to guide Internal Family Systems sessions. Here I share each tiny experiment and lesson in plain view, inviting honest feedback as I go. The aim is to learn in public while staying clear-eyed and free from the doom-scroll.
 
@@ -70,12 +76,27 @@ PACT* = In _Tiny Experiments_, Anne-Laure Le Cunff says a PACT is a self-designe
 
 ### Package for long-form 
 *Process needs finalising*
-- Create thumbnail: **Brand consistency via a five-minute LoRA.** Drop 10–20 headshots into **“Train Flux LoRA – Portrait Trainer”** ($2 per run). In ~5 min you get a lightweight LoRA you can bolt onto FLUX.1 and generate endless thumbnails featuring _your_ face, perfectly on-brand. 
+- Create thumbnail: **Brand consistency via a five-minute LoRA.** Drop 10–20 headshots into **“Train Flux LoRA – Portrait Trainer”** ($2 per run). In ~5 min you get a lightweight LoRA you can bolt onto FLUX.1 and generate endless thumbnails featuring _your_ face, perfectly on-brand. https://chatgpt.com/c/683efb74-11f0-800a-9601-05aeef14b036 
+- Upload to Youtube 
+- Put into substack 
+- Send once per week 
 
+### Package for short-form 
+- Take long form video 
+- Put into Opus Clip and AI makes the short versions 
+- Download 
+- Schedule to instagram ??? via Opus, yourself, other tool? 
+
+---
+
+### Review 
+
+See above to do Positive, Negative and Next and answer your hypotheses. 
 
 
 --- 
 ### Future idea 
 - If you keep doing the above, automate: 
 	- Human following the docs 
-	- Create it as a tool that others can use, the outcome would be that you upload your video you recorded, the tool does the rest right through to publishing. 
+	- Create it as a tool - the outcome would be that you upload your video you recorded, the tool does the rest right through to publishing. 
+- In both human and tool could be something you sell 

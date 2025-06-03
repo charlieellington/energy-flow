@@ -1,3 +1,9 @@
+---
+title: Sora Video Guide
+---
+
+# Sora Video Guide
+
 Thanks, that's clear. I'll create a short, up-to-date prompt guide for generating the best videos using OpenAI's Sora. The guide will include concise frameworks tailored for different types of videos—cinematic, explainer, animated, and realistic—and dive deeper into formats like social media and storytelling when the prompt structure differs.
 
 I'll let you know as soon as it's ready.
