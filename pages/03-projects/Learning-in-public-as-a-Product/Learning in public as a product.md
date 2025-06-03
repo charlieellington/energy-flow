@@ -32,7 +32,7 @@ What is a PACT*
 
 ### Post a video three times a week to XXXXXX for three weeks and review if you want to continue. 
 
-PACT* = 
+PACT* = In _Tiny Experiments_, Anne-Laure Le Cunff says a PACT is a self-designed promise to carry out one **Purposeful, Actionable, Continuous and Trackable** action for a fixed time—so you learn through tiny experiments rather than chase distant goals. [So Brief](https://sobrief.com/books/tiny-experiments)
 
 --- 
 
@@ -50,4 +50,32 @@ PACT* =
 
 ### Content and Visuals
 - Load up pages or visuals 
-- Load up Discord to record and find the right viewport
+- Load up Discord to record and find the right viewport 
+
+### Record 
+- On Descript
+- Use good mic 
+
+### Edit
+- Descript basic, removes ummms ahhhs, etc. 
+
+### b-roll creation 
+- Transcript to o3 and create b-roll prompts 
+- Prompt b-roll in Soras 
+
+### Edit in b-roll 
+- https://clip.opus.pro/dashboard 
+- Use Opus Clip to place the b-roll with AI quickly 
+- Export and download 
+
+### Package for long-form 
+*Process needs finalising*
+- Create thumbnail: **Brand consistency via a five-minute LoRA.** Drop 10–20 headshots into **“Train Flux LoRA – Portrait Trainer”** ($2 per run). In ~5 min you get a lightweight LoRA you can bolt onto FLUX.1 and generate endless thumbnails featuring _your_ face, perfectly on-brand. 
+
+
+
+--- 
+### Future idea 
+- If you keep doing the above, automate: 
+	- Human following the docs 
+	- Create it as a tool that others can use, the outcome would be that you upload your video you recorded, the tool does the rest right through to publishing. 
