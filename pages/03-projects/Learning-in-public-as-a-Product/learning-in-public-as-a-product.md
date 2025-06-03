@@ -36,9 +36,19 @@ Am I building with others and gathering feedback?
 # PACT 
 What is a PACT* 
 
-### Post a video three times a week to XXXXXX for three weeks and review if you want to continue. 
+### Post a video three times a week to youtube** for three weeks and review if you want to continue. 
+
+-
 
 PACT* = In _Tiny Experiments_, Anne-Laure Le Cunff says a PACT is a self-designed promise to carry out one **Purposeful, Actionable, Continuous and Trackable** action for a fixed time—so you learn through tiny experiments rather than chase distant goals. [So Brief](https://sobrief.com/books/tiny-experiments)
+
+--- 
+
+** Youtube: 
+- **Evergreen reach:** videos keep surfacing through search and recommendations for months, so each upload compounds instead of expiring after two days.
+- **Deeper feedback:** threaded, timestamped comments invite thoughtful discussion—ideal for nuanced IFS topics.
+- **Low-distraction setup:** schedule uploads in YouTube Studio, answer comments in a weekly block, and skip the home-feed entirely.
+- **Room to grow:** Community posts, playlists and live streams sit on the same channel, giving you future options without adding new apps.
 
 --- 
 
