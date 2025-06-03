@@ -48,26 +48,38 @@ const config: DocsThemeConfig = {
           alignItems: 'center',
           justifyContent: 'center',
           textAlign: 'center',
-          gap: '0.4rem',
+          gap: '1rem',
           fontSize: '0.8rem',
+          width: '100%',
+          maxWidth: '600px',
+          margin: '0 auto',
+          padding: '1.5rem 1rem',
         }}
       >
-        <span>
+        <span style={{ lineHeight: '1.4', marginBottom: '0.5rem' }}>
           These notes helped? Buy me a coffee to fund nappies and turning rough notes into more useful docs:
         </span>
         <a
           href="https://www.buymeacoffee.com/charlieflow"
           target="_blank"
           rel="noopener noreferrer"
-          style={{ display: 'inline-block' }}
+          style={{ 
+            display: 'inline-block',
+            margin: '0.5rem 0',
+            transition: 'transform 0.2s ease',
+          }}
+          onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+          onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
         >
           <img
             src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png"
             alt="Buy Me A Coffee"
-            style={{ height: '45px', width: '162px' }}
+            style={{ height: '45px', width: '162px', borderRadius: '8px' }}
           />
         </a>
-        <span>Made with ❤️ by Charlie Ellington with help from friends</span>
+        <span style={{ lineHeight: '1.4', marginTop: '0.5rem', opacity: '0.8' }}>
+          Made with ❤️ by Charlie Ellington with help from friends
+        </span>
       </div>
     ),
   },
