@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "pages/03-projects/Learning-in-public-as-a-Product/Sora Video Guide.md",
+                "file": "pages/03-projects/no-bad-parts-collective/notes-and-planning.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sora Video Guide"
+              "title": "notes-and-planning"
             }
           }
         ]
@@ -181,10 +181,14 @@
   },
   "active": "7048e266322725b7",
   "lastOpenFiles": [
+    "pages/03-projects/no-bad-parts-collective/about.mdx",
+    "pages/03-projects/no-bad-parts-collective/build-plan.mdx",
+    "pages/03-projects/no-bad-parts-collective/index.mdx",
+    "pages/03-projects/no-bad-parts-collective/notes-and-planning.md",
+    "pages/03-projects/no-bad-parts-collective/scratchpad.md",
     "pages/03-projects/Learning-in-public-as-a-Product/Learning in public as a product.md",
     "pages/03-projects/Learning-in-public-as-a-Product/Sora Video Guide.md",
     "pages/doing.mdx",
-    "pages/03-projects/no-bad-parts-collective/about.mdx",
     "pages/03-projects/Learning-in-public-as-a-Product",
     "Untitled",
     "pages/03-projects/Client-Projects/Paid247.mdx",
@@ -195,12 +199,10 @@
     "pages/02-developer-docs/waitlist-freeze-duplicate.md",
     "pages/03-projects/Client-Projects/index.mdx",
     "README.md",
-    "pages/03-projects/no-bad-parts-collective/notes-and-planning.md",
     "pages/03-projects/oli-stories/new-page-test.md",
     "pages/03-projects/oli-stories/new-page-test-four.md",
     "pages/03-projects/oli-stories/about-and-idea.md",
     "pages/03-projects/oli-stories/new-page-test-3.md",
-    "pages/03-projects/oli-stories/index.mdx",
     "pages/03-projects/oli-stories/New page test 3.md",
     "pages/03-projects/oli-stories/new page test four.md",
     "pages/03-projects/Sunni/sunni-project-plan.md",
@@ -214,8 +216,6 @@
     "pages/02-developer-docs/test-auto.md",
     "pages/02-developer-docs/testing-ob-2.md",
     "pages/02-developer-docs/testing-ob-1.md",
-    "pages/03-projects/no-bad-parts-collective/Notes and Planning.md",
-    "pages/03-projects/no-bad-parts-collective/scratchpad.md",
-    "scratchpad.md"
+    "pages/03-projects/no-bad-parts-collective/Notes and Planning.md"
   ]
 }
