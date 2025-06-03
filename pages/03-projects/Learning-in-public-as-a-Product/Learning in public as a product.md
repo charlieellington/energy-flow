@@ -1,4 +1,10 @@
 
+I’m building a peer-to-peer app that uses AI prompts to guide Internal Family Systems sessions. Here I share each tiny experiment and lesson in plain view, inviting honest feedback as I go. The aim is to learn in public while staying clear-eyed and free from the doom-scroll.
+
+--- 
+
+**Scratchpad:** 
+
 2) Continue the video experiment to get an idea of time: 
 - You use opusclip 
 - plus this: https://chatgpt.com/c/683dcf92-625c-800a-927a-a9914c737b3f 
