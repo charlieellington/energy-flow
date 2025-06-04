@@ -88,8 +88,9 @@ PACT* = In _Tiny Experiments_, Anne-Laure Le Cunff says a PACT is a self-designe
 - Upload to Youtube 
 
 ### Thumbnail 
-- Create thumbnail: **Brand consistency via a five-minute LoRA.** Drop 10–20 headshots into **“Train Flux LoRA – Portrait Trainer”** ($2 per run). In ~5 min you get a lightweight LoRA you can bolt onto FLUX.1 and generate endless thumbnails featuring _your_ face, perfectly on-brand. https://chatgpt.com/c/683efb74-11f0-800a-9601-05aeef14b036 
-- Publish on Youtube 
+- https://fal.ai/models/fal-ai/flux-lora - Create the image 
+- Path: https://v3.fal.media/files/rabbit/N-6sIMdjL9NDh9MsddWi-_pytorch_lora_weights.safetensors 
+- Add text: https://fal.ai/models/fal-ai/flux-pro/kontext 
 
 ### Package for short-form 
 - Take long form video 
