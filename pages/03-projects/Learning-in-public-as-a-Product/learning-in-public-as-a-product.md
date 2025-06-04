@@ -72,31 +72,40 @@ PACT* = In _Tiny Experiments_, Anne-Laure Le Cunff says a PACT is a self-designe
 - On Descript
 - Use good mic 
 - Make sure at high resolution 
+- Make sure you have the correct framing for youtube 
 
 ### Edit
 - Descript basic, removes ummms ahhhs, etc. 
 - Sound quality 
 - Eye contact ? Looks weird 
 
-### b-roll creation 
-- Transcript to o3 and create b-roll prompts 
-- Prompt b-roll in Soras 
-
-### Edit in b-roll 
-- https://clip.opus.pro/dashboard 
-- Use Opus Clip to place the b-roll with AI quickly 
-- Export and download 
-- Upload to Youtube 
-
 ### Thumbnail 
 - https://fal.ai/models/fal-ai/flux-lora - Create the image 
 - Path: https://v3.fal.media/files/rabbit/N-6sIMdjL9NDh9MsddWi-_pytorch_lora_weights.safetensors 
 - Add text: https://fal.ai/models/fal-ai/flux-pro/kontext 
 
+### Title and Description
+- Gernerate in ChatGPT or Descript  
+
+### Upload 
+- To Youtube via Descript 
+
+
+---
+
+**Optional short form:**
+### Setup 
+- Download video descript 
 ### Package for short-form 
 - Take long form video 
-- Put into Opus Clip and AI makes the short versions 
+- Put into Opus Clip and AI makes the short versions by splitting the video 
+### b-roll creation 
+- Take transcripts of short-forms 
+- Transcript to o3 and create b-roll prompts 
+- Prompt b-roll in Soras 
+### short form edit 
 - Add captions 
+- Add b-roll 
 - Upload to youtube 
 - Upload to instagram (stealth for now, one click extra) 
 
