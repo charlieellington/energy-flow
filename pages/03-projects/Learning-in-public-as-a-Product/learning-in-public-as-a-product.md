@@ -71,11 +71,12 @@ PACT* = In _Tiny Experiments_, Anne-Laure Le Cunff says a PACT is a self-designe
 ### Record 
 - On Descript
 - Use good mic 
+- Make sure at high resolution 
 
 ### Edit
 - Descript basic, removes ummms ahhhs, etc. 
 - Sound quality 
-- Eye contact 
+- Eye contact ? Looks weird 
 
 ### b-roll creation 
 - Transcript to o3 and create b-roll prompts 
