@@ -74,6 +74,8 @@ PACT* = In _Tiny Experiments_, Anne-Laure Le Cunff says a PACT is a self-designe
 
 ### Edit
 - Descript basic, removes ummms ahhhs, etc. 
+- Sound quality 
+- Eye contact 
 
 ### b-roll creation 
 - Transcript to o3 and create b-roll prompts 
