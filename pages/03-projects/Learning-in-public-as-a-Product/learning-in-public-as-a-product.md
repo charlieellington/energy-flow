@@ -82,7 +82,9 @@ PACT* = In _Tiny Experiments_, Anne-Laure Le Cunff says a PACT is a self-designe
 ### Thumbnail 
 - https://fal.ai/models/fal-ai/flux-lora - Create the image 
 - Path: https://v3.fal.media/files/penguin/L5caGEpFypoPST0LvIAKZ_pytorch_lora_weights.safetensors
-- Add text and edits to image: https://fal.ai/models/fal-ai/flux-pro/kontext 
+- Edits to image: https://fal.ai/models/fal-ai/flux-pro/kontext 
+- Buzz template: https://www.figma.com/buzz/qR3LmqFRJVTV7pamoyrEEh/Social?node-id=0-1&p=f&t=kgZUbSFCihi5cMRJ-0 
+- Output 
 
 ### Title and Description
 - Gernerate in ChatGPT or Descript  
