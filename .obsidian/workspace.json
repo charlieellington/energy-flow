@@ -179,10 +179,50 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7048e266322725b7",
+  "floating": {
+    "id": "460d8e0b0e85a41b",
+    "type": "floating",
+    "children": [
+      {
+        "id": "fcf7a836f6938a41",
+        "type": "window",
+        "children": [
+          {
+            "id": "52175029d0e9cd91",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "36f5352824ff7bb4",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "pages/03-projects/Learning-in-public-as-a-Product/Video-scripts.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "Video-scripts"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 189,
+        "y": 470,
+        "width": 1024,
+        "height": 800,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "36f5352824ff7bb4",
   "lastOpenFiles": [
-    "pages/03-projects/Learning-in-public-as-a-Product/sora-video-guide.md",
     "pages/03-projects/Learning-in-public-as-a-Product/learning-in-public-as-a-product.md",
+    "pages/03-projects/Learning-in-public-as-a-Product/Video-scripts.md",
+    "pages/03-projects/Learning-in-public-as-a-Product/sora-video-guide.md",
     "pages/03-projects/Learning-in-public-as-a-Product/index.mdx",
     "pages/doing.mdx",
     "pages/06-ideas/index.mdx",

@@ -63,6 +63,7 @@ PACT* = In _Tiny Experiments_, Anne-Laure Le Cunff says a PACT is a self-designe
 
 ### Script 
 - Write a basic script 
+- See video-scripts 
 
 ### Content and Visuals
 - Load up pages or visuals 
