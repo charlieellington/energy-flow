@@ -181,6 +181,8 @@
   },
   "active": "7048e266322725b7",
   "lastOpenFiles": [
+    "pages/07-Videos/index.mdx",
+    "pages/07-Videos",
     "pages/03-projects/Learning-in-public-as-a-Product/Video-scripts.md",
     "pages/03-projects/Learning-in-public-as-a-Product/learning-in-public-as-a-product.md",
     "pages/03-projects/Learning-in-public-as-a-Product/sora-video-guide.md",
@@ -197,7 +199,6 @@
     "pages/03-projects/no-bad-parts-collective/notes-and-planning.md",
     "pages/03-projects/Learning-in-public-as-a-Product/Learning in public as a product.md",
     "components/BuyMeACoffee.tsx",
-    "pages/03-projects/no-bad-parts-collective/about.mdx",
     "pages/03-projects/no-bad-parts-collective/scratchpad.md",
     "pages/03-projects/Learning-in-public-as-a-Product/Sora Video Guide.md",
     "pages/02-developer-docs/CONTRIBUTING.md",
@@ -215,7 +216,6 @@
     "pages/03-projects/OliStories/About and Idea.md",
     "pages/03-projects/OliStories/about-and-idea.md",
     "pages/03-projects/oli-stories/New Page Test.md",
-    "pages/03-projects/oli-stories/About and Idea.md",
-    "pages/03-projects/OliStories/new-page-test.md"
+    "pages/03-projects/oli-stories/About and Idea.md"
   ]
 }

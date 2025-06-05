@@ -102,11 +102,10 @@ PACT* = In _Tiny Experiments_, Anne-Laure Le Cunff says a PACT is a self-designe
 
 **Optional short form:**
 ### Setup 
-- Download video descript 
-- *Also try this in Descript as it has a similar tool* 
+- Take transcript from descript 
 ### Package for short-form 
 - Take long form video 
-- Put into Opus Clip and AI makes the short versions by splitting the video 
+- Copy it in descript and then edit the layout to mobile 
 ### b-roll creation 
 - Take transcripts of short-forms 
 - Transcript to o3 and create b-roll prompts 
@@ -116,8 +115,6 @@ PACT* = In _Tiny Experiments_, Anne-Laure Le Cunff says a PACT is a self-designe
 - Add b-roll 
 - Upload to youtube 
 - Upload to instagram (stealth for now, one click extra) 
-
-☝️ to review: can this be done in Descript so one one tool? 
 
 
 ---

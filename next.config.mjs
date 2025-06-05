@@ -59,11 +59,44 @@ function addTitleIfMissing() {
   };
 }
 
+// Custom remark plugin to transform bare YouTube links into embedded iframes
+function embedYouTubeLinks() {
+  return (tree) => {
+    visit(tree, (node, index, parent) => {
+      // We only care about paragraph nodes that contain a single link (autolink or explicit)
+      if (
+        node.type === 'paragraph' &&
+        node.children &&
+        node.children.length === 1 &&
+        node.children[0].type === 'link'
+      ) {
+        const linkNode = node.children[0];
+        const url = linkNode.url || '';
+
+        // Match typical YouTube URL formats: youtu.be/<id> or youtube.com/watch?v=<id>
+        const match = url.match(
+          /(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/
+        );
+
+        if (match) {
+          const videoId = match[1];
+
+          // Replace the entire paragraph node with a JSX iframe embed
+          parent.children[index] = {
+            type: 'jsx',
+            value: `<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" title="YouTube video" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>`
+          };
+        }
+      }
+    });
+  };
+}
+
 const withNextra = nextra({
   theme: 'nextra-theme-docs',
   themeConfig: './theme.config.tsx',
   mdxOptions: {
-    remarkPlugins: [remarkFrontmatter, addTitleIfMissing],
+    remarkPlugins: [remarkFrontmatter, addTitleIfMissing, embedYouTubeLinks],
   },
 });
 
