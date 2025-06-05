@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "pages/04-processes/Creating OliStories Custom with AI.md",
+                "file": "pages/06-ideas/index.mdx",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Creating OliStories Custom with AI"
+              "title": "index"
             }
           }
         ]
@@ -181,14 +181,14 @@
   },
   "active": "7048e266322725b7",
   "lastOpenFiles": [
-    "pages/04-processes/Creating images for the Paid247 Website.md",
+    "pages/index.mdx",
     "pages/04-processes/Creating OliStories Custom with AI.md",
+    "pages/04-processes/Creating images for the Paid247 Website.md",
     "pages/03-projects/Learning-in-public-as-a-Product/learning-in-public-as-a-product.md",
     "pages/06-ideas/index.mdx",
     "pages/06-ideas",
     "pages/03-projects/Learning-in-public-as-a-Product/sora-video-guide.md",
     "pages/03-projects/Learning-in-public-as-a-Product/index.mdx",
-    "pages/index.mdx",
     "pages/04-processes",
     "pages/03-projects/Client-Projects/Paid247.mdx",
     "pages/03-projects/Client-Projects/index.mdx",
@@ -215,7 +215,6 @@
     "pages/03-projects/OliStories/about-and-idea.md",
     "pages/03-projects/oli-stories/New Page Test.md",
     "pages/03-projects/oli-stories/About and Idea.md",
-    "pages/03-projects/OliStories/new-page-test.md",
-    "pages/02-developer-docs/test-auto.md"
+    "pages/03-projects/OliStories/new-page-test.md"
   ]
 }
