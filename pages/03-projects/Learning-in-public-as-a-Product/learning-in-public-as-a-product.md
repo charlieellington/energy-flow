@@ -79,15 +79,15 @@ PACT* = In _Tiny Experiments_, Anne-Laure Le Cunff says a PACT is a self-designe
 - Sound quality 
 - Eye contact ? Looks weird 
 
-### Thumbnail 
-- https://fal.ai/models/fal-ai/flux-lora - Create the image 
-- Path: https://v3.fal.media/files/penguin/L5caGEpFypoPST0LvIAKZ_pytorch_lora_weights.safetensors
-- Edits to image: https://fal.ai/models/fal-ai/flux-pro/kontext 
-- Buzz template: https://www.figma.com/buzz/qR3LmqFRJVTV7pamoyrEEh/Social?node-id=0-1&p=f&t=kgZUbSFCihi5cMRJ-0 
-- Output 
-
 ### Title and Description
 - Gernerate in ChatGPT or Descript  
+
+### Thumbnail 
+- https://fal.ai/models/fal-ai/flux-lora?fromTraining=df2b7e6e-b583-4d8e-8334-5c9b4db05806- Create the image 
+- Edits to image: https://fal.ai/models/fal-ai/flux-pro/kontext 
+- Buzz template: https://www.figma.com/buzz/qR3LmqFRJVTV7pamoyrEEh/Social?node-id=0-1&p=f&t=kgZUbSFCihi5cMRJ-0 
+- Add icons: https://www.tech-stack-icons.com/ 
+- Output thumbnail from Buzz 
 
 ### Upload 
 - To Youtube via Descript 
