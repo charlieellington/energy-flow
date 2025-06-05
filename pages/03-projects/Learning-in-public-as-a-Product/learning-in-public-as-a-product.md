@@ -76,6 +76,7 @@ PACT* = In _Tiny Experiments_, Anne-Laure Le Cunff says a PACT is a self-designe
 
 ### Edit
 - Descript basic, removes ummms ahhhs, etc. 
+- Split screen: https://chatgpt.com/c/68415730-1d0c-800a-a8b0-44daa751eb5d 
 - Sound quality 
 - Eye contact ? Looks weird 
 
@@ -98,6 +99,7 @@ PACT* = In _Tiny Experiments_, Anne-Laure Le Cunff says a PACT is a self-designe
 **Optional short form:**
 ### Setup 
 - Download video descript 
+- *Also try this in Descript as it has a similar tool* 
 ### Package for short-form 
 - Take long form video 
 - Put into Opus Clip and AI makes the short versions by splitting the video 
