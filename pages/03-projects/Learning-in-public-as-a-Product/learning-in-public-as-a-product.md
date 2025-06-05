@@ -94,6 +94,8 @@ PACT* = In _Tiny Experiments_, Anne-Laure Le Cunff says a PACT is a self-designe
 
 ### Upload 
 - To Youtube via Descript 
+- Add thumbnail in youtube 
+- Publish 
 
 
 ---
