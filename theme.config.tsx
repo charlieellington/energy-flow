@@ -95,6 +95,7 @@ const config: DocsThemeConfig = {
     // Render nicer labels in the sidebar without requiring _meta.json files per folder
     titleComponent: ({ title }: { title: string }) => <span>{humanize(title)}</span>,
     toggleButton: true,
+    defaultMenuCollapseLevel: 1,
   },
   main: ({ children }) => (
     <div style={{ maxWidth: '860px', margin: '0 auto' }}>
