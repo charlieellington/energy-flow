@@ -109,6 +109,8 @@ PACT* = In _Tiny Experiments_, Anne-Laure Le Cunff says a PACT is a self-designe
 - Upload to youtube 
 - Upload to instagram (stealth for now, one click extra) 
 
+☝️ to review: can this be done in Descript so one one tool? 
+
 
 ---
 
