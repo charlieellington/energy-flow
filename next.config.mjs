@@ -63,29 +63,26 @@ function addTitleIfMissing() {
 function embedYouTubeLinks() {
   return (tree) => {
     visit(tree, (node, index, parent) => {
-      // We only care about paragraph nodes that contain a single link (autolink or explicit)
-      if (
-        node.type === 'paragraph' &&
-        node.children &&
-        node.children.length === 1 &&
-        node.children[0].type === 'link'
-      ) {
-        const linkNode = node.children[0];
-        const url = linkNode.url || '';
+      // Look for paragraphs containing only text that looks like a YouTube URL
+      if (node.type === 'paragraph' && node.children && node.children.length === 1) {
+        const child = node.children[0];
+        
+        // Check if it's a text node with a YouTube URL
+        if (child.type === 'text') {
+          const url = child.value.trim();
+          const match = url.match(
+            /^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([A-Za-z0-9_-]{11})(?:\S+)?$/
+          );
 
-        // Match typical YouTube URL formats: youtu.be/<id> or youtube.com/watch?v=<id>
-        const match = url.match(
-          /(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/
-        );
+          if (match) {
+            const videoId = match[1];
 
-        if (match) {
-          const videoId = match[1];
-
-          // Replace the entire paragraph node with an HTML iframe embed
-          parent.children[index] = {
-            type: 'html',
-            value: `<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" title="YouTube video" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>`
-          };
+            // Replace the paragraph with JSX that MDX will process
+            parent.children[index] = {
+              type: 'jsx',
+              value: `<iframe width={560} height={315} src="https://www.youtube.com/embed/${videoId}" title="YouTube video" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />`
+            };
+          }
         }
       }
     });

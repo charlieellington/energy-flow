@@ -101,6 +101,8 @@ PACT* = In _Tiny Experiments_, Anne-Laure Le Cunff says a PACT is a self-designe
 ---
 
 **Optional short form:**
+
+*Not sure this is worth it!* 
 ### Setup 
 - Take transcript from descript 
 ### Package for short-form 
@@ -113,8 +115,8 @@ PACT* = In _Tiny Experiments_, Anne-Laure Le Cunff says a PACT is a self-designe
 ### short form edit 
 - Add captions 
 - Add b-roll 
-- Upload to youtube 
-- Upload to instagram (stealth for now, one click extra) 
+- Upload to instagram (stealth for now) 
+
 
 
 ---
