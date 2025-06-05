@@ -67,6 +67,7 @@ PACT* = In _Tiny Experiments_, Anne-Laure Le Cunff says a PACT is a self-designe
 
 ### Content and Visuals
 - Load up pages or visuals 
+- Visual slides: https://www.figma.com/buzz/qR3LmqFRJVTV7pamoyrEEh/Social?node-id=0-1&p=f&t=yeFmktWUH6uBFyi0-0 
 - Load up Discord to record and find the right viewport 
 
 ### Record 
