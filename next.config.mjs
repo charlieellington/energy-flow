@@ -81,9 +81,9 @@ function embedYouTubeLinks() {
         if (match) {
           const videoId = match[1];
 
-          // Replace the entire paragraph node with a JSX iframe embed
+          // Replace the entire paragraph node with an HTML iframe embed
           parent.children[index] = {
-            type: 'jsx',
+            type: 'html',
             value: `<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" title="YouTube video" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>`
           };
         }
