@@ -79,8 +79,18 @@ function embedYouTubeLinks() {
 
             // Replace the paragraph with JSX that MDX will process
             parent.children[index] = {
-              type: 'jsx',
-              value: `<iframe width={560} height={315} src="https://www.youtube.com/embed/${videoId}" title="YouTube video" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />`
+              type: 'mdxJsxFlowElement',
+              name: 'iframe',
+              attributes: [
+                { type: 'mdxJsxAttribute', name: 'width', value: '560' },
+                { type: 'mdxJsxAttribute', name: 'height', value: '315' },
+                { type: 'mdxJsxAttribute', name: 'src', value: `https://www.youtube.com/embed/${videoId}` },
+                { type: 'mdxJsxAttribute', name: 'title', value: 'YouTube video' },
+                { type: 'mdxJsxAttribute', name: 'frameBorder', value: '0' },
+                { type: 'mdxJsxAttribute', name: 'allow', value: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' },
+                { type: 'mdxJsxAttribute', name: 'allowFullScreen', value: null }
+              ],
+              children: []
             };
           }
         }
