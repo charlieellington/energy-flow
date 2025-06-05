@@ -179,8 +179,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7048e266322725b7",
+  "active": "a5f19c0ca4309956",
   "lastOpenFiles": [
+    "pages/06-ideas/index.mdx",
+    "pages/06-ideas",
     "pages/04-processes/Creating images for the Paid247 Website.md",
     "pages/03-projects/Learning-in-public-as-a-Product/learning-in-public-as-a-product.md",
     "pages/03-projects/Learning-in-public-as-a-Product/sora-video-guide.md",
@@ -195,7 +197,6 @@
     "components/BuyMeACoffee.tsx",
     "pages/03-projects/no-bad-parts-collective/about.mdx",
     "pages/03-projects/no-bad-parts-collective/build-plan.mdx",
-    "pages/03-projects/no-bad-parts-collective/index.mdx",
     "pages/03-projects/no-bad-parts-collective/scratchpad.md",
     "pages/03-projects/Learning-in-public-as-a-Product/Sora Video Guide.md",
     "pages/02-developer-docs/CONTRIBUTING.md",
