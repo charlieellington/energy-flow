@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "pages/doing.mdx",
+                "file": "pages/03-projects/Learning-in-public-as-a-Product/learning-in-public-as-a-product.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "doing"
+              "title": "learning-in-public-as-a-product"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 365.5
+    "width": 276.5
   },
   "right": {
     "id": "9223520457501638",
@@ -181,18 +181,18 @@
   },
   "active": "7048e266322725b7",
   "lastOpenFiles": [
+    "pages/03-projects/Learning-in-public-as-a-Product/sora-video-guide.md",
+    "pages/03-projects/Learning-in-public-as-a-Product/learning-in-public-as-a-product.md",
+    "pages/03-projects/Learning-in-public-as-a-Product/index.mdx",
+    "pages/doing.mdx",
     "pages/06-ideas/index.mdx",
     "pages/index.mdx",
     "pages/04-processes/Creating OliStories Custom with AI.md",
     "pages/04-processes/Creating images for the Paid247 Website.md",
-    "pages/03-projects/Learning-in-public-as-a-Product/learning-in-public-as-a-product.md",
     "pages/06-ideas",
-    "pages/03-projects/Learning-in-public-as-a-Product/sora-video-guide.md",
-    "pages/03-projects/Learning-in-public-as-a-Product/index.mdx",
     "pages/04-processes",
     "pages/03-projects/Client-Projects/Paid247.mdx",
     "pages/03-projects/Client-Projects/index.mdx",
-    "pages/doing.mdx",
     "pages/03-projects/no-bad-parts-collective/notes-and-planning.md",
     "pages/03-projects/Learning-in-public-as-a-Product/Learning in public as a product.md",
     "components/BuyMeACoffee.tsx",
