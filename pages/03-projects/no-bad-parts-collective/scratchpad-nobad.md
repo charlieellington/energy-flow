@@ -6,6 +6,52 @@ title: Scratchpad
 
 ## Current Project Status - January 21, 2025
 
+🚀 **READY TO START: Video POC Build - Full Power Mode**
+
+### Project Overview:
+Based on the [build-plan.mdx](mdc:energy-flow/pages/03-projects/no-bad-parts-collective/build-plan.mdx), we're about to implement a **2-day sprint** to build the core proof-of-concept:
+
+**Goal**: Create a two-URL system that streams AI coaching hints to facilitators during live IFS therapy sessions
+- `/partner` - full-screen video only
+- `/facilitator` - video + live AI hints panel  
+- Silent AI agent joins room, listens to partner, streams hints to facilitator
+
+**Architecture**:
+```
+Partner ──▶ LiveKit Room ◀── Facilitator
+                ▲
+                │ audio
+     Silent Agent ──┘ (Whisper → GPT-4o-mini → text stream)
+```
+
+### 2-Day Timeline from Build Plan:
+**Day 1 Goals:**
+- AM: LiveKit room + JWTs, local Agent running
+- Noon: video-poc branch, deps installed, folder structure
+- Early PM: `/partner` route live on Vercel preview  
+- Late PM: **DEMO MILESTONE** - `/facilitator` route with placeholder HintStream
+
+**Day 2 Goals:**
+- AM: Connect real Agent data-channel locally
+- Mid-PM: Deploy Agent to Fly.io (fully cloud-hosted)
+- Late PM: Polish UI, deploy to production, record demo
+
+### Technical Stack:
+- **Frontend**: Next.js + @livekit/components-react + Tailwind + shadcn/ui
+- **Video/Audio**: LiveKit Cloud (EU region)
+- **AI Agent**: Docker container (livekit/agent-audio-llm) → Fly.io
+- **AI Model**: Whisper (STT) + GPT-4o-mini (LLM)
+
+### Current Status: 
+- ✅ Project renamed to `no-bad-parts` (positioned as main app)
+- ✅ Rules configured for Tailwind + shadcn/ui only
+- ✅ GitHub connectivity verified
+- 🎯 **READY TO START BUILD PLAN IMPLEMENTATION**
+
+---
+
+## Previous Project Status
+
 ✅ **COMPLETED: Workspace Structure and Rules Verification & Cleanup**
 
 ### What was verified and fixed:
@@ -65,3 +111,23 @@ title: Scratchpad
 - Positioned as main application rather than temporary landing page
 - Ready for continued development and expansion beyond landing page functionality
 - All git operations and GitHub integration working seamlessly
+
+## 🔍 Planner Clarifications Needed — Step 1 SET-UP
+
+Before we automate the SET-UP tasks (Docker Desktop, Node 18 + pnpm, Vercel CLI, Fly CLI, repo prep, branch creation), please confirm the following so we can execute without surprises:
+
+1. **Repository state**
+   • The build-plan still references `no-bad-parts-landing`, but our scratchpad shows the repo has already been renamed to **`no-bad-parts`** and is cloned locally at `/Users/charlieellington1/coding/no-bad-parts`. Can we skip `git clone …` and instead run future commands inside this existing repo?  
+   • If a *private* remote is still required, please provide the target `<PRIVATE-ORG>` Git URL so we can run `git remote set-url origin …`.
+2. **Local toolchain**
+   • Docker Desktop is installed and `docker run hello-world` succeeds?  
+   • `nvm ls` shows **Node 18** is installed and selected for this project?  
+   • `pnpm -v` prints a version number (project uses `pnpm-lock.yaml`).  
+   • `vercel --version` prints a version, *and* you are already logged-in (`vercel whoami`)?  
+   • `flyctl version` prints a version (installed via Homebrew on macOS 14)?
+3. **Branch strategy**  
+   • We will create a new branch **`video-poc`** off `main` in the `no-bad-parts` repo — sound good?
+
+Please answer or adjust anything above; once confirmed, we'll jump straight into executing Step 1 automatically.
+
+---
