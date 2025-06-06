@@ -4,16 +4,44 @@ title: Build Plan
 
 # Build Plan
 
-# 0.000 to review first: 
-does it need a video set up or just a listener like a note taker with the instructions in a seperate browser for a v.01
+## 0a. What the demo will do
 
+Create a two‑URL proof‑of‑concept that streams AI coaching hints to a facilitator during a 1‑to‑1 Internal Family Systems session.
 
-
-
-## 0. What the demo will do
 * `/partner` – full-screen video.  
 * `/facilitator` – video **+** scrolling **Coach Panel** that prints AI hints.  
 * A silent **Agent** joins the room, listens only to the Partner, streams hints to the Facilitator.
+
+## 0b. High‑Level Architecture
+
+```
+Partner  ──▶  LiveKit Room  ◀──  Facilitator
+                  ▲
+                  │  audio
+   Silent Agent ──┘  (Whisper → GPT‑4o‑mini → text stream)
+```
+
+- **/partner** → video only.
+- **/facilitator** → video + _Coach Panel_ (AI hints).
+- One static LiveKit room (`ifs-demo`).
+
+## 0c. Environment Variables
+
+|Context|Var|Example value|
+|---|---|---|
+|**Next.js**|`NEXT_PUBLIC_LK_URL`|wss://ifs-demo.eu.livekit.cloud|
+||`NEXT_PUBLIC_PARTNER_TOKEN`|eyJhbGciOi...|
+||`NEXT_PUBLIC_FACILITATOR_TOKEN`|eyJhbGciOi...|
+|**Agent**|`LIVEKIT_URL`|wss://ifs-demo.eu.livekit.cloud|
+||`PARTNER_ID`|partner|
+||`OPENAI_API_KEY`|sk‑...|
+||`SYSTEM_PROMPT`|_(IFS prompt v0.1)_|
+
+## 0d. Dependencies
+
+- **Front‑end**: `next@14`, `@livekit/client`, `@livekit/components-react`, `tailwindcss`
+- **Agent**: `livekit/agent-audio-llm:latest` (Docker image)
+- **Tooling**: Docker, Node ≥ 18, Vercel CLI, ngrok (optional)
 
 ## 1. LiveKit Cloud — 1 hour
 
@@ -106,16 +134,13 @@ export default function Facilitator() {
 }
 ```
 
-## 5. Timeline
+## 3.5 Roll‑Back / Failure Behaviour
 
-| Day | Output |
-| --- | --- |
-| **Day 1 AM** | LiveKit room + tokens; Agent image pulled. |
-| **Day 1 PM** | Agent running locally; Partner page live. |
-| **Day 2 AM** | Facilitator page + Coach Panel wired. |
-| **Day 2 PM** | Test, polish Tailwind, `vercel --prod`. Demo done. |
+If Agent disconnects:
 
-*Total dev effort: **≈ 12–14 hours***.
+- Video continues; Coach Panel shows “AI offline – continue as normal”.
+    
+- No hard refresh needed.
 
 ### Next easy wins
 * **Move Agent to Fly.io** — `fly launch`, reuse env-file.  
