@@ -20,6 +20,9 @@
   "homepage": "https://github.com/shuding/nextra-docs-template#readme",
   "dependencies": {
     "@calcom/atoms": "^1.0.102",
+    "@livekit/components-react": "^2.9.9",
+    "@livekit/components-styles": "^1.1.6",
+    "livekit-client": "^2.13.3",
     "next": "13.3.0",
     "nextra": "2.6.1",
     "nextra-theme-docs": "2.6.1",

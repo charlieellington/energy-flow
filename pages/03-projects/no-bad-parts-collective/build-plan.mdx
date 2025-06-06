@@ -107,21 +107,74 @@ Partner ─▶ LiveKit Room ◀─ Facilitator
 npm i @livekit/components-react @livekit/client
 ```
 
-### 4.2 Shared wrapper – `app/livekit-wrapper.tsx`
+### 4.2 Shared wrapper – `components/livekit-wrapper.tsx`
 
 (_as in previous snippet—unchanged_)
 
 ### 4.3 Routes
 
-- `app/(session)/partner/page.tsx` – displays `<ParticipantTile isLocal />`
+- `pages/session/partner.tsx` – displays `<ParticipantTile isLocal />`
     
-- `app/(session)/facilitator/page.tsx` – grid layout + `HintStream` hook  
-    (both snippets unchanged from earlier plan)
+- `pages/session/facilitator.tsx` – grid layout + `HintStream` hook  
+    (accessible at `/session/partner` and `/session/facilitator`)
     
 
 ### 4.4 Failure behaviour
 
 If Agent drops, Coach Panel prints **"AI offline – continue as normal."**
+
+---
+
+## 4.5 — LOCAL INTEGRATION TEST (connects real agent to front-end, ≈ 30 min)
+
+**Critical POC validation step before cloud deployment.**
+
+### 4.5.1 Start the Real Agent
+
+```bash
+# In terminal 1: Start the Python agent with full SYSTEM_PROMPT
+cd no-bad-parts
+source agent/venv/bin/activate
+python agent.py dev
+```
+
+**Success indicators:**
+- "Connected to LiveKit server"
+- "Joined room: no-bad-parts" 
+- "Listening to participant: partner"
+
+### 4.5.2 Test End-to-End Flow
+
+```bash
+# In terminal 2: Start front-end
+cd energy-flow
+pnpm dev
+```
+
+**Manual test sequence:**
+1. Open `/session/facilitator` in browser → verify video + "Waiting for AI hints..." 
+2. Open `/session/partner` in another tab → speak into microphone
+3. **Expected result:** Facilitator panel shows real IFS coaching hints using SYSTEM_PROMPT format:
+   ```
+   SUMMARY: [partner validation]
+   SUGGESTION: [facilitator guidance]
+   FOLLOW-UP: [invitation 1] | [invitation 2]
+   REMINDER: [peer support reminder] (first 3 replies only)
+   ```
+
+### 4.5.3 Replace Dummy Script
+
+Once real agent works, remove dependency on dummy script:
+
+```bash
+# No longer needed for testing
+rm scripts/dummy-hints.js
+```
+
+**🎯 POC Success Criteria:**
+- Partner speaking → Agent transcribing → Facilitator receiving properly formatted hints
+- Real SYSTEM_PROMPT generating contextual IFS coaching suggestions
+- No "dummy" data in the final POC
 
 ---
 
@@ -287,7 +340,7 @@ fly apps destroy no-bad-parts-agent
 |**Day 1 Noon**|`video-poc` branch, deps installed, folder groups created|Repo pushed|
 |**Day 1 Early PM**|`/partner` route live on Vercel preview|Self-view video tile|
 |**Day 1 Late PM**|**Demo milestone** – `/facilitator` route with placeholder HintStream (dummy text)|Layout + video + scrolling text|
-|**Day 2 AM**|Connect real Agent data-channel locally|Spoken sentence → hint appears|
+|**Day 2 AM**|**Step 4.5** – Local integration test: real Agent → front-end with SYSTEM_PROMPT|Partner speech → formatted IFS hints in facilitator panel|
 |**Day 2 Mid-PM**|Deploy Agent to Fly.io|Any browser → hints work (laptop can sleep)|
 |**Day 2 Late PM**|Polish UI, offline-toast, `vercel --prod`, record demo GIF|Finished POC|
 
