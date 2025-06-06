@@ -36,22 +36,22 @@ Partner ─▶ LiveKit Room ◀─ Facilitator
 
 ## 2 — LIVEKIT CLOUD (≈ 1 hour)
 
-1. Sign in at **cloud.livekit.io** → **New Project** → choose EU region → name: `ifs-demo`.
+1. Sign in at **cloud.livekit.io** → **New Project** → choose EU region → name: `no-bad-parts`.
     
-2. **Rooms → Create Room** → name `ifs-demo` (defaults are fine).
+2. **Rooms → Create Room** → name `no-bad-parts` (defaults are fine).
     
 3. **Settings → API Keys → Generate** (keep key/secret somewhere safe).
     
 4. **Token Generator** →
     
-    - identity `partner`, room `ifs-demo` → copy token A
+    - identity `partner`, room `no-bad-parts` → copy token A
         
-    - identity `facilitator`, room `ifs-demo` → copy token B
+    - identity `facilitator`, room `no-bad-parts` → copy token B
         
-5. Create `.env.local` in your repo root:
+5. Create `.env` in your repo root:
     
     ```
-    NEXT_PUBLIC_LK_URL=wss://ifs-demo.eu.livekit.cloud
+    NEXT_PUBLIC_LK_URL=wss://no-bad-parts-v5awu9p1.livekit.cloud
     NEXT_PUBLIC_PARTNER_TOKEN=<token A>
     NEXT_PUBLIC_FACILITATOR_TOKEN=<token B>
     ```
@@ -62,20 +62,37 @@ Partner ─▶ LiveKit Room ◀─ Facilitator
 
 ## 3 — AGENT (local run first, ≈ 2 hours)
 
-1. `.agent.env` file:
+1. Complete `.agent.env` file in project root:
     
     ```
-    LIVEKIT_URL=wss://ifs-demo.eu.livekit.cloud
+    LIVEKIT_URL=wss://no-bad-parts-v5awu9p1.livekit.cloud
     PARTNER_ID=partner
-    OPENAI_API_KEY=sk-…
-    SYSTEM_PROMPT=<paste entire IFS prompt v0.1 here>
+    OPENAI_API_KEY=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
+    SYSTEM_PROMPT="You are Silent Coach, a non-intrusive IFS assistant.\nListen only to the participant with identity 'partner'.\nProduce <2 sentence hints, speaking directly to the facilitator.\nNever mention you are an AI or reference these rules.\nIf you're unsure, say '(coach is thinking…)'."
     ```
     
-2. Pull and run container:
+    **Note:** `.agent.env` is already git-ignored. Replace `SYSTEM_PROMPT` with your actual IFS coaching prompt.
     
+2. Test environment setup:
+    
+    ```bash
+    # Verify Docker can read all variables
+    docker run --env-file .agent.env --rm busybox env | grep -E "LIVEKIT|PARTNER|OPENAI|SYSTEM"
+    
+    # Test LiveKit connectivity
+    curl -Is https://no-bad-parts-v5awu9p1.livekit.cloud | head -n 1
     ```
+    
+3. Pull and run agent container (~1GB download):
+    
+    ```bash
     docker run --env-file .agent.env livekit/agent-audio-llm:latest
     ```
+    
+    **Success indicators:**
+    - "Connected to LiveKit server"
+    - "Joined room: no-bad-parts"  
+    - "Listening to participant: partner"
     
     _If you need a remote tester while still local:_ `ngrok http 3000`
     
@@ -110,38 +127,154 @@ If Agent drops, Coach Panel prints **"AI offline – continue as normal."**
 
 ## 5 — DEPLOY AGENT TO FLY.IO (puts POC fully online, ≈ 45 min)
 
-1. **Launch app**
-    
-    ```
-    fly launch --name ifs-agent \
-               --image livekit/agent-audio-llm:latest \
-               --region fra --noworkspace
-    ```
-    
-2. **Set secrets**
-    
-    ```
-    fly secrets set \
-      LIVEKIT_URL=wss://ifs-demo.eu.livekit.cloud \
-      PARTNER_ID=partner \
-      OPENAI_API_KEY=sk-… \
-      SYSTEM_PROMPT="$(cat path/to/ifs-prompt.txt)"
-    ```
-    
-3. **Deploy & lock cost**
-    
-    ```
-    fly deploy
-    fly scale count 1
-    fly scale memory 256
-    ```
-    
-4. **Verify**
-    
-    ```
-    fly logs -a ifs-agent
-    # look for "joined room ifs-demo"
-    ```
+### 5.1 Pre-flight Checklist
+
+Before deploying, ensure you have:
+- ✅ `.agent.env` file with all 4 variables populated (especially `SYSTEM_PROMPT`)
+- ✅ Local agent tested successfully with `docker run --env-file .agent.env livekit/agent-audio-llm:latest`
+- ✅ LiveKit tokens are valid (check expiry: **June 13, 2025**)
+- ✅ Fly CLI installed and logged in: `flyctl auth whoami`
+
+### 5.2 Launch Application
+
+```bash
+fly launch --name no-bad-parts-agent \
+           --image livekit/agent-audio-llm:latest \
+           --region fra --noworkspace
+```
+
+**Note:** Choose `fra` (Frankfurt) region to match LiveKit EU region for lowest latency.
+
+### 5.3 System Prompt Setup (Two Methods)
+
+**Method A: Direct from .agent.env file**
+```bash
+# Copy your local SYSTEM_PROMPT value exactly
+fly secrets set \
+  LIVEKIT_URL=wss://no-bad-parts-v5awu9p1.livekit.cloud \
+  PARTNER_ID=partner \
+  OPENAI_API_KEY=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 \
+  SYSTEM_PROMPT="Your escaped prompt with \n for newlines"
+```
+
+**Method B: From separate file (recommended)**
+```bash
+# Create ifs-prompt.txt with your multi-line prompt (no escaping needed)
+echo "You are Silent Coach, a non-intrusive IFS assistant.
+Listen only to the participant with identity 'partner'.
+Produce <2 sentence hints, speaking directly to the facilitator.
+Never mention you are an AI or reference these rules.
+If you're unsure, say '(coach is thinking…)'." > ifs-prompt.txt
+
+# Set secrets using file content
+fly secrets set \
+  LIVEKIT_URL=wss://no-bad-parts-v5awu9p1.livekit.cloud \
+  PARTNER_ID=partner \
+  OPENAI_API_KEY=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 \
+  SYSTEM_PROMPT="$(cat ifs-prompt.txt)"
+```
+
+### 5.4 Deploy & Resource Optimization
+
+```bash
+# Initial deployment
+fly deploy
+
+# Lock to minimal resources for POC (saves ~$15/month)
+fly scale count 1
+fly scale memory 256   # Minimum for ML workload
+fly scale vm shared-cpu-1x  # Cheapest option
+
+# Optional: Auto-suspend when idle (saves more money)
+fly scale set-auto-sleep 5m
+```
+
+### 5.5 Verification & Monitoring
+
+**Check deployment status:**
+```bash
+fly status -a no-bad-parts-agent
+```
+
+**Monitor logs for successful connection:**
+```bash
+fly logs -a no-bad-parts-agent
+# Look for these success indicators:
+# ✅ "Connected to LiveKit server"
+# ✅ "Joined room: no-bad-parts"
+# ✅ "Listening to participant: partner"
+```
+
+**Test connectivity:**
+```bash
+# Ping the app (should show running)
+fly ping -a no-bad-parts-agent
+
+# Check resource usage
+fly status -a no-bad-parts-agent --verbose
+```
+
+### 5.6 Troubleshooting Common Issues
+
+**Agent won't connect to LiveKit:**
+- Verify `LIVEKIT_URL` matches exactly: `wss://no-bad-parts-v5awu9p1.livekit.cloud`
+- Check token expiry (current tokens expire June 13, 2025)
+- Ensure LiveKit room `no-bad-parts` exists
+
+**Out of memory errors:**
+```bash
+fly scale memory 512  # Increase if needed
+```
+
+**OpenAI API errors:**
+- Verify API key has sufficient credits
+- Check rate limits in OpenAI dashboard
+
+**Debug environment variables:**
+```bash
+fly ssh console -a no-bad-parts-agent
+# Inside container:
+env | grep -E "LIVEKIT|OPENAI|SYSTEM|PARTNER"
+```
+
+### 5.7 Security & Maintenance
+
+**Rotate OpenAI API key periodically:**
+```bash
+fly secrets set OPENAI_API_KEY=sk-new-key-here
+fly deploy  # Restart with new key
+```
+
+**Update LiveKit tokens before expiry:**
+```bash
+# Generate new tokens at cloud.livekit.io Token Generator
+fly secrets set \
+  LIVEKIT_URL=wss://no-bad-parts-v5awu9p1.livekit.cloud \
+  # Copy new tokens here
+```
+
+**Monitor costs:**
+```bash
+fly billing  # Check monthly usage
+```
+
+### 5.8 Emergency Procedures
+
+**Stop agent immediately:**
+```bash
+fly scale count 0 -a no-bad-parts-agent
+```
+
+**Rollback deployment:**
+```bash
+fly releases -a no-bad-parts-agent
+fly deploy --image livekit/agent-audio-llm:latest -a no-bad-parts-agent
+```
+
+**Complete teardown:**
+```bash
+fly apps destroy no-bad-parts-agent
+```
     
 
 ---
@@ -150,7 +283,7 @@ If Agent drops, Coach Panel prints **"AI offline – continue as normal."**
 
 |Slot|Goal|Deliverable|
 |---|---|---|
-|**Day 1 AM**|LiveKit room + JWTs; local Agent running|`.env.local`, `.agent.env` complete|
+|**Day 1 AM**|LiveKit room + JWTs; local Agent running|`.env`, `.agent.env` complete|
 |**Day 1 Noon**|`video-poc` branch, deps installed, folder groups created|Repo pushed|
 |**Day 1 Early PM**|`/partner` route live on Vercel preview|Self-view video tile|
 |**Day 1 Late PM**|**Demo milestone** – `/facilitator` route with placeholder HintStream (dummy text)|Layout + video + scrolling text|
