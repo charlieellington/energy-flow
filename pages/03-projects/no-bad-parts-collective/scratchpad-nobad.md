@@ -6,6 +6,44 @@ title: Scratchpad
 
 ## Current Project Status - January 21, 2025
 
+✅ **COMPLETED: Workspace Structure and Rules Verification & Cleanup**
+
+### What was verified and fixed:
+- **Workspace Structure**: Confirmed both projects exist in `/Users/charlieellington1/coding/`
+  - `energy-flow/` - Documentation and workspace management project
+  - `no-bad-parts/` - Main application (renamed from no-bad-parts-landing)
+- **GitHub Connectivity**: Both projects connected and up to date
+  - energy-flow: `https://github.com/charlieellington/energy-flow.git`
+  - no-bad-parts: `https://github.com/charlieellington/no-bad-parts.git`
+- **Cursor Rules Hierarchy**: Fixed malformed file paths in all rule files
+  - Workspace level: `.cursor/rules/rule.mdc` (applies to all projects)
+  - Project level: `energy-flow/.cursor/rules/rule.mdc` and `no-bad-parts/.cursor/rules/rule.mdc`
+
+### Rules Summary:
+**I follow DIFFERENT rules for each project:**
+
+**For energy-flow project:**
+- Follow CONTRIBUTING.md rules
+- Update energy-flow scratchpad after every action
+- General documentation and workspace management rules
+
+**For no-bad-parts project:**
+- Follow CONTRIBUTING.md rules  
+- Update no-bad-parts scratchpad after every action
+- Check build-plan.mdx for project context
+- **SPECIAL STYLING RULE**: Use ONLY Tailwind CSS + shadcn/ui components
+- NO bespoke CSS files or custom React components for styling (warn user first if necessary)
+
+**Workspace level (applies to both):**
+- Follow CONTRIBUTING.md from energy-flow project
+- Update appropriate scratchpad based on which project is being worked on
+
+### Technical details:
+- Fixed malformed file paths that had repeated "energy-flow/energy-flow/" segments
+- Verified git status: both repos up to date with origin/main
+- Rules now correctly reference documentation files in energy-flow project
+- Both projects have proper project-specific rules that extend workspace rules
+
 ✅ **COMPLETED: Project Cleanup - Renamed no-bad-parts-landing to no-bad-parts**
 
 ### What was implemented:

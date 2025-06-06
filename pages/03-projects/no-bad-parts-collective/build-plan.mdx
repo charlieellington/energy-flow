@@ -4,145 +4,172 @@ title: Build Plan
 
 # Build Plan
 
-## 0a. What the demo will do
+## 0 — POC OVERVIEW
 
 Create a two‑URL proof‑of‑concept that streams AI coaching hints to a facilitator during a 1‑to‑1 Internal Family Systems session.
 
-* `/partner` – full-screen video.  
-* `/facilitator` – video **+** scrolling **Coach Panel** that prints AI hints.  
-* A silent **Agent** joins the room, listens only to the Partner, streams hints to the Facilitator.
-
-## 0b. High‑Level Architecture
+- `/partner` – full-screen video
+- `/facilitator` – video **+** scrolling **Coach Panel** that prints live AI hints
+- A silent **Agent** joins the room, listens only to the Partner, streams hints to the Facilitator
 
 ```
-Partner  ──▶  LiveKit Room  ◀──  Facilitator
-                  ▲
-                  │  audio
-   Silent Agent ──┘  (Whisper → GPT‑4o‑mini → text stream)
+Partner ─▶ LiveKit Room ◀─ Facilitator
+               ▲
+               │ audio
+    Silent Agent ─┘  (Whisper → GPT-4o-mini → text stream)
 ```
 
-- **/partner** → video only.
-- **/facilitator** → video + _Coach Panel_ (AI hints).
-- One static LiveKit room (`ifs-demo`).
+---
 
-## 0c. Environment Variables
+## 1 — SET-UP (local workstation, once)
 
-|Context|Var|Example value|
-|---|---|---|
-|**Next.js**|`NEXT_PUBLIC_LK_URL`|wss://ifs-demo.eu.livekit.cloud|
-||`NEXT_PUBLIC_PARTNER_TOKEN`|eyJhbGciOi...|
-||`NEXT_PUBLIC_FACILITATOR_TOKEN`|eyJhbGciOi...|
-|**Agent**|`LIVEKIT_URL`|wss://ifs-demo.eu.livekit.cloud|
-||`PARTNER_ID`|partner|
-||`OPENAI_API_KEY`|sk‑...|
-||`SYSTEM_PROMPT`|_(IFS prompt v0.1)_|
+|Item|Command / action|
+|---|---|
+|**1.1 Docker Desktop**|Install from docker.com → confirm `docker run hello-world` works.|
+|**1.2 Node 18 + pnpm / npm**|`nvm install 18 && nvm use 18` or use Homebrew.|
+|**1.3 Vercel CLI**|`npm i -g vercel` → `vercel login`|
+|**1.4 Fly CLI**|`brew install flyctl` (mac) or `choco install flyctl` (Windows)|
+|**1.5 Git repo**|`git clone git@github.com:charlieellington/no-bad-parts-landing.git``git remote set-url origin git@github.com:<PRIVATE-ORG>/no-bad-parts-landing.git` (make it private)|
+|**1.6 Create new branch**|`git checkout -b video-poc`|
 
-## 0d. Dependencies
+---
 
-- **Front‑end**: `next@14`, `@livekit/client`, `@livekit/components-react`, `tailwindcss`
-- **Agent**: `livekit/agent-audio-llm:latest` (Docker image)
-- **Tooling**: Docker, Node ≥ 18, Vercel CLI, ngrok (optional)
+## 2 — LIVEKIT CLOUD (≈ 1 hour)
 
-## 1. LiveKit Cloud — 1 hour
+1. Sign in at **cloud.livekit.io** → **New Project** → choose EU region → name: `ifs-demo`.
+    
+2. **Rooms → Create Room** → name `ifs-demo` (defaults are fine).
+    
+3. **Settings → API Keys → Generate** (keep key/secret somewhere safe).
+    
+4. **Token Generator** →
+    
+    - identity `partner`, room `ifs-demo` → copy token A
+        
+    - identity `facilitator`, room `ifs-demo` → copy token B
+        
+5. Create `.env.local` in your repo root:
+    
+    ```
+    NEXT_PUBLIC_LK_URL=wss://ifs-demo.eu.livekit.cloud
+    NEXT_PUBLIC_PARTNER_TOKEN=<token A>
+    NEXT_PUBLIC_FACILITATOR_TOKEN=<token B>
+    ```
+    
 
-| Do | Trim |
-| --- | --- |
-| • Create project (EU) → make room `ifs-demo`. | Skip separate **dev** vs **prod** envs. |
-| • Use LiveKit's **token-generator** web page to mint two JWTs ("partner", "facilitator") and paste them into `.env.local`. | No scripting, no API-key juggling. |
+---
 
-## 2. Agent — 2 hours
+## 3 — AGENT (local run first, ≈ 2 hours)
 
-| Do | Trim |
-| --- | --- |
-| • Pull pre-built image:<br/>`docker run --env-file .agent.env livekit/agent-audio-llm:latest`. | No repo fork, no code edits today. |
-| • Set **four** env-vars only:<br/>`LIVEKIT_URL`, `PARTNER_ID=partner`, `OPENAI_API_KEY`, `SYSTEM_PROMPT` (your IFS prompt). | Defaults: Whisper STT, GPT-4o-mini LLM. |
-| • Run locally for the demo (use `ngrok` if remote testers need access). | Skip Fly/Railway deployment for POC. |
+1. `.agent.env` file:
+    
+    ```
+    LIVEKIT_URL=wss://ifs-demo.eu.livekit.cloud
+    PARTNER_ID=partner
+    OPENAI_API_KEY=sk-…
+    SYSTEM_PROMPT=<paste entire IFS prompt v0.1 here>
+    ```
+    
+2. Pull and run container:
+    
+    ```
+    docker run --env-file .agent.env livekit/agent-audio-llm:latest
+    ```
+    
+    _If you need a remote tester while still local:_ `ngrok http 3000`
+    
 
-## 3. Front end — 1 day total
+---
 
-### 3.1 Setup (15 min)
+## 4 — FRONT-END (inside existing repo, ≈ 1 day)
 
-```bash
-npx create-next-app ifs-demo --example with-supabase
-cd ifs-demo
+### 4.1 Install deps
+
+```
 npm i @livekit/components-react @livekit/client
 ```
 
-### 3.2 Shared wrapper (20 min)
+### 4.2 Shared wrapper – `app/livekit-wrapper.tsx`
 
-```tsx
-// app/livekit-wrapper.tsx
-export default function LKWrapper({ token, children }) {
-  return (
-    <LiveKitRoom
-      token={token}
-      serverUrl={process.env.NEXT_PUBLIC_LK_URL}
-      connectOptions={{ autoSubscribe: true }}
-      style={{ height: '100%' }}
-    >
-      {children}
-    </LiveKitRoom>
-  );
-}
-```
+(_as in previous snippet—unchanged_)
 
-### 3.3 Partner page (30 min)
+### 4.3 Routes
 
-```tsx
-// app/partner/page.tsx
-import LKWrapper from '@/livekit-wrapper';
-
-export default function Partner() {
-  return (
-    <LKWrapper token={process.env.NEXT_PUBLIC_PARTNER_TOKEN!}>
-      <ParticipantTile isLocal />
-    </LKWrapper>
-  );
-}
-```
-
-### 3.4 Facilitator page (2 h)
-
-```tsx
-// app/facilitator/page.tsx
-import { useRoomContext } from '@livekit/components-react';
-
-function HintStream() {
-  const { room } = useRoomContext();
-  const [lines, setLines] = React.useState<string[]>([]);
-
-  React.useEffect(() => {
-    room.on('dataReceived', ({ payload, participant }) => {
-      if (participant.identity === 'agent') {
-        setLines((l) => [...l, new TextDecoder().decode(payload)]);
-      }
-    });
-  }, [room]);
-
-  return <pre className="overflow-auto p-4 text-sm">{lines.join('\n')}</pre>;
-}
-
-export default function Facilitator() {
-  return (
-    <LKWrapper token={process.env.NEXT_PUBLIC_FACILITATOR_TOKEN!}>
-      <div className="grid h-screen grid-cols-[2fr_1fr]">
-        <ParticipantTile isLocal />
-        <HintStream />
-      </div>
-    </LKWrapper>
-  );
-}
-```
-
-## 3.5 Roll‑Back / Failure Behaviour
-
-If Agent disconnects:
-
-- Video continues; Coach Panel shows “AI offline – continue as normal”.
+- `app/(session)/partner/page.tsx` – displays `<ParticipantTile isLocal />`
     
-- No hard refresh needed.
+- `app/(session)/facilitator/page.tsx` – grid layout + `HintStream` hook  
+    (both snippets unchanged from earlier plan)
+    
 
-### Next easy wins
-* **Move Agent to Fly.io** — `fly launch`, reuse env-file.  
-* **Consent banner** — Tailwind modal on `/partner`, sets a cookie.  
-* **Supabase auth** — re-enable provider, add serverless JWT-sign function.
+### 4.4 Failure behaviour
+
+If Agent drops, Coach Panel prints **“AI offline – continue as normal.”**
+
+---
+
+## 5 — DEPLOY AGENT TO FLY.IO (puts POC fully online, ≈ 45 min)
+
+1. **Launch app**
+    
+    ```
+    fly launch --name ifs-agent \
+               --image livekit/agent-audio-llm:latest \
+               --region fra --noworkspace
+    ```
+    
+2. **Set secrets**
+    
+    ```
+    fly secrets set \
+      LIVEKIT_URL=wss://ifs-demo.eu.livekit.cloud \
+      PARTNER_ID=partner \
+      OPENAI_API_KEY=sk-… \
+      SYSTEM_PROMPT="$(cat path/to/ifs-prompt.txt)"
+    ```
+    
+3. **Deploy & lock cost**
+    
+    ```
+    fly deploy
+    fly scale count 1
+    fly scale memory 256
+    ```
+    
+4. **Verify**
+    
+    ```
+    fly logs -a ifs-agent
+    # look for “joined room ifs-demo”
+    ```
+    
+
+---
+
+## 6 — DAY-BY-DAY TIMELINE
+
+|Slot|Goal|Deliverable|
+|---|---|---|
+|**Day 1 AM**|LiveKit room + JWTs; local Agent running|`.env.local`, `.agent.env` complete|
+|**Day 1 Noon**|`video-poc` branch, deps installed, folder groups created|Repo pushed|
+|**Day 1 Early PM**|`/partner` route live on Vercel preview|Self-view video tile|
+|**Day 1 Late PM**|**Demo milestone** – `/facilitator` route with placeholder HintStream (dummy text)|Layout + video + scrolling text|
+|**Day 2 AM**|Connect real Agent data-channel locally|Spoken sentence → hint appears|
+|**Day 2 Mid-PM**|Deploy Agent to Fly.io|Any browser → hints work (laptop can sleep)|
+|**Day 2 Late PM**|Polish UI, offline-toast, `vercel --prod`, record demo GIF|Finished POC|
+
+---
+
+## 7 — NEXT EASY WINS
+
+- Consent banner (Tailwind modal, store click in Supabase)
+    
+- Supabase auth + serverless LiveKit JWT signer
+    
+- Fly.io autoscaling or Railway alternative
+    
+- Post-session summary generator
+    
+
+---
+
+_Follow the list top-to-bottom; you’ll have a totally cloud-hosted proof-of-concept by the end of Day 2._
