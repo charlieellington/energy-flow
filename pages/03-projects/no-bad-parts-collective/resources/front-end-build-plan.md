@@ -157,9 +157,53 @@ ws.on("open", () => {
 
 _(Comment out once the real Agent is connected.)_
 
+
+---
+### 4.7 Front-end tweak: **soft brand bar** at the top of every session page
+
+You can keep each route file unchanged and add a tiny header right in the wrapper.
+
 ---
 
-#### 4.7 Failure toast (optional polish)
+#### 1 Update `app/livekit-wrapper.tsx`
+
+```tsx
+"use client";
+import { LiveKitRoom } from "@livekit/components-react";
+
+export default function LKWrapper({
+  token,
+  children,
+}: {
+  token: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <LiveKitRoom
+      token={token}
+      serverUrl={process.env.NEXT_PUBLIC_LK_URL}
+      connectOptions={{ autoSubscribe: true }}
+      style={{ height: "100%" }}
+    >
+      {/* brand bar */}
+      <header className="h-10 w-full bg-zinc-900 px-4 flex items-center text-sm tracking-wide text-white/90">
+        No&nbsp;Bad&nbsp;Parts&nbsp;•&nbsp;alpha
+      </header>
+
+      {/* main content fills the rest */}
+      <main className="h-[calc(100vh-2.5rem)]">{children}</main>
+    </LiveKitRoom>
+  );
+}
+```
+
+- Tailwind classes keep it tiny: `bg-zinc-900` dark bar, `text-white/90` soft white text.
+- `h-10` (2.5 rem) bar; `calc(100vh-2.5rem)` lets the video grid still fill remaining space.
+
+
+---
+
+#### 4.8 Failure toast (optional polish)
 
 Add to `HintStream` top:
 
@@ -169,20 +213,3 @@ if (!room.connected) {
 }
 ```
 
----
-
-#### 4.8 Commit & push
-
-```bash
-git add .
-git commit -m "feat: partner & facilitator routes with LiveKit"
-git push origin video-poc
-```
-
-Vercel will auto-deploy a preview URL.
-
----
-
-### You’re ready for **Step 5 – Fly.io Agent deploy**.
-
-Open `/partner` and `/facilitator` on the preview link, start the local Agent, and confirm hints flow. Then move the Agent to Fly so anyone can test without your laptop.
