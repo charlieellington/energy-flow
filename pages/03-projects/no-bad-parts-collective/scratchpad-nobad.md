@@ -48,6 +48,100 @@ Partner ──▶ LiveKit Room ◀── Facilitator
 - ✅ GitHub connectivity verified
 - 🎯 **READY TO START BUILD PLAN IMPLEMENTATION**
 
+### 🔑 Clarifications Answered (Jan 21, 2025)
+
+1. **Repo naming**
+   • Build plan updated: all references now `no-bad-parts`. Clone step marked as *skip if already cloned*.
+
+2. **Local toolchain checks** – pending confirmation
+   • Docker Desktop: User asked *how* to verify install & run test container.
+   • Node 18: User accepts recommendation → will install via nvm if not already.
+   • pnpm: Confirmed present.
+   • Vercel CLI: Unsure; needs verification & maybe install.
+   • Fly CLI: Likely missing; needs verification & setup.
+
+3. **Branch + Vercel auto-deploy**
+   • `video-poc` branch approved. Need to ensure Vercel's Git integration doesn't auto-deploy to production; default behaviour is Preview only. Will supply guidance.
+
+### ⏭️ Next Planner Steps
+
+1. Provide user with concise installation / verification commands for:
+   • Docker Desktop (and `docker run hello-world` test)
+   • Node 18 via nvm + pnpm
+   • Vercel CLI install + login
+   • Fly CLI install + login check
+2. Explain Vercel branch-deployment behaviour and optional settings to restrict prod deploys.
+3. Await user thumbs-up that all checks pass → then switch to **Executor** mode for Step 1 automation.
+
+### ✅ Toolchain Verification Complete (Jan 21, 2025)
+
+**All 4 tools tested and ready:**
+
+1. **Docker Desktop** ✅  
+   • Status: Running (was launched automatically)  
+   • Test: `docker run hello-world` → Success ("Hello from Docker!")
+
+2. **Node 18 + pnpm** ✅  
+   • Node: v18.20.8  
+   • pnpm: 10.11.0  
+   • Status: Perfect for this project
+
+3. **Vercel CLI** ✅  
+   • Version: v41.7.0  
+   • Logged in as: `charliee-5441`  
+   • Status: Ready (update available but current version fine)
+
+4. **Fly CLI** ✅  
+   • Version: v0.3.140 darwin/arm64  
+   • Status: Freshly installed via Homebrew → working
+
+**Branch Strategy Confirmed:**  
+• Will create `video-poc` branch in `/Users/charlieellington1/coding/no-bad-parts`  
+• Vercel auto-preview is fine (no production risk)
+
+### 🚀 READY FOR EXECUTOR MODE
+
+All SET-UP prerequisites verified. Switch to **Executor** mode to complete Step 1:
+- [x] 1.1 Docker Desktop 
+- [x] 1.2 Node 18 + pnpm
+- [x] 1.3 Vercel CLI
+- [x] 1.4 Fly CLI  
+- [ ] 1.5 Git repo (skip clone, just confirm correct repo)
+- [ ] 1.6 Create new branch `video-poc`
+
+**Next:** Navigate to no-bad-parts directory and create branch.
+
+### ✅ STEP 1 SET-UP COMPLETE (Jan 21, 2025)
+
+**All tasks completed successfully:**
+
+- [x] 1.1 Docker Desktop → Running, tested with hello-world
+- [x] 1.2 Node 18 + pnpm → v18.20.8 + pnpm 10.11.0  
+- [x] 1.3 Vercel CLI → v41.7.0, logged in as `charliee-5441`
+- [x] 1.4 Fly CLI → v0.3.140 (freshly installed)
+- [x] 1.5 Git repo → Confirmed correct: `https://github.com/charlieellington/no-bad-parts.git`
+- [x] 1.6 Create new branch → `video-poc` branch created and active
+
+**Environment Summary:**
+- **Working Directory:** `/Users/charlieellington1/coding/no-bad-parts` 
+- **Active Branch:** `video-poc` (clean, ready for development)
+- **Remote:** https://github.com/charlieellington/no-bad-parts.git
+- **All tools:** Docker ✅, Node 18 ✅, pnpm ✅, Vercel CLI ✅, Fly CLI ✅
+
+**Debugging Notes:**
+- Had to launch Docker Desktop manually (common on fresh boot)
+- Fly CLI was missing → installed via Homebrew successfully
+- Minor uncommitted change in `.cursor/rules/rule.mdc` (safe to leave)
+
+### 🎯 READY FOR STEP 2: LIVEKIT CLOUD
+
+**Next milestone:** Set up LiveKit Cloud (≈ 1 hour)
+- Create EU region project `ifs-demo`
+- Generate room + API keys + tokens  
+- Create `.env.local` file with tokens
+
+**Timeline Status:** On track for Day 1 AM completion.
+
 ---
 
 ## Previous Project Status
