@@ -152,6 +152,71 @@ All SET-UP prerequisites verified. Switch to **Executor** mode to complete Step 
 
 **Waiting for user update on Step 2 completion...**
 
+## Planning Update – LiveKit Tokens & Docker Check (Jan 21, 2025)
+
+**Objective:** Complete Build-Plan §2 with project/room name `no-bad-parts`, mint Partner & Facilitator tokens automatically, verify Docker readiness for running the Agent.
+
+### Planned Command Sequence (no execution yet)
+1. `cd ~/coding/no-bad-parts` – ensure we are in repo root.
+2. **Docker verification**
+   - `docker --version` – confirm binary exists.
+   - `docker run --rm hello-world` – confirm engine runs containers.
+   - If either fails → prompt user to open Docker Desktop.
+3. **Mint tokens via LiveKit "token-server" sandbox**
+   ```bash
+   # Partner token
+   curl -s -X POST https://cloud-api.livekit.io/api/sandbox/connection-details \
+     -H "Content-Type: application/json" \
+     -H "X-Sandbox-ID: responsive-byte-1cgfuu" \
+     -d '{"roomName":"no-bad-parts","participantName":"partner","ttl":7200}'
+
+   # Facilitator token
+   curl -s -X POST https://cloud-api.livekit.io/api/sandbox/connection-details \
+     -H "Content-Type: application/json" \
+     -H "X-Sandbox-ID: responsive-byte-1cgfuu" \
+     -d '{"roomName":"no-bad-parts","participantName":"facilitator","ttl":7200}'
+   ```
+   - Parse `serverUrl` + `participantToken` from JSON responses.
+4. **Generate `.env.local** with:
+   ```
+   NEXT_PUBLIC_LK_URL=<serverUrl>
+   NEXT_PUBLIC_PARTNER_TOKEN=<partnerToken>
+   NEXT_PUBLIC_FACILITATOR_TOKEN=<facilitatorToken>
+   ```
+5. **Safeguards**
+   - Ensure `.env.local` is git-ignored.
+   - Create `.env.example` (dummy values) for future collaborators.
+6. **Commit** scratchpad update & env template (though `.env.local` remains untracked).
+
+### Next-step Success Criteria
+- Both cURL calls succeed and return HTTP 200.
+- `.env.local` exists with real tokens.
+- `docker run hello-world` prints success message.
+
+### Awaiting User Confirmation
+- Received ✅ choice of room/project name: `no-bad-parts`.
+- Need ✅ approval to run the above commands (and download ~1 GB agent image later).
+
+Once approved, will execute and log outputs here.
+
+## 🔍 Planner Clarifications Needed — Step 1 SET-UP
+
+Before we automate the SET-UP tasks (Docker Desktop, Node 18 + pnpm, Vercel CLI, Fly CLI, repo prep, branch creation), please confirm the following so we can execute without surprises:
+
+1. **Repository state**
+   • The build-plan still references `no-bad-parts-landing`, but our scratchpad shows the repo has already been renamed to **`no-bad-parts`** and is cloned locally at `/Users/charlieellington1/coding/no-bad-parts`. Can we skip `git clone …` and instead run future commands inside this existing repo?  
+   • If a *private* remote is still required, please provide the target `<PRIVATE-ORG>` Git URL so we can run `git remote set-url origin …`.
+2. **Local toolchain**
+   • Docker Desktop is installed and `docker run hello-world` succeeds?  
+   • `nvm ls` shows **Node 18** is installed and selected for this project?  
+   • `pnpm -v` prints a version number (project uses `pnpm-lock.yaml`).  
+   • `vercel --version` prints a version, *and* you are already logged-in (`vercel whoami`)?  
+   • `flyctl version` prints a version (installed via Homebrew on macOS 14)?
+3. **Branch strategy**  
+   • We will create a new branch **`video-poc`** off `main` in the `no-bad-parts` repo — sound good?
+
+Please answer or adjust anything above; once confirmed, we'll jump straight into executing Step 1 automatically.
+
 ---
 
 ## Previous Project Status
@@ -215,23 +280,5 @@ All SET-UP prerequisites verified. Switch to **Executor** mode to complete Step 
 - Positioned as main application rather than temporary landing page
 - Ready for continued development and expansion beyond landing page functionality
 - All git operations and GitHub integration working seamlessly
-
-## 🔍 Planner Clarifications Needed — Step 1 SET-UP
-
-Before we automate the SET-UP tasks (Docker Desktop, Node 18 + pnpm, Vercel CLI, Fly CLI, repo prep, branch creation), please confirm the following so we can execute without surprises:
-
-1. **Repository state**
-   • The build-plan still references `no-bad-parts-landing`, but our scratchpad shows the repo has already been renamed to **`no-bad-parts`** and is cloned locally at `/Users/charlieellington1/coding/no-bad-parts`. Can we skip `git clone …` and instead run future commands inside this existing repo?  
-   • If a *private* remote is still required, please provide the target `<PRIVATE-ORG>` Git URL so we can run `git remote set-url origin …`.
-2. **Local toolchain**
-   • Docker Desktop is installed and `docker run hello-world` succeeds?  
-   • `nvm ls` shows **Node 18** is installed and selected for this project?  
-   • `pnpm -v` prints a version number (project uses `pnpm-lock.yaml`).  
-   • `vercel --version` prints a version, *and* you are already logged-in (`vercel whoami`)?  
-   • `flyctl version` prints a version (installed via Homebrew on macOS 14)?
-3. **Branch strategy**  
-   • We will create a new branch **`video-poc`** off `main` in the `no-bad-parts` repo — sound good?
-
-Please answer or adjust anything above; once confirmed, we'll jump straight into executing Step 1 automatically.
 
 ---
