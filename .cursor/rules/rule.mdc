@@ -1,0 +1,6 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Always follow the rules set out in energy-flow/pages/02-developer-docs/CONTRIBUTING.md and, after every action, update energy-flow/pages/03-projects/no-bad-parts-collective/scratchpad-nobad.md for the current project status. Check energy-flow/pages/03-projects/no-bad-parts-collective/build-plan.mdx for context of the project. 
