@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "pages/03-projects/no-bad-parts-collective/notes-and-planning.md",
+                "file": "pages/03-projects/no-bad-parts-collective/build-plan.mdx",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "notes-and-planning"
+              "title": "build-plan"
             }
           }
         ]
@@ -181,8 +181,11 @@
   },
   "active": "7048e266322725b7",
   "lastOpenFiles": [
-    "pages/03-projects/no-bad-parts-collective/index.mdx",
+    "pages/03-projects/no-bad-parts-collective/about.mdx",
     "pages/03-projects/no-bad-parts-collective/build-plan.mdx",
+    "pages/03-projects/no-bad-parts-collective/index.mdx",
+    "pages/03-projects/no-bad-parts-collective/notes-and-planning.md",
+    "pages/03-projects/no-bad-parts-collective/scratchpad.md",
     "pages/03-projects/no-bad-parts-collective/landing/scratchpad-parts-landing.mdx",
     "pages/doing.mdx",
     "pages/06-ideas/index.mdx",
@@ -196,10 +199,7 @@
     "pages/04-processes/Creating OliStories Custom with AI.md",
     "pages/04-processes/Creating images for the Paid247 Website.md",
     "pages/06-ideas",
-    "pages/04-processes",
-    "pages/03-projects/no-bad-parts-collective/notes-and-planning.md",
     "pages/03-projects/Learning-in-public-as-a-Product/Learning in public as a product.md",
-    "pages/03-projects/no-bad-parts-collective/scratchpad.md",
     "pages/03-projects/Learning-in-public-as-a-Product/Sora Video Guide.md",
     "pages/02-developer-docs/CONTRIBUTING.md",
     "pages/02-developer-docs/waitlist-freeze-duplicate.md",
