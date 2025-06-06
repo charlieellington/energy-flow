@@ -142,6 +142,16 @@ All SET-UP prerequisites verified. Switch to **Executor** mode to complete Step 
 
 **Timeline Status:** On track for Day 1 AM completion.
 
+### 🔄 CURRENT STATUS: User Working on Step 2 (Jan 21, 2025)
+
+**User is handling Step 2 LiveKit Cloud setup:**
+- Setting up cloud.livekit.io account and EU region project
+- Will create `ifs-demo` project and room
+- Will generate API keys and JWT tokens
+- Will report back when ready for Step 3 or if assistance needed
+
+**Waiting for user update on Step 2 completion...**
+
 ---
 
 ## Previous Project Status
