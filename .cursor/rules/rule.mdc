@@ -3,19 +3,4 @@ description:
 globs: 
 alwaysApply: true
 ---
-## 🔒 API Key & Secret Security Rules
-
-**NEVER** put API keys, secrets, tokens, or other sensitive values in any documentation files, especially:
-- ❌ Build plans (build-plan.mdx)
-- ❌ README files  
-- ❌ Tutorial documentation
-- ❌ Commit messages
-- ❌ Code examples in docs
-
-**INSTEAD:**
-- ✅ Use placeholder values like `<your-api-key-here>` or `<see-environment-reference.md>`
-- ✅ Store actual values in git-ignored files (like `environment-reference.md`)
-- ✅ Reference the secure file location in documentation
-- ✅ Always add sensitive files to `.gitignore` immediately
-
-**Before committing:** Always scan for patterns like `sk-`, `pk_`, `_KEY=`, API keys, or other secrets.
+Never commit API keys, secrets, or tokens (see CONTRIBUTING.md section 5 for full security rules).
