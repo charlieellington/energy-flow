@@ -67,7 +67,7 @@ Partner ─▶ LiveKit Room ◀─ Facilitator
     ```
     LIVEKIT_URL=wss://no-bad-parts-v5awu9p1.livekit.cloud
     PARTNER_ID=partner
-    OPENAI_API_KEY=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
+    OPENAI_API_KEY=sk-proj-YOUR_OPENAI_API_KEY_HERE
     SYSTEM_PROMPT="You are Silent Coach, a non-intrusive IFS assistant.\nListen only to the participant with identity 'partner'.\nProduce <2 sentence hints, speaking directly to the facilitator.\nNever mention you are an AI or reference these rules.\nIf you're unsure, say '(coach is thinking…)'."
     ```
     
@@ -206,7 +206,7 @@ fly launch --name no-bad-parts-agent \
 fly secrets set \
   LIVEKIT_URL=wss://no-bad-parts-v5awu9p1.livekit.cloud \
   PARTNER_ID=partner \
-  OPENAI_API_KEY=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 \
+  OPENAI_API_KEY=sk-proj-YOUR_OPENAI_API_KEY_HERE \
   SYSTEM_PROMPT="Your escaped prompt with \n for newlines"
 ```
 
@@ -223,7 +223,7 @@ If you're unsure, say '(coach is thinking…)'." > ifs-prompt.txt
 fly secrets set \
   LIVEKIT_URL=wss://no-bad-parts-v5awu9p1.livekit.cloud \
   PARTNER_ID=partner \
-  OPENAI_API_KEY=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 \
+  OPENAI_API_KEY=sk-proj-YOUR_OPENAI_API_KEY_HERE \
   SYSTEM_PROMPT="$(cat ifs-prompt.txt)"
 ```
 
