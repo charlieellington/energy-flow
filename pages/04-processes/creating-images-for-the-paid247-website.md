@@ -1,3 +1,9 @@
+---
+title: Creating Images For The Paid247 Website
+---
+
+# Creating Images For The Paid247 Website
+
 https://share.descript.com/view/yBTvxR9pF8C 
 
 

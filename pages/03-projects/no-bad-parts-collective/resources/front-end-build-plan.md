@@ -1,3 +1,9 @@
+---
+title: Front End Build Plan
+---
+
+# Front End Build Plan
+
 ### STEP 4 – FRONT-END (detailed, copy-paste friendly)
 
 _Assumes you’re now on the `video-poc` branch inside the **private** `no-bad-parts-landing` repo._

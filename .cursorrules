@@ -1,0 +1,45 @@
+# No Bad Parts Project - Cursor Rules
+
+## Project Structure
+- **Source Code**: no-bad-parts/ (THIS DIRECTORY)
+- **Documentation**: energy-flow/ (SEPARATE REPOSITORY)
+- **Never mix edits between these two directories**
+
+## Mandatory Prefixes for Code Changes
+Always announce target repo before editing:
+- `# Editing no-bad-parts/<path>` for source code
+- `# Editing energy-flow/<path>` for documentation only
+
+## Required Verification Steps
+1. After ANY edit, immediately call `read_file` to verify changes landed correctly
+2. If content doesn't include expected change, ABORT and re-edit
+3. Always run `rm -rf .next && npm run build` after structural changes
+4. Kill stray servers: `pkill -f "next dev"` before starting new ones
+
+## Router Architecture
+- **USES PAGES ROUTER** (pages/session/*.tsx)
+- **NO APP ROUTER** - Remove any app/session directories that conflict
+- Routes: /session/partner and /session/facilitator
+
+## LiveKit Implementation Rules
+- livekit-wrapper.tsx must have:
+  - `"use client"` directive
+  - `connectOptions={{ autoSubscribe: true }}`
+  - Brand bar header + main wrapper
+  - NO duplicate @livekit/components-styles import
+- Use `RoomEvent.DataReceived` enum, not magic strings
+
+## Port Management
+- Always use port 3000 for development
+- Check for conflicts with `lsof -i :3000`
+- Kill processes if needed before starting
+
+## Build Hygiene
+- Run `npm run lint && npx tsc --noEmit` before testing
+- Update scratchpad.md after significant changes
+- Test both routes return 200 OK after changes
+
+## Security Reminders
+- API keys only in .env and environment-reference.md (git-ignored)
+- Never commit tokens or secrets
+- Follow CONTRIBUTING.md security guidelines 

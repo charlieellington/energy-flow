@@ -1,3 +1,9 @@
+---
+title: Gluten Free Pizza Recipe
+---
+
+# Gluten Free Pizza Recipe
+
 ## Gluten-Free Pizza for Ten — complete step-by-step
 
 ### Yield

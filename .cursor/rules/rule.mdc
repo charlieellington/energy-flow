@@ -4,3 +4,6 @@ globs:
 alwaysApply: true
 ---
 Never commit API keys, secrets, or tokens (see CONTRIBUTING.md section 5 for full security rules).
+
+Always make sure you're updating the correct folder and application as we're often working in a two folder structure. For example, if editing or working on No Bad Parts update "no-bad-parts" - only documentation updates go into "energy-flow". 
+Also check this when starting a local development server to make sure the correct app is run. 

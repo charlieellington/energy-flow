@@ -44,5 +44,41 @@
 - Added `pageExtensions` to `next.config.mjs` so `.md` files render; affected pages now appear on live site.
 - Added desktop sidebar toggle (button in navbar) with `SidebarToggle` component and CSS.
 
+## 2025-06-06 15:45 – PLAN A & B EXECUTION COMPLETE ✅
+
+### Issue Resolved: App/Pages Router Conflict
+• **Root Cause**: Empty `app/session/` directories conflicting with `pages/session/` routes
+• **Solution**: Removed `app/session/` directories to let Pages Router work properly
+• **Result**: Both routes now return HTTP 200 OK
+
+### Plan A - Fix Current Breakage ✅
+1. **Stopped processes**: Cleared port conflicts  
+2. **Cleaned artifacts**: `rm -rf .next` (removed corrupted cache)
+3. **Code verification**: All edits were already correctly applied:
+   - `components/livekit-wrapper.tsx` ✅ ("use client", brand bar, modern props)
+   - `pages/session/facilitator.tsx` ✅ (RoomEvent enum, type safety)
+4. **Build tests**: `npm run lint` + `npx tsc --noEmit` passed ✅
+5. **Routes fixed**: 
+   - http://localhost:3000/session/partner → **200 OK** ✅
+   - http://localhost:3000/session/facilitator → **200 OK** ✅
+
+### Plan B - Prevention Measures ✅
+• **Created `.cursorrules`** with project-specific guidelines
+• **Repository distinction rules**: no-bad-parts/ vs energy-flow/
+• **Mandatory verification steps**: read_file after edits
+• **Router architecture**: Pages Router only, no App Router conflicts
+• **Build hygiene**: lint/tsc checks, clean restarts
+• **Security reminders**: API key handling, CONTRIBUTING.md compliance
+
+### Current Status: READY FOR STEP 4.5 
+• **Front-end complete** with brand bar and LiveKit best practices
+• **Routes working** on port 3000  
+• **Next step**: Local Integration Test with Python agent
+• **Architecture**: Partner ↔ LiveKit Room ↔ Facilitator (with brand headers)
+
+---
+
+## Previous Logs...
+
 
 

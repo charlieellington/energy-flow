@@ -6,7 +6,7 @@ title: Build Plan
 
 ## 0 — POC OVERVIEW
 
-Create a two‑URL proof‑of‑concept that streams AI coaching hints to a facilitator during a 1‑to‑1 Internal Family Systems session.
+Create a two‑URL proof‑of‑concept that streams AI coaching hints to a facilitator during a 1‑to‑1 Internal Family Systems session.
 
 - `/partner` – full-screen video
 - `/facilitator` – video **+** scrolling **Coach Panel** that prints live AI hints
@@ -57,6 +57,18 @@ Partner ─▶ LiveKit Room ◀─ Facilitator
     ```
 
 **⏰ Token Expiry Note:** For longer development sessions, use TTL of 604800 seconds (1 week) when generating tokens. Current tokens expire **June 13, 2025**.
+
+**🚨 IMPORTANT - Token Expiry Warning:**
+- **Sandbox tokens expire in 15 minutes** - use only for quick testing
+- **For development sessions**: Generate tokens with longer TTL via dashboard
+- **Signs of expired tokens**: "Connection: disconnected", "cannot publish track when not connected"
+- **Quick fix**: Use sandbox API to generate fresh tokens:
+  ```bash
+  curl -X POST https://cloud-api.livekit.io/api/sandbox/connection-details \
+    -H "X-Sandbox-ID: responsive-byte-1cgfuu" \
+    -H "Content-Type: application/json" \
+    -d '{"roomName": "no-bad-parts", "participantName": "facilitator"}'
+  ```
 
 ---
 
@@ -357,6 +369,24 @@ fly apps destroy no-bad-parts-agent
     
 - Post-session summary generator
     
+
+---
+
+## 8 — NICE TO HAVE LATER
+
+- **Migrate session pages to app directory** – Currently working fine in pages directory with proper CSS. Consider migration after POC is complete for consistency with rest of app, better performance with RSC, and modern Next.js patterns.
+
+- **Enhanced video controls** – Mute/unmute, camera toggle, screen sharing
+
+- **Session recording** – Store sessions for review (with consent)
+
+- **Multi-party support** – Expand beyond 1-to-1 to group sessions
+
+- **Mobile-optimized layouts** – Responsive design for phone/tablet sessions
+
+- **Real-time connection quality indicators** – Network status badges
+
+- **Session analytics** – Track engagement, duration, technical metrics
 
 ---
 
