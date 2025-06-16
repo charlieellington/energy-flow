@@ -6,9 +6,22 @@ title: Notes And Planning
 
 v.01 - Can make calls and AI listens - test it 1:1 with personal network 
 v.02 - Test the above posting in forums and see if there's interest 
-v.1 - Community Page + Technology (Paid Basic) - SEE BELOW 
-v.2 - As above with connections to people ( Paid Pro )
 
+--- 
+
+Next Steps: 
+
+- v.03 make as a full speaking bot 
+- Why - less friction to onboarding - test out - even if its a one time use for someone to try out and then they go find a partner. 
+- Test out each one to see the conversion blockers - then you'll know which way to go. 
+
+
+--- 
+
+Notes from FKC: 
+- [Eternals.ai](http://eternals.ai/) - public figures that are dead - all their knowledge - you have a chat with that person. Could have any psychologist. Two stage - ai is the low cost option and then the human to human is an extra. 
+- Masterclass is a person and ai and people use it 
+- Seb - get data for conversion blockers and compare 
 
 --- 
 
