@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "pages/03-projects/no-bad-parts-collective/notes-and-planning.md",
+                "file": "pages/06-ideas/index.mdx",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "notes-and-planning"
+              "title": "index"
             }
           }
         ]
@@ -181,6 +181,8 @@
   },
   "active": "7048e266322725b7",
   "lastOpenFiles": [
+    "pages/03-projects/no-bad-parts-collective/scratchpad-nobad.md",
+    "pages/03-projects/no-bad-parts-collective/notes-and-planning.md",
     "pages/02-developer-docs/Developement-documentation.mdx",
     "pages/03-projects/no-bad-parts-collective/resources/front-end-build-plan.md",
     "pages/03-projects/no-bad-parts-collective/resources/agent-from-source.mdx",
@@ -188,13 +190,11 @@
     "pages/05-life-tools/Gluten free pizza recipe.md",
     "pages/03-projects/no-bad-parts-collective/resources/livekit notes (to delete).md",
     "pages/03-projects/no-bad-parts-collective/resources/Livekit status.md",
-    "pages/03-projects/no-bad-parts-collective/scratchpad-nobad.md",
     "pages/03-projects/no-bad-parts-collective/resources",
     "pages/03-projects/Energy-flow-studio-docs/scratchpad-energy-flow",
     "pages/03-projects/Energy-flow-studio-docs",
     "pages/03-projects/no-bad-parts-collective/about.mdx",
     "pages/03-projects/no-bad-parts-collective/index.mdx",
-    "pages/03-projects/no-bad-parts-collective/notes-and-planning.md",
     "pages/03-projects/no-bad-parts-collective/scratchpad.md",
     "pages/03-projects/no-bad-parts-collective/landing/scratchpad-parts-landing.mdx",
     "pages/doing.mdx",
