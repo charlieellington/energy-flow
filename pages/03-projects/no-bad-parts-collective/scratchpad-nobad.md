@@ -391,3 +391,7 @@ The highlighted `import asyncio` and overall approach suggests we may be:
 ---
 
 # DETAILED SESSION LOG
+
+### 2025-06-10 — Update Notice
+The main project README has been refreshed with up-to-date instructions and screenshots.  
+Detailed change-log and cleanup recommendations live in `no-bad-parts/references/scratchpad.md` under *Docs Refresh & Cleanup Suggestions*.
