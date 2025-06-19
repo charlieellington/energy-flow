@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "pages/doing.mdx",
+                "file": "pages/06-ideas/index.mdx",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "doing"
+              "title": "index"
             }
           }
         ],
@@ -196,10 +196,10 @@
   },
   "active": "42e2922d1d195746",
   "lastOpenFiles": [
-    "pages/02-developer-docs/Product-Developement-documentation.mdx",
     "pages/02-developer-docs/Development Documentation Build.md",
-    "pages/doing.mdx",
     "pages/06-ideas/index.mdx",
+    "pages/doing.mdx",
+    "pages/02-developer-docs/Product-Developement-documentation.mdx",
     "pages/03-projects/no-bad-parts-collective/scratchpad-nobad.md",
     "pages/03-projects/no-bad-parts-collective/notes-and-planning.md",
     "pages/03-projects/no-bad-parts-collective/resources/front-end-build-plan.md",
