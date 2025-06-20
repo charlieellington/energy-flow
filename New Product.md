@@ -46,14 +46,18 @@ Typical approaches:
 Using AI and Cursor I've been building user-centric MVPs in weeks. 
 
 “Designs that don’t match what developers build" 
-10
+10+ years launching early stage products as a freelancer and founder of Deep Work. Ramp Network raised $120million on the product I designed. Ethereum launch Eth 2.0 staking on the interface we designed. And, Nexus Mutual leads the web3 insurance space. 
 
 “Freelancers who disappear or get priorities wrong”
+I've been a startup founder launching three different companies - I understand your needs and what actually matters when launching a product - speed and talking to users. 
 
-Burning cash without validated learning”
+Burning cash without validated learning
+Deep Work Studio, my last design agency, perfected the model of early testing prototypes, a scentific process to design and getting validated designs in weeks instead of months. 
+
+--- 
+(this is below those four points)
 
 A Different Approach using AI coding: Design and Code, Unified. Product and Users First. 
-
 We run a rapid design sprint with your stakeholders, build your prototype **in code** (not just static mockups), and test it with real users – all in a few weeks. Then, as we iterate, we’re your on-call product team delivering new features on a subscription model. No more delays or runaway costs. 
 
 --- 
@@ -112,6 +116,8 @@ Who Is This For?
 --- 
   
 Process Details / Why It Works:
+
+(update this section with the last output and results on how we're doing to structure the way this works and pricing)
 
         - Q: _“How can you deliver so fast?”_ – A: Because we’ve **streamlined the process**. We start with your knowledge (no wasted time), use efficient tools (AI-assisted coding, etc.), and focus on core features first. Also we work **iteratively** – you see progress in days.
             
