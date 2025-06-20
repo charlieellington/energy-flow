@@ -27,16 +27,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "pages/02-developer-docs/Development Documentation Build.md",
+                "file": "pages/03-projects/Zebra-Design/index.mdx",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Development Documentation Build"
+              "title": "index"
+            }
+          },
+          {
+            "id": "9794ba0552194641",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "New Product.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "New Product"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -181,7 +195,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -194,10 +209,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "42e2922d1d195746",
+  "active": "9794ba0552194641",
   "lastOpenFiles": [
-    "pages/02-developer-docs/Product-Developement-documentation.mdx",
+    "pages/03-projects/Zebra-Design/index.mdx",
+    "New Product.md",
     "pages/02-developer-docs/Development Documentation Build.md",
+    "pages/02-developer-docs/Product-Developement-documentation.mdx",
     "pages/06-ideas/index.mdx",
     "pages/doing.mdx",
     "pages/03-projects/no-bad-parts-collective/scratchpad-nobad.md",
@@ -229,7 +246,6 @@
     "pages/03-projects/oli-stories/about-and-idea.md",
     "pages/03-projects/oli-stories/new-page-test-3.md",
     "pages/03-projects/oli-stories/New page test 3.md",
-    "pages/03-projects/oli-stories/new page test four.md",
-    "pages/03-projects/Sunni/sunni-project-plan.md"
+    "pages/03-projects/oli-stories/new page test four.md"
   ]
 }
