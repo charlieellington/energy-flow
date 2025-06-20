@@ -34,17 +34,12 @@ I founded a design studio that designed cutting-edge products with some of the w
 
 --- 
 
+“Only hire people who are either going to **write code or go out and get users**, because those are the only things you need at first.” - Paul Graham, The 18 Mistakes That Kill Startups, **This is what I've based Zebra Design on**
 
+--- 
 
+Typical approaches: 
 
-
-
-- **Problem/Pain Section:**
-    
-    - Title: “Why wait a year for what you can have next month?” or “Tired of stalled projects and endless feedback loops?”
-        
-    - Bullet pains (with small icons perhaps):
-        
         - _“6-month dev estimates turning into 12-month nightmares”_
             
         - _“Designs that don’t match what developers build”_
@@ -52,36 +47,44 @@ I founded a design studio that designed cutting-edge products with some of the w
         - _“Freelancers who disappear or get priorities wrong”_
             
         - _“Burning cash without validated learning”_.
-            
-    - Possibly a short testimonial-style quote (real or hypothetical) like: _“We wasted 8 months and $$$ with a dev team and still had no usable app… I wish we had this service from the start.”_ (This addresses the job-to-be-done by empathizing with their current frustration.)
-        
-- **Solution/Service Overview Section:**
-    
-    - Title idea: “A Different Approach: Design and Code, Unified.”
-        
-    - Short paragraph: explain the service succinctly. _E.g., “We run a rapid design sprint with your stakeholders, build your prototype **in code** (not just static mockups), and test it with real users – all in a few weeks. Then, as you iterate, we’re your on-call product team delivering new features on a subscription model. No more delays or runaway costs.”_[uxpin.com](https://www.uxpin.com/studio/blog/design-sprints/#:~:text=Design%20sprints%20have%20become%20common,product%20in%20just%20five%20days)[uxpin.com](https://www.uxpin.com/studio/blog/design-sprints/#:~:text=A%20sprint%20incorporates%20group%20and,or%20MVP%20to%20start%20developing).
-        
-    - Maybe a visual of the process (could be an icon or doodle for each step):
-        
-        1. **Workshop** (Day 1-2) – capture requirements with your experts (option as add-on).
-            
-        2. **Prototype in Code** (Week 1-2) – we design high-fidelity UI and build the front-end in real code, so it feels like the finished product.
-            
-        3. **User Testing** (Week 2) – we help conduct rapid user tests on the prototype to gather feedback (video calls or in-person, as needed).
-            
-        4. **Continuous Build** (Week 3 onward) – we implement feedback, connect the backend (if full-stack plan), and polish the MVP. Ongoing, we add features _on demand_ via your subscription.
-            
-    - Emphasize after that initial sprint, the service transitions into continuous improvement mode (unlimited requests in queue, delivered fast).
-        
-- **Key Benefits Section:** (Could be a 2-column list with icons)
-    
-    - **Speed:** _Idea to clickable product in ~2-4 weeks._ (Use a lightning icon)
-        
-    - **Validated Results:** _Built-in user testing to ensure your product hits the mark._ (target icon or checkmark icon)
-        
-    - **Flat Pricing:** _One monthly price, unlimited requests, no surprise bills. Pause or cancel anytime._ (pricing tag icon)[hatchwise.com](https://www.hatchwise.com/resources/an-honest-review-of-designjoy-design-agency#:~:text=,Pause%20or%20cancel%20anytime).
-        
-    - **Quality Design:** _Beautiful, consistent UI – no more ugly MVPs. We take pride in design details._ (palette icon)
+
+A Different Approach using AI coding: Design and Code, Unified. Product and Users First. 
+
+We run a rapid design sprint with your stakeholders, build your prototype **in code** (not just static mockups), and test it with real users – all in a few weeks. Then, as we iterate, we’re your on-call product team delivering new features on a subscription model. No more delays or runaway costs. 
+
+--- 
+
+What to expect: 
+
+(this section is squares)
+
+Workshops 
+Rapidly align stakeholders and the domain experts in the design process. No more tedious feedback loops as designers and developers fail to understand the problem. 
+
+Prototype in Code
+We design high-fidelity UI and build the front-end in real code - the finished product! In days instead of months for your first MVP. 
+
+User Testing
+We conduct rapid user tests on the MVP to gather feedback. No more months of building the wrong thing and user-centric decisions made to continue the product. 
+
+Continuous Build 
+We implement feedback, continue developing (e.g. connect the backend), and polish with a user-centric design to code approach. Ongoing, we add features _on demand_ via your subscription.
+
+--- 
+
+**Speed:** _Idea to clickable product in ~2-4 weeks._ (Use a lightning icon)
+
+**Validated Results:** _Built-in user testing to ensure your product hits the mark._ (target icon or checkmark icon)
+
+**Clear Pricing**: One agreed monthly price, unlimited design and code requests, no surprise bills. Pause or cancel anytime.
+
+**Quality Design**: Beautiful, consistent UI and pride in details. Using front-end UI library's to speed up going to market which are focused on optimal User Experience. Don't be slowed down by custom designs that don't move the needle. 
+
+
+
+
+
+
         
     - **Full-Stack Option:** _Front-end, backend, whatever you need. We can deliver a complete product, not just sketches._ (server/cloud icon)
         
