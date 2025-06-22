@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "pages/02-developer-docs/Product-Developement-documentation.mdx",
+                "file": "pages/02-developer-docs/CONTRIBUTING.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Product-Developement-documentation"
+              "title": "CONTRIBUTING"
             }
           }
         ],
@@ -197,6 +197,7 @@
   },
   "active": "9a4f83829b87e079",
   "lastOpenFiles": [
+    "pages/02-developer-docs/Product-Developement-documentation.mdx",
     "pages/02-developer-docs/Development Documentation Build.md",
     "pages/02-developer-docs/CONTRIBUTING.md",
     "pages/03-projects/Zebra-Design/designers-that-code-with-ai/pricing page.md",
@@ -207,7 +208,6 @@
     "pages/03-projects/Zebra-Design/designers-that-code-with-ai/v.01.md",
     "pages/03-projects/Zebra-Design/designers-that-code-with-ai",
     "pages/03-projects/Zebra-Design/index.mdx",
-    "pages/02-developer-docs/Product-Developement-documentation.mdx",
     "pages/06-ideas/index.mdx",
     "pages/doing.mdx",
     "pages/03-projects/no-bad-parts-collective/scratchpad-nobad.md",
@@ -231,7 +231,6 @@
     "pages/03-projects/Learning-in-public-as-a-Product/Sora Video Guide.md",
     "pages/02-developer-docs/waitlist-freeze-duplicate.md",
     "README.md",
-    "pages/03-projects/oli-stories/new-page-test.md",
-    "pages/03-projects/oli-stories/new-page-test-four.md"
+    "pages/03-projects/oli-stories/new-page-test.md"
   ]
 }
