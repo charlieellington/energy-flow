@@ -7,11 +7,11 @@
 **Headline:** *Value‑based, month‑to‑month. Starts ~€5 k.*\
 *Sub‑copy:* "You pay ~20 % of the value I create over two years. Cancel anytime---only a 20 % wrap‑up fee on the remaining balance (Agile 'Money for Nothing')."
 
-| Tier | Short pitch | Typical fit | Example cost* |
-| --- | --- | --- | --- |
+| Tier                  | Short pitch                                                 | Typical fit                        | Example cost*     |
+| --------------------- | ----------------------------------------------------------- | ---------------------------------- | ----------------- |
 | **UI/UX Design Only** | Design in code. Pixel‑perfect front‑end using a UI library. | Teams with back‑end devs in place. | from **€5 k / m** |
-| **Front‑End** | Custom design + coded front‑end app (Storybook / shadcn). | SaaS founders who need UI + build. | from **€7 k / m** |
-| **Full‑Stack** | Complete app (front‑ & back‑end) built in Cursor. | Zero‑to‑one product build. | from **€9 k / m** |
+| **Front‑End**         | Custom design + coded front‑end app (Storybook / shadcn).   | SaaS founders who need UI + build. | from **€7 k / m** |
+| **Full‑Stack**        | Complete app (front‑ & back‑end) built in Cursor.           | Zero‑to‑one product build.         | from **€9 k / m** |
 
 *If I project €500 k benefit over two years, Full‑Stack lands ~€8 k / m.\
 *Select a tier to expand full inclusions & FAQs.*
