@@ -27,15 +27,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "pages/03-projects/Zebra-Design/designers-that-code-with-ai/pricing page.md",
+                "file": "pages/02-developer-docs/Product-Developement-documentation.mdx",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "pricing page"
+              "title": "Product-Developement-documentation"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -194,8 +195,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9794ba0552194641",
+  "active": "9a4f83829b87e079",
   "lastOpenFiles": [
+    "pages/02-developer-docs/Development Documentation Build.md",
+    "pages/02-developer-docs/CONTRIBUTING.md",
     "pages/03-projects/Zebra-Design/designers-that-code-with-ai/pricing page.md",
     "pages/03-projects/Zebra-Design/designers-that-code-with-ai/Zebra Design 2.0 Content Plan.md",
     "pages/03-projects/Zebra-Design/designers-that-code-with-ai/v.03-long.md",
@@ -204,7 +207,6 @@
     "pages/03-projects/Zebra-Design/designers-that-code-with-ai/v.01.md",
     "pages/03-projects/Zebra-Design/designers-that-code-with-ai",
     "pages/03-projects/Zebra-Design/index.mdx",
-    "pages/02-developer-docs/Development Documentation Build.md",
     "pages/02-developer-docs/Product-Developement-documentation.mdx",
     "pages/06-ideas/index.mdx",
     "pages/doing.mdx",
@@ -227,7 +229,6 @@
     "pages/04-processes/Creating images for the Paid247 Website.md",
     "pages/03-projects/Learning-in-public-as-a-Product/Learning in public as a product.md",
     "pages/03-projects/Learning-in-public-as-a-Product/Sora Video Guide.md",
-    "pages/02-developer-docs/CONTRIBUTING.md",
     "pages/02-developer-docs/waitlist-freeze-duplicate.md",
     "README.md",
     "pages/03-projects/oli-stories/new-page-test.md",
