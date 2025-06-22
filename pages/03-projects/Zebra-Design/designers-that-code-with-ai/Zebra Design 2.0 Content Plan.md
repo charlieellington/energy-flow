@@ -17,10 +17,14 @@ Tools: Cursor, OpenAI, Claude, Remarkable
 
 --- 
 
+Yes, we love beautiful design, but we love real-world resutls even more: 
+
 > **"Only hire people who either write code or go out and get users."**\
 > --- Paul Graham, *The 18 Mistakes That Kill Startups*
 >
 >**This is the principle I've based Zebra Design on.**.. 
+
+( Photo of Charlie ) Zebra Design is my solo practice - no middle, managers, you work directly with me. Just design, code, user validation and results: 
 
 ---
 
@@ -45,7 +49,7 @@ Tools: Cursor, OpenAI, Claude, Remarkable
 
 # Launch in Weeks, Not Months
 
-Zebra Design gets you from idea to **user-tested product** in a matter of weeks, not months. We design **and** code your app simultaneously for lightning-fast delivery, without sacrificing user feedback or quality. 
+Zebra Design gets you from idea to **user-tested product** in a matter of weeks, not months. I design **and** code your app simultaneously for lightning-fast delivery, without sacrificing user feedback or quality. 
 
 1.  **Workshops with domain experts ▸**\
      Rapid workshops get your whole team aligned---no endless feedback loops.\
@@ -84,6 +88,13 @@ Built in two weeks
 - Ramp Network: leading on/off ramping in crypto, raised $120m off the product I designed 
 - Nexus Mutual: the leading web3 insurance interface, designed before web3 design patterns existed. 
 - And many more... 
+
+(this next section needs rewriting first hand)
+
+**Founder-led, Design-centric, Outcome-driven.** I founded Zebra Design on a background of  product designer experience, 10+ years launching early-stage products. After co-founding Deep Work Studio (a design agency that delivered successful UX for Web3 innovators like Ethereum, MakerDAO and others), our founder saw how traditional design handoffs often slowed development to a crawl. In 2023–24 he embraced AI-assisted coding and discovered a better way to build products: **design and development unified from the start** for ultra-fast results.
+
+Today, Zebra Design is a small but mighty team that blends design thinking, coding expertise, and cutting-edge AI tools. We are obsessed with making product development **faster and more user-centric**. We act as your hands-on partner with skin in the game – when **you** succeed, **we** succeed. Our mission is simple: help innovators launch sooner and learn faster. Yes, we love beautiful design, but we love real-world results even more.
+
 
 --- 
 
@@ -161,6 +172,8 @@ Call to Action (sticky footer or final section)
 --------------------------------------------------
 
 **Ready to launch in weeks?**\
-Book a free 30‑minute strategy call → we'll outline a sprint plan you can act on tomorrow---whether or not you hire me.
+Book a free 30‑minute strategy call
 
 [Book your call] [See live examples]
+
+Let’s chat, see if we’re the right fit for your project. In that call, we’ll discuss your idea, brainstorm solutions, and sketch out a quick action plan – whether or not you decide to work with us. It’s a risk-free way to get expert insight and a roadmap for turning your concept into a live product. Time-to-market is critical, so don’t wait months to get started – **grab a slot now** and let’s get your product moving!
