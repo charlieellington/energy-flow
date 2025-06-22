@@ -1,20 +1,4 @@
 
-# Launch in Weeks, Not Months
-
-Zebra Design gets you from idea to **user-tested product** in a matter of weeks, not months. We design **and** code your app simultaneously for lightning-fast delivery, without sacrificing user feedback or quality.
-
-## How It Works (Our Process)
-
-**Rapid 4-Step Product Build:** We combine design and development into one fast, iterative cycle:
-
-1. **Workshop:** We start with a rapid kickoff workshop to align on your goals and capture your team’s knowledge from day one.
-    
-2. **Prototype in Code:** Next, we design the UI and build a high-fidelity front-end prototype in working code _within days_. This isn’t a throwaway mockup – it’s the first version of your product.
-    
-3. **User Testing:** We quickly put the prototype in front of real users to gather feedback. Each iteration is informed by users, so you won’t waste time or money building the wrong thing.
-    
-4. **Continuous Build:** With real feedback in hand, we iterate and build out your product continuously. Through our monthly subscription, we act as your on-call product team – refining the UX, adding features, and hooking up the back-end as needed to evolve your product.
-    
 
 ## Key Benefits
 
