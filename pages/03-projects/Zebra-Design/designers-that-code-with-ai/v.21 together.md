@@ -13,7 +13,7 @@ I help you launch your digital product faster - design and coded - through a use
  
 [Book intro call] [View examples]
 
-Logos: 
+Tools: Cursor, OpenAI, Claude, Remarkable
 
 --- 
 
@@ -24,7 +24,22 @@ Logos:
 
 ---
 
-**Speed ⚡ | Validation 🎯 | Flat price € | Full‑stack 🖥️ | Cancel anytime ✂️** 
+**Speed ⚡ | Validation 🎯 | Flat price € | Quality Design 🎨 | Full‑stack 🖥️ | Cancel anytime ✂️** 
+
+
+(when the above is hovered or clicked)
+
+- **Speed:** Go from idea to a clickable, working product in 2–4 weeks. We move at breakneck speed to get a usable app in front of your users ASAP.
+    
+- **Validated Results:** Every cycle includes user testing, so you know each iteration hits the mark before doubling down. It’s built-in validation to de-risk your big ideas.
+    
+- **Clear Pricing:** One flat monthly fee covers **all** design and development – no hourly rates or surprise change orders. Unlimited requests (handled one at a time for quality). Plus, you can pause or cancel whenever you need.
+    
+- **Quality Design:** Enjoy beautiful, consistent UI using proven libraries and design systems. We prioritise a great user experience and fast delivery over any ego-driven from-scratch designs that slow you down.
+    
+- **Full-Stack Capability:** Need a backend or integrations? No problem. We handle front-end **and** back-end development as needed to deliver a complete, working product – not just a pretty prototype. 
+    
+- **Cancel anytime**: When we deliver the value you need based on the on the Agile 'Money for Nothing' Principle. 
 
 --- 
 
@@ -47,8 +62,63 @@ Zebra Design gets you from idea to **user-tested product** in a matter of weeks,
 
 --- 
 
+Recent Builds (gallery -- cards open on click)
+-----------------------------------------------
+
+**Therapist AI Tool ▸**\
+Call room: client talks, bot transcribes, AI generated hints given to a therapist 
+Built in 1 week 
+
+**Waitlist Platform ▸**\
+Capture early adopters for any product 
+Build in 2 days 
+
+**Sunni Photo Concept ▸**\
+My first AI project to learn databases and experiment with processes 
+Built in two weeks 
+
+## Based on my design and founder experience 
+
+- Deep Work Studio: web3's leading product design studio 
+- Ethereum Foundation: designing the transition to eth2.0 staking 
+- Ramp Network: leading on/off ramping in crypto, raised $120m off the product I designed 
+- Nexus Mutual: the leading web3 insurance interface, designed before web3 design patterns existed. 
+- And many more... 
+
+--- 
+
+## Who I Help 
+
+- **Startup founders** – who need to test a new app idea _ASAP_ to find product–market fit before the runway runs out. (We provide the speed and lean iteration to do exactly that.)
+    
+- **Product teams with developers** – who have engineering talent but lack UX/UI bandwidth. We’ll slot in as your design & front-end experts, rapidly shaping your product’s interface and even integrating with your backend.
+    
+- **SMEs and non-tech businesses** – that need a custom internal tool or app built from scratch (and don’t have an in-house design or dev team). We design and build your solution end-to-end, fast.
+    
+- **Teams with an MVP** – who have a bare-bones product that users find clunky or limited. We can overhaul your UX/UI and quickly add the features users are asking for to level up your product.
+    
+- **Companies stuck in limbo** – after freelancers or agencies have let you down with delays, miscommunication, or lack of accountability. Our integrated approach gets your product moving forward again with weekly visible progress.
 
 
+
+--- 
+
+## Pricing 
+
+**Headline:** *Value‑based, month‑to‑month. Starts ~€5 k.*\
+*Sub‑copy:* "You pay ~20 % of the value I create over two years. Cancel anytime---only a 20 % wrap‑up fee on the remaining balance (based on the Agile 'Money for Nothing' Principle)." 
+
+[Pricing Calculations] 
+See how we calculate the monthly fee based on the value we bring. 
+
+**Example Services**: 
+
+| Tier                  | Short pitch                                                                          | Typical fit                        |
+| --------------------- | ------------------------------------------------------------------------------------ | ---------------------------------- |
+| **UI/UX Design Only** | Design in code. Pixel‑perfect front‑end using a UI library.                          | Teams with back‑end devs in place. |
+| **Front‑End**         | Custom design + coded front‑end app (e.g. custom in Storybook or shadcn UI library). | SaaS founders who need UI + build. |
+| **Full‑Stack**        | Complete app (front‑ & back‑end) built in Cursor.                                    | Zero‑to‑one product build.         |
+**Pricing & Terms:** Plans start at approximately **€5k per month**. We typically price at about **20% of the projected value** we’ll deliver to your business over 2 years. (For example, if our solution is estimated to save you around €500k in two years, the subscription would be roughly €8k per month.) All plans are **no long-term lock-in** – you can cancel at any time. If you do choose to end the engagement early, we only charge a modest **20% wrap-up fee** on the remaining contract value of the first year (following the agile “Money for Nothing” principle, to fairly cover the unused work). In short: we succeed when you succeed, and we’re confident in delivering value far above our cost.
 
 --- 
 
@@ -68,37 +138,22 @@ How we overcome your typical product issues without hiring in house:
 
 --- 
 
-## Pricing 
+## FAQs
 
-**Headline:** *Value‑based, month‑to‑month. Starts ~€5 k.*\
-*Sub‑copy:* "You pay ~20 % of the value I create over two years. Cancel anytime---only a 20 % wrap‑up fee on the remaining balance (based on the Agile 'Money for Nothing' Principle)." 
+**How can you deliver so fast?**  
+We’ve honed an ultra-streamlined process. From day one we leverage your team’s existing knowledge (instead of weeks of slow “discovery”), then we use efficient tools like AI coding assistants and pre-built components. By focusing only on what matters for the user and building in code immediately (no throwaway mockups), we compress the timeline dramatically without cutting corners. The result is high-quality output at breakneck speed.
 
-[Pricing Calculations] 
-See how we calculate the monthly fee based on the value we bring. 
+**What does “unlimited requests” really mean?**  
+Exactly what it sounds like – you can request as many features, design tweaks, or tasks as you want each month. We’ll handle them one at a time with laser focus to maintain quality. You can continually prioritise your backlog, and we’ll keep delivering tasks in order of importance. There’s effectively no cap on the amount of work; we just make sure each item is done right before moving to the next.
 
-**Example Services**: 
+**Can you work with our existing team?**  
+Absolutely. Think of us as an extension of your team – a special forces unit that plugs right in. If you have in-house developers, we’ll collaborate with them (for example, we can consume your existing API or work alongside your back-end engineers). If you have a product manager or designer, we’ll sync up to ensure our work complements yours. We play nice with any stack or team; our goal is to enhance your capabilities, not duplicate or disrupt them.
 
-| Tier                  | Short pitch                                                                          | Typical fit                        |
-| --------------------- | ------------------------------------------------------------------------------------ | ---------------------------------- |
-| **UI/UX Design Only** | Design in code. Pixel‑perfect front‑end using a UI library.                          | Teams with back‑end devs in place. |
-| **Front‑End**         | Custom design + coded front‑end app (e.g. custom in Storybook or shadcn UI library). | SaaS founders who need UI + build. |
-| **Full‑Stack**        | Complete app (front‑ & back‑end) built in Cursor.                                    | Zero‑to‑one product build.         |
+**What if I just need design or just development?**  
+That’s fine too! We’re flexible. If you only need design, we offer a **design-in-code** plan where we craft your UX/UI in live code and deliver an interactive front-end for your developers to plug into. Conversely, if you already have designs and just need them built out, we can go into **dev-only mode** – turning your existing design files into a working product. Our subscription adapts to what you need: you’re hiring us to achieve outcomes (finished designs, coded features), not to fill a timesheet.
 
---- 
-
-## Who I Help 
-
-*I'm **Charlie Ellington**---product designer turned full‑stack maker. I ran Deep Work Studio and crafted UX for MakerDAO, Ethereum, Ramp, and Nexus Mutual. After discovering AI‑assisted coding, I realised I could merge design + build and slash time‑to‑market for founders like you. Zebra Design is my solo practice---no middle managers; you work directly with me.* 
-
--   Founders racing to validate an idea before the runway runs out.
--   Product teams missing design / front‑end velocity.
--   SMEs needing a bespoke internal tool without hiring engineers.
--   MVP owners who need a UX overhaul and features *now*.
--   Anyone burned by flaky freelancers or over‑priced agencies.
-
---- 
-
-
+**Is there a commitment?**  
+No long-term commitment required. Our standard engagement is month-to-month — use us for as long (or as short) as you need. You can cancel anytime. If you’re on a multi-month plan or decide to stop mid-project, you’re free to do so; we’d just charge a 20% wrap-up fee on the remaining work as a courtesy (this follows agile’s “cancel anytime” ethos with a fair compensation for unused time). Many clients start with a one-month pilot to see the value first-hand. If you love the results, you can simply continue; if not, you can stop with no hard feelings.
 
 --- 
 
