@@ -17,7 +17,7 @@ Tools: Cursor, OpenAI, Claude, Remarkable
 
 --- 
 
-Yes, we love beautiful design, but we love real-world resutls even more: 
+Yes, to beautiful design, but I love real-world resutls even more: 
 
 > **"Only hire people who either write code or go out and get users."**\
 > --- Paul Graham, *The 18 Mistakes That Kill Startups*
@@ -29,7 +29,6 @@ Yes, we love beautiful design, but we love real-world resutls even more:
 ---
 
 **Speed ⚡ | Validation 🎯 | Flat price € | Quality Design 🎨 | Full‑stack 🖥️ | Cancel anytime ✂️** 
-
 
 (when the above is hovered or clicked)
 
