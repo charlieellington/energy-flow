@@ -1,18 +1,36 @@
 ---
-title: About
+title: About No Bad Parts Collective
 ---
-
-# About
 
 # About the [No Bad Parts Collective](https://www.nobadpartscollective.com/)
 
 > Peer-led Internal Family Systems exploration — humans first, AI second.
 
-[No Bad Parts Collective](https://www.nobadpartscollective.com/) is an experiment in compassionate, peer-to-peer inner-work.
-Two community members meet in a private video room:
-**one explores, the other facilitates**.
-A silent AI agent stays backstage, streaming gentle prompts to the facilitator's
-coach panel so they can stay fully present with the explorer.
+[No Bad Parts Collective](https://www.nobadpartscollective.com/) is an experiment in compassionate, peer-to-peer inner-work. Two community members meet in a private video room: **one explores, the other facilitates**. A silent AI agent stays backstage, streaming gentle prompts to the facilitator's coach panel so they can stay fully present with the explorer.
+
+## 🎥 Live Demo Available!
+
+We have a working proof-of-concept that demonstrates the "Silent Coach" in action:
+
+- **Partner View**: Full-screen video call for natural conversation
+- **Facilitator View**: Video + real-time AI coaching hints sidebar
+- **AI Agent**: Listens to audio, transcribes with Whisper, generates IFS-style hints with GPT-4
+- **Real-time delivery**: Hints appear within ~2 seconds via WebSocket
+
+**→ Want to try it? [Email me](mailto:charliee+nobadparts@gmail.com) for early access to the demo!**
+
+---
+
+## Technical Stack
+
+The current demo ([GitHub](https://github.com/charlieellington/no-bad-parts)) uses:
+
+- **Next.js 14** + Daily for video rooms
+- **Python Pipecat** orchestrating Whisper → GPT-4
+- **FastAPI WebSocket** for real-time hint delivery
+- **Fly.io** (agent) + **Vercel** (front-end) deployment
+
+This gives facilitators private, real-time suggestions without interrupting the partner's flow.
 
 ---
 
@@ -48,6 +66,11 @@ We're all equals here—there is no therapist ⇄ client divide. Yet we are **no
 
 ---
 
+### Ready to Experience It?
+
+**[Get in touch](mailto:charliee+nobadparts@gmail.com)** to try the demo or join our early access list. We're actively looking for feedback from IFS practitioners and enthusiasts!
+
 ### Want the Technical Details?
 
-Read the full [Build Plan →](/03-projects/no-bad-parts-collective/build-plan). 
+- View the code: [GitHub Repository](https://github.com/charlieellington/no-bad-parts)
+- Read the full: [Build Plan →](/03-projects/no-bad-parts-collective/build-plan) 
