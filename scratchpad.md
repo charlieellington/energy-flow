@@ -76,6 +76,53 @@
 • **Next step**: Local Integration Test with Python agent
 • **Architecture**: Partner ↔ LiveKit Room ↔ Facilitator (with brand headers)
 
+## Documentation Site (energy-flow) - CLEANED UP
+
+### Cleanup Completed (Latest)
+- Successfully removed all non-documentation code from energy-flow repo
+- Deleted files:
+  - `components/livekit-wrapper.tsx`
+  - `components/local-camera-tile.tsx`
+  - `pages/session/facilitator.tsx`
+  - `pages/session/partner.tsx`
+  - `pages/_app.tsx`
+  - `scripts/dummy-hints.js`
+  - `tailwind.config.ts`
+  - `app/` directory (was empty)
+  - `pages/session/` directory
+- Reverted package.json to remove:
+  - `@livekit/components-react`
+  - `@livekit/components-styles`
+  - TypeScript 5.0 (reverted to 4.9.5)
+  - React type definitions
+- Build now succeeds: `npm run build` ✅
+- TypeScript checking passes: `npx tsc --noEmit` ✅
+- Vercel deployments should now work correctly
+
+### Current State
+- Pure documentation site using Nextra
+- No application code or LiveKit dependencies
+- Ready for deployment on Vercel
+- All session/LiveKit code should be moved to the no-bad-parts repo
+
+### Reference
+- Cleanup plan documented in: `pages/02-developer-docs/fix.md`
+- Last known good commit before mixing code: `f079b8f` (2025-06-06)
+
+## Recent Updates
+
+### Vercel Deployment Fix (Latest)
+- Fixed deployment failure due to missing LiveKit dependencies
+- Added `@livekit/components-react` and `@livekit/components-styles` to package.json
+- Created missing `components/local-camera-tile.tsx` component
+- Both session routes should now build successfully
+
+### Session Pages Structure
+- Using pages router: `pages/session/facilitator.tsx` and `pages/session/partner.tsx`
+- Both pages use the `LKWrapper` component from `components/livekit-wrapper.tsx`
+- Facilitator page shows local camera and AI hint stream
+- Partner page shows just the local camera
+
 ---
 
 ## Previous Logs...

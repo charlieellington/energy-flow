@@ -1,3 +1,9 @@
+---
+title: Pricing Page
+---
+
+# Pricing Page
+
 
 **Pricing page**
 
