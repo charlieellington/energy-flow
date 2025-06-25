@@ -7,21 +7,20 @@ title: 3-Day Waste-Free Meal Plan (Wed–Fri)
 
 | Day | Breakfast | Lunch | Dinner | Prep / Notes |
 |-----|-----------|-------|--------|--------------|
-| **Wed** | Coconut yoghurt + almond milk + chia + fresh berries | Warm lentil & roasted-veg salad (make double) | **Take-out** (planned) | 1–2 h batch-prep window:<br/>• Grill chicken thighs (store) <br/>• Cook quinoa <br/>• Roast mixed veg & chickpeas <br/>• Hard-boil 4 eggs |
+| **Wed** | Coconut yoghurt + almond milk + chia + fresh berries | Warm lentil & roasted-veg salad (make double) | **Take-out** (planned) | 1–2 h batch-prep window:<br/>• Grill chicken breasts (store) <br/>• Cook quinoa <br/>• Roast mixed veg & chickpeas <br/>• Hard-boil 4 eggs |
 | **Thu** | Same yoghurt bowl | Grilled-chicken quinoa salad + leafy greens & roasted chickpeas | **Dinner out with friends** | — |
-| **Fri** | Same yoghurt bowl | Leftover lentil salad + 2 boiled eggs | Tray-bake salmon, broccoli & root veg | While oven is on, roast extra broccoli & carrot sticks for travel snack boxes |
+| **Fri** | Same yoghurt bowl | Leftover lentil salad + 2 boiled eggs **+ bake GF bread loaf at lunchtime** | Tray-bake lemon-herb chicken breasts & root veg *(cook 4 extra breasts for sandwiches)* | While oven is on, roast carrot sticks + red peppers for travel sandwich boxes |
 
 ### Travel Snack Boxes (Sat)
-• Roasted chickpea crunch  
 • GF seed-bread slices + nut butter sachets  
-• Carrot & broccoli florets (roasted)  
+• Carrot sticks (roasted)  
+• **GF chicken-avocado roasted-pepper sandwiches** (made with Friday's extra chicken)  
 
 ---
 
 ## One-Trip Shopping List
 
 ### Produce
-- [ ] 2 heads broccoli (daily cooked veg + snacks)  
 - [ ] 2 × 120 g mixed salad leaves  
 - [ ] 1 punnet berries (≈ 400 g)  
 - [ ] 2 bell peppers  
@@ -32,10 +31,10 @@ title: 3-Day Waste-Free Meal Plan (Wed–Fri)
 - [ ] 3 ripe avocados  
 - [ ] 1 garlic bulb  
 - [ ] Small bunch parsley  
+- [ ] 1 head broccoli (Wed cooked veg)  
 
 ### Meat & Fish
-- [ ] 600 g chicken thighs, skinless  
-- [ ] 400 g salmon fillet  
+- [ ] **1.2 kg chicken breasts** *(≈ 6 large or 8 medium; Wed grill + Fri tray-bake & sandwiches)*  
 
 ### Dry / Canned
 - [ ] 2 cans lentils  
@@ -44,6 +43,7 @@ title: 3-Day Waste-Free Meal Plan (Wed–Fri)
 - [ ] GF seed-bread loaf  
 - [ ] Pumpkin seeds (top-up)  
 - [ ] Chia seeds (top-up)  
+- [ ] **1 jar roasted red peppers (in brine)**  
 
 ### Chilled / Drinks
 - [ ] 500 g coconut yoghurt  
@@ -59,9 +59,9 @@ title: 3-Day Waste-Free Meal Plan (Wed–Fri)
 
 | Step | Time | Temperature |
 |------|------|-------------|
-| Prep veg & salmon | 10 min | — |
+| Prep veg & chicken | 10 min | — |
 | Roast veg alone | 15 min | 200 °C |
-| Add salmon & extra broccoli | 12–15 min | 200 °C |
+| Add marinated chicken & root veg | 18–20 min | 200 °C |
 | Finish with lemon & parsley | 1 min | — |
 
 ---
