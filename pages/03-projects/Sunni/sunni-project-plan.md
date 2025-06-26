@@ -5,6 +5,10 @@ title: Sunni Project Plan
 # Sunni Project Plan
 
 
+## Next: Bene Choose Template: 
+
+
+
 ## Current Plan 
 
 **Where we are at:** 
@@ -21,11 +25,7 @@ Get customers for first batch delivery
 
 ## Build Next 
 
-Keep: Current landing > Artwork > Waitlist :: As it currently is 
-On top of that: 
-
-Invite first ten people > TO BUILD: 
-
+Shopify to buy, see: https://chatgpt.com/c/685a9d84-deb4-800a-824c-ff771022348d?model=o3 for plan. 
 
 ### Must Have 
 
@@ -34,29 +34,12 @@ Artwork Page
 Confirmation Page
 Checkout 
 Confirmation 
-
-**Build Plan**
-Ecommerce Starter 
-Supabase connected to it 
-Stripe setup with one off payment 
-Somewhere for the order data to go (email at most scrappy)
-
 ### Should Have 
 
-**User Flow**
-Collections 
-Collection 
-
-**Build Plan**
-Stripe recurring billing set up 
-Order management in Notion 
-
 ### Could Have 
-Better order management 
 
 ### Won't Have (This Time)
-Landing Page - Bene can set this up somewhere else and be able to edit and test herself - Full control 
-
+Subscription orders 
 
 
 ## Launch v.1 
