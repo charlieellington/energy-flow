@@ -11,7 +11,7 @@ v.02 - Test the above posting in forums and see if there's interest
 
 Next Steps: 
 
-- v.03 make as a full speaking bot 
+- v.03 make as a full speaking bot - see: https://chatgpt.com/c/685c19a8-1914-800a-bcbb-3d4b2bbf61ee 
 - Why - less friction to onboarding - test out - even if its a one time use for someone to try out and then they go find a partner. 
 - Test out each one to see the conversion blockers - then you'll know which way to go. 
 
