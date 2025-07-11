@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "pages/doing.mdx",
+                "file": "pages/04-processes/User Testing Guide.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "doing"
+              "title": "User Testing Guide"
             }
           }
         ],
@@ -224,12 +224,13 @@
   },
   "active": "2c8442a79e499544",
   "lastOpenFiles": [
+    "pages/doing.mdx",
+    "pages/04-processes/User Testing Guide.md",
     "pages/03-projects/Zebra-Design/Style Plan.md",
     "scratchpad.md",
     "pages/03-projects/Zebra-Design/New Product.md",
     "public/favicon.svg",
     "pages/index.mdx",
-    "pages/doing.mdx",
     "pages/07-Videos/index.mdx",
     "pages/06-ideas/index.mdx",
     "pages/05-life-tools/meal-planning-context.mdx",
@@ -258,8 +259,6 @@
     "pages/02-developer-docs/CONTRIBUTING.md",
     "pages/03-projects/Sunni/Next/Theme Selection.md",
     "pages/03-projects/Sunni/Next/sunni-project-plan.md",
-    "pages/03-projects/Zebra-Design/designers-that-code-with-ai/Zebra Design 2.0 Content Plan.md",
-    "pages/03-projects/Zebra-Design/designers-that-code-with-ai/pricing page.md",
-    "pages/02-developer-docs/Development Documentation Build.md"
+    "pages/03-projects/Zebra-Design/designers-that-code-with-ai/Zebra Design 2.0 Content Plan.md"
   ]
 }
