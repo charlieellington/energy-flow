@@ -13,7 +13,9 @@ We used to do user testing by the process out of Google Ventures’ Design Sprin
 
 Most sessions happen over Zoom with a digital interface on-screen, but the framework is elastic. Swap the screen for a counter and the bakery itself becomes the prototype: walk, talk, and note what the customer does next. Same rhythm, same insights—just a different stage.
 
-I created this guide as a short overview for how to reun
+I created this guide as a short overview for how to run effective user tests and leverage AI to speed up as much as possible. 
+
+--- 
 
 ### Step 1: Define Your Hypotheses
 
@@ -54,6 +56,8 @@ Create a loose script with:
     
 
 Avoid yes/no questions. You're listening for _confusion_, _hesitation_, and _unexpected paths_.
+
+Note: you can quickly generate a script by putting in your hypotheses and details of your prototype into ChatGPT. 
 
 ---
 
@@ -117,5 +121,3 @@ This process blends what we did at Deep Work and Google Ventures sprints with th
 📌 Works well with lean teams
 
 ---
-
-Let me know if you want a ready-made prompt template or a Notion workspace for this. Also—how might this evolve further using your current projects or workflows? Curious to hear how you'd apply it in Paid247, IFS coaching, or Sunni.be.
