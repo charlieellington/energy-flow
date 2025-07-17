@@ -123,6 +123,10 @@
 - Facilitator page shows local camera and AI hint stream
 - Partner page shows just the local camera
 
+## 2025-07-17 Updates
+- Added `pages/05-life-tools/meal-plan-july.md` containing a 3-day waste-free meal collection (breakfasts, main meals, light salads).
+- Followed meal-planning-context guidelines; shopping list excludes pancake base ingredients and snacks.
+
 ---
 
 ## Previous Logs...
