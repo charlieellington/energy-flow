@@ -27,36 +27,52 @@ Use these nine meals interchangeably over any three-day window. Main meals are d
 | 2 | **Chicken-Pepper Quinoa Salad** | Leftover grilled chicken, quinoa & roasted pepper |
 | 3 | **Warm Lentil-Aubergine Parsley Salad** | Leftover lentil bake warmed & tossed with parsley |
 
+## Snacks 
+PIES!!!! 
+PIES!!! 
+PIE! 
+
 ---
 
 ## One-Trip Shopping List
 
 ### Produce
-- [ ] 300 g mixed leafy greens  
-- [ ] 500 g sweet-potato cubes  
-- [ ] 2 broccoli heads  
-- [ ] 1 large aubergine  
-- [ ] 2 bell peppers  
-- [ ] 250 g cherry tomatoes  
-- [ ] 1 lemon  
-- [ ] 2 ripe avocados  
-- [ ] 1 small bunch parsley  
-- [ ] 250 g berries (for pancakes + snacks)  
-- [ ] 1 garlic bulb  
+
+- [ ] 300 g mixed leafy greens
+- [ ] 500 g sweet-potato cubes
+- [ ] 1 large aubergine
+- [ ] 2 bell peppers
+- [ ] 250 g cherry tomatoes
+- [ ] Red onions
+- [ ] 1 lemon
+- [ ] 2 ripe avocados
+- [ ] 1 small bunch parsley
+- [ ] 250 g berries (for pancakes + snacks)
+- [ ] 250 g fresh spinach
+- [ ] 1 small leek
+- [ ] 1 small brown/white onion
 
 ### Meat & Fish
-- [ ] 2 salmon fillets (≈ 300 g total)  
-- [ ] 500 g chicken breasts  
+
+- [ ] 2 salmon fillets (≈ 300 g total)
+- [ ] 500 g chicken breasts
+- [ ] Cooked ham for pies
+
+### Dairy/Chilled
+
+- [ ] Cheese for pies
+- [ ] Feta cheese
+- [ ] 12 Eggs
 
 ### Dry / Canned
-- [ ] 200 g quinoa  
-- [ ] 1 × 400 g can brown lentils  
-- [ ] 1 × 400 g can chickpeas  
-- [ ] Thyme 
+
+- [ ] Thyme
+- [ ] Oregano
 
 ### Chilled / Drinks
-- [ ] 6-pack Yakult  
-- [ ] Coconut yoghurt (500 g)  
+
+- [ ] 6-pack Yakult
+- [ ] Yoghurt x lots
 
 
 
