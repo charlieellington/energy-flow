@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "pages/05-life-tools/meal-plan-july.md",
+                "file": "pages/03-projects/Zebra-Design/tools/Tools.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "meal-plan-july"
+              "title": "Tools"
             }
           }
         ]
@@ -181,13 +181,20 @@
   },
   "active": "81c1bd765f74bd9e",
   "lastOpenFiles": [
-    "pages/05-life-tools/meal-planning-context.mdx",
+    "pages/03-projects/Zebra-Design/Untitled.md",
+    "pages/03-projects/Zebra-Design/tools/Tools.md",
+    "pages/03-projects/Zebra-Design/tools",
+    "pages/03-projects/Zebra-Design/zebra-design-20-content-plan.md",
+    "pages/03-projects/Zebra-Design/about.mdx",
+    "pages/03-projects/Zebra-Design/designers-that-code-with-ai/pricing-page.md",
+    "pages/03-projects/Zebra-Design/designers-that-code-with-ai/index.mdx",
+    "pages/doing.mdx",
     "pages/05-life-tools/meal-plan-july.md",
+    "pages/05-life-tools/meal-planning-context.mdx",
     "pages/05-life-tools/meal-plan-short.md",
     "pages/05-life-tools/meal-plan.mdx",
     "pages/05-life-tools/index.mdx",
     "pages/05-life-tools/gluten-free-pizza-recipe.md",
-    "pages/doing.mdx",
     "pages/03-projects/Sunni/Next/Theme Selection.md",
     "pages/03-projects/Sunni/Next/sunni-project-plan.md",
     "pages/03-projects/Sunni/Next/scratchpad-sunni.md",
@@ -201,21 +208,15 @@
     "pages/index.mdx",
     "pages/07-Videos/index.mdx",
     "pages/06-ideas/index.mdx",
-    "pages/04-processes/index.mdx",
     "pages/04-processes/creating-oli-stories-custom-with-ai.md",
     "pages/04-processes/creating-images-for-the-paid247-website.md",
     "pages/03-projects/Waitlist-app/scratchpad-waitlist.md",
-    "pages/03-projects/Waitlist-app/project-plan.mdx",
-    "pages/03-projects/Waitlist-app/index.mdx",
     "pages/03-projects/oli-stories/about-and-idea.md",
     "pages/03-projects/no-bad-parts-collective/scratchpad-nobad.md",
     "pages/03-projects/no-bad-parts-collective/notes-and-planning.md",
     "pages/03-projects/Learning-in-public-as-a-Product/learning-in-public-as-a-product.md",
     "pages/03-projects/Learning-in-public-as-a-Product/sora-video-guide.md",
     "pages/02-developer-docs/development-documentation-build.md",
-    "pages/02-developer-docs/processes and archive/waitlist-freeze-duplicate.md",
-    "pages/02-developer-docs/processes and archive/fix.md",
-    "pages/02-developer-docs/processes and archive/Chatway-Integration.md",
-    "pages/03-projects/no-bad-parts-collective/resources/front-end-build-plan.md"
+    "pages/02-developer-docs/processes and archive/waitlist-freeze-duplicate.md"
   ]
 }
